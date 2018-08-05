@@ -1,0 +1,71 @@
+@import "../variables.scss";
+/************
+Cart container
+************/
+.ecom-cart-container{
+    position: absolute;
+    float:right;
+    right:160px;
+    top:64px!important;
+    z-index: 100;
+    min-height:250px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    background-color:$white-bg;
+    img{
+        width:60%;
+        height:auto;
+    }
+    .col-sm-5, .col-sm-3 {
+        h4{color:$txt-sec-color; }
+        h6{color:$sec-color;}
+    }
+    .ecom-cart-total-container{
+        h4{display:inline-block;}
+        .ecom-cart-total-nb{
+            color:$txt-sec-color;
+            float:right;
+        }
+    }
+    .ecom-hedear-cart-bestdeal{
+        float:left;
+        background-color:$main-bg-color;
+        border-color:$main-color;    
+    }
+    .ecom-header-clear-cart{
+        float:right;
+        background-color:$secondary-bg-color;
+        border-color:$sec-color;
+    }
+    .ecom-hedaer-clear-cart:hover{cursor:not-allowed;}
+    .ecom-hide-total{text-decoration:none;}
+    .ecom-show-total{text-decoration:line-through;}
+}
+/************
+Responsive
+************/
+@media (min-width:320px) and (max-width:991px){
+    .ecom-cart-container{
+        right:0px;
+        width:100%;
+    }
+}
+@media (min-width:992px) and (max-width:1199px){
+    .ecom-cart-container{
+        right:160px;
+        min-width:250px!important;
+    }
+}
+@media (min-width:1200px) and (max-width:1600px){
+    .ecom-cart-container{
+        right:160px;
+        min-width:250px!important;
+    }
+    
+}
+@media (min-width:1200px) and (max-width:1600px){
+    .ecom-cart-container{
+        right:160px;
+        min-width:250px!important;
+    }
+    
+}

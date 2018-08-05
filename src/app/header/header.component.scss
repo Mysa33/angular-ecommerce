@@ -1,0 +1,60 @@
+@import "../variables.scss";
+/************
+Header & NavBar
+************/
+.ecom-header-row{
+    padding:0px!important;
+    background-color:$main-bg-color;
+    .ecom-hedaer-cart-bestdeal{
+        background-color:$main-bg-color;
+        border-color: #e40046;
+    }
+    .ecom-show-cart{display:block!important;}
+    .ecom-hide-cart{display:none!important;}
+    /*NavBar*/
+    .ecom-nav-col{
+        padding:0px!important;
+        background-color:$main-bg-color;
+        .bg-light{background-color:$main-bg-color!important;}
+        .navbar-brand{
+            font-size:1.2rem;
+            line-height: 1.2rem;
+            vertical-align: middle;
+            color:$txt-first-color;
+        }
+        input:hover{cursor:not-allowed;}
+        .material-icons{
+            color:$txt-first-color;
+            font-size:2rem;
+            line-height:2rem;
+            vertical-align:middle;
+        }
+        .ecom-home-cart-wrapper{
+            margin-left:30px;
+            span{
+                font-size:1rem;
+                color:$txt-first-color;
+            }
+        }
+        .ecom-cart-items-nb{
+            display:inline-block;
+            width:25px;
+            height:25px;
+            font-weight: 600;
+            text-align:center;
+            color:$txt-sec-color; 
+            background-color:$white-bg; 
+            border-radius:50%;  
+        }
+        .ecom-home-cart-wrapper:hover{cursor: pointer;}
+        .ecom-custom-nav-link{
+            font-size:1.2rem;
+            line-height: 1.85rem;
+            vertical-align: middle;
+            color:$txt-first-color;
+        }
+        .ecom-header-profil{color: $txt-first-color; }
+    }
+}
+.ecom-show-cart{display:block!important;}
+.ecom-hide-cart{display:none!important;}

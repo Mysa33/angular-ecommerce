@@ -1,0 +1,37 @@
+<div class="container-fluid ecom-header-row">
+
+  <!-- .ecom-nav-col -->
+  <div class="col-lg-12 ecom-nav-col">
+  
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <a class="navbar-brand d-none d-lg-block" href="#" >BestDeal</a>
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="#">
+              <i class="material-icons">home</i>
+          </a>
+        </li>
+        <li class="nav-item d-none d-lg-block">
+          <a class="nav-link ecom-custom-nav-link">Notre catalogue</a>
+        </li>
+        </ul>
+        
+        <form class="form-inline my-2 my-lg-0 d-none d-none d-lg-block">
+          <input class="form-control mr-sm-2" type="search" placeholder="Rechercher par titre" disabled="disabled">
+        </form>
+        
+        <div class="ecom-home-cart-wrapper" (click)="cartToggle();">
+          <span>Votre panier</span>
+          <i class="material-icons">shopping_cart</i>
+          <div class="ecom-cart-items-nb">{{catLength}}</div>
+        </div>
+        <div class="ecom-home-cart-wrapper d-none d-none d-lg-block">
+            <span>S'indentifier</span>
+            <i class="material-icons ecom-header-profil">person</i>
+        </div>
+    </nav>
+
+  </div>
+  <!-- /.ecom-nav-col -->
+  <app-cart [ngClass]="isVisible ? 'ecom-show-cart' : 'ecom-hide-cart'"></app-cart>
+</div>

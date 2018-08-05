@@ -1,0 +1,74 @@
+<div class="container">
+  <!-- .row -->
+  <div class="row ecom-home-catalog-serach-row">
+    <div class="col-lg-4 col-lg-offset-8">
+      <div class="input-group mb-3">  
+                
+        <input type="search" class="form-control" [(ngModel)]="queryString" placeholder ="Rechercher par titre">
+  
+          <div class="input-group-append">
+            <span class="input-group-text">
+              <i class="material-icons">search</i>
+            </span>
+          </div>
+    
+          </div>
+      </div>
+    </div>
+    <!-- /.row -->
+  <!-- .ecom-home-catalog-row -->
+  <div class="row ecom-home-catalog-row">
+    <!-- col-lg-4-->
+    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-6" *ngFor="let book of  books; let i = index">
+      <!-- .ecom-home-catalog-card -->
+      <div class="card ecom-home-catalog-card">
+          <figure>
+            <img class="card-img-top" src="{{book.cover}}" alt="{{book.title}}">
+            <figcaption>
+                <button type="button" class="btn" id="{{i}}" (click)="openModal(i);">
+                  Lire plus 
+                </button>
+            </figcaption>
+          </figure>
+          <div class="card-body">
+          <h5 class="card-title ecom-home-catalog-book-title">{{book.title}}</h5>
+          <p class="card-text ecom-home-catalog-book-price">
+            <span>{{book.price}}</span>
+            <span>&euro;</span>
+          </p>
+          <a class="btn btn-primary ecom-home-catalog-add-cart" id="{{i}}" (click)="addToCart(i);">
+            <span>Ajouter au panier</span>
+            <span class="ecom-home-add-to-cart-icon">
+                <i class="material-icons">add_shopping_cart</i>
+            </span>
+          </a>
+      </div>
+      <!-- /.ecom-home-catalog-card -->
+    </div>
+
+  </div>
+  <!-- .ecom-home-catalog-row -->
+</div>
+<!-- modal -->
+<div class="ecom-modal-container" *ngIf="modalVisibility">
+  <!-- .modal -->
+  <div class="ecom-modal modal-body" >
+    <!-- .row -->
+    <div class="row ecom-modal-content">
+      
+      <!-- app-modal-body -->
+      <app-modal [bookModalObjChild]="bookModal"></app-modal>
+      <!-- app-modal-body -->
+
+      <div class="col-lg-12">
+        <div class="modal-footer">
+          <button (click)="closeModal();" type="button" class="btn btn-secondary ecom-modal-close">Fermer</button>
+        </div>
+      </div>
+    </div>
+    <!-- /.row -->
+
+  </div>
+  <!-- /.modal -->
+</div>
+<!-- /modal -->

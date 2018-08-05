@@ -1,0 +1,110 @@
+/****
+Search row
+****/
+.ecom-home-catalog-serach-row{
+    margin-top:20px;
+    .input-group-text{
+        color:#FFF;
+        background-color: #333;
+    }
+}
+/****
+Catalog row
+****/
+.ecom-home-catalog-row{
+    .ecom-home-catalog-card{
+        margin-bottom:1.4em;
+        figure:hover{
+            figcaption{display:block;}
+        }
+        figure{
+            margin:auto;
+            text-align:center;
+            .card-img-top{
+                width:75%;
+                height:auto;
+                margin:auto;
+            }
+            figcaption{
+                position:absolute;
+                left:36px;
+                top:215px;
+                display:none;
+                width:75%;
+                min-height:100px;
+                color:#FFF;
+                border-radius:4px;
+                /*background-color:#333;*/
+                button{
+                    font-size:1.2rem;
+                    color:#FFF;
+                    background-color: #333;
+                }
+                h4:hover{cursor:pointer;}
+            }
+        }
+        
+        .card-text{
+            span{font-size: 0.8rem;}
+        }
+        .ecom-home-catalog-book-title{
+            font-size: 1rem;
+            margin-bottom:5px!important;
+        }
+        strong{font-size: 0.8rem;}
+        .ecom-home-catalog-book-price{
+            span{
+                color:#e40046;
+                font-size: 2rem;
+                font-weight: 500;
+            }
+        }
+        .material-icons{
+            float:left!important;
+            margin-right:15px;
+            font-size:1.2rem;
+            color:#FFF;
+            line-height:28.4px;
+            vertical-align: middle;
+        
+        }
+        .ecom-home-catalog-add-cart:hover{cursor: pointer;}
+        .ecom-home-catalog-add-cart{
+            font-size: 1rem;
+            color:#FFF;
+            background-color: #e40046;
+            border-color: #e40046!important;
+            
+        }
+    }
+}
+/****
+Modal
+****/
+.ecom-modal-show{display:block;}
+.ecom-modal-hide{display:none;}
+.ecom-modal-container{
+    .ecom-modal {
+        display: block;
+        position: fixed;
+        z-index: 1;
+        padding-top: 100px;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        overflow: auto;
+        background-color: rgb(0,0,0);
+        background-color: rgba(0,0,0,0.4);
+    }
+    .ecom-modal-content {
+        background-color: #fefefe;
+        margin: auto;
+        padding: 20px;
+        border: 1px solid #888;
+        width: 50%;
+    }
+    .ecom-modal-close{
+        background-color:#333;
+    }
+}
