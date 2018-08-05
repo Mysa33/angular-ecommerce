@@ -1,0 +1,6 @@
+@import "../variables.scss";
+.ecom-team-row{
+    i{color:$txt-sec-color;font-size:0.95em!important;margin-top:5px;}
+    span{text-transform: capitalize;color:$sec-color;}
+    .ecom-team-mail-span{max-width: 70%!important;overflow: hidden;}
+}

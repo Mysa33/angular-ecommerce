@@ -1,0 +1,25 @@
+<div class="row ecom-team-row">
+  <div class="col-lg-4" *ngFor ="let member of team; let i=index">
+    
+    <div>
+      <img class="rounded-circle" src="https://randomuser.me/api/portraits/women/55.jpg" alt="{{member.name.first}}">
+    </div>
+    <div>
+        <span>{{member.name.title}}</span>
+        <span>{{member.name.first}}</span>
+        <span>{{member.name.last}}</span>
+    </div>
+    <div>
+        <i class="material-icons">
+            mail_outline
+        </i>
+        <span class="ecom-team-mail-span">{{member.email}}</span>
+    </div>
+    <div>
+        <i class="material-icons">
+            phone
+        </i>
+        <span>{{member.phone}}</span>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,12 @@
+@import "../variables.scss";
+/**/
+.ecom-page-margin-top{
+    margin-top:50px;
+    .ecom-about-main-container{
+        h4{color:$txt-sec-color!important;}
+        p{text-align: justify;font-size:1.1em;color:$sec-color;}
+        i{color:$txt-sec-color;font-size:0.95em!important;margin-top:5px;}
+        span{color:$sec-color;}
+    }
+    
+}

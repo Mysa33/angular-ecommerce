@@ -1,5 +1,4 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
 
 import {ApiService} from '../../shared/services/api.service';
 @Component({
@@ -31,7 +30,7 @@ export class BestDealComponent implements OnInit {
   
   dataArray;
 
-  constructor(private _http:HttpClient,private _offersService: ApiService) {}
+  constructor(private _offersService: ApiService) {}
 
   ngOnInit() {
     this.doBestDeal();
@@ -62,18 +61,17 @@ export class BestDealComponent implements OnInit {
   getCommercialOffers(commercialOffersUrl){
     this.commercialOffersUrl = commercialOffersUrl;
     if(this.commercialOffersUrl == ""){
-      return
+      return;
     }else{
       this._offersService.getoffers(this.commercialOffersUrl).subscribe(
         data => { 
           this.dataArray = data;
           this.dataArray = this.dataArray.offers;
-          this.calcBestdeal(this.dataArray);//Todo
-          console.log("dataArray : ",this.dataArray);
-          return this.dataArray;//Todo
+          this.calcBestdeal(this.dataArray);
+          return this.dataArray;
         },
         err => console.error(err),
-        () => console.log('done loading books')
+        () => console.log('done loading offers')
       );
     }
   }

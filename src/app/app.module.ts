@@ -17,6 +17,8 @@ import { ModalComponent } from './modal/modal.component';
 import { FilterdataPipe } from './shared/pipes/filterdata.pipe';
 import { CommentsComponent } from './comments/comments.component';
 import { SocialComponent } from './social/social.component';
+import { AboutUsComponent } from './about-us/about-us.component';
+import { TeamComponent } from './team/team.component';
 
 
 @NgModule({
@@ -30,7 +32,9 @@ import { SocialComponent } from './social/social.component';
     ModalComponent,
     FilterdataPipe,
     CommentsComponent,
-    SocialComponent
+    SocialComponent,
+    AboutUsComponent,
+    TeamComponent
     
   ],
   imports: [
