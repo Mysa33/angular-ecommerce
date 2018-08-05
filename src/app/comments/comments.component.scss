@@ -1,0 +1,14 @@
+@import "../variables.scss";
+.ecom-comments-container{
+    margin-top:15px;
+    h6{
+        font-size:1.2em!important;
+        color : $txt-first-color
+    }
+    .ecom-comment-user-infos{
+        //margin-left:5px;
+        span{text-transform: capitalize;}
+        q{display:block;}
+        q,span{font-size:.8em;}
+    }
+}

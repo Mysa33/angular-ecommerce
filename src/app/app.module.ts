@@ -15,6 +15,7 @@ import { DataShareService } from './shared/services/data-share.service';
 import { BestDealComponent } from './cart/best-deal/best-deal.component';
 import { ModalComponent } from './modal/modal.component';
 import { FilterdataPipe } from './shared/pipes/filterdata.pipe';
+import { CommentsComponent } from './comments/comments.component';
 
 
 @NgModule({
@@ -26,7 +27,8 @@ import { FilterdataPipe } from './shared/pipes/filterdata.pipe';
     ProductsComponent,
     BestDealComponent,
     ModalComponent,
-    FilterdataPipe
+    FilterdataPipe,
+    CommentsComponent
     
   ],
   imports: [
