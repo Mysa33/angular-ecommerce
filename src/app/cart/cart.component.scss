@@ -17,7 +17,11 @@ Cart container
     }
     .col-sm-5, .col-sm-3 {
         h4{color:$txt-sec-color; }
-        h6{color:$sec-color;}
+        h6{
+            color:$sec-color;
+            font-size: 2em!important;
+            font-weight: 600;
+        }
     }
     .ecom-cart-total-container{
         h4{display:inline-block;}
