@@ -19,7 +19,7 @@
   <!-- .ecom-home-catalog-row -->
   <div class="row ecom-home-catalog-row">
     <!-- col-lg-4-->
-    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-6" *ngFor="let book of  books; let i = index">
+    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-6" *ngFor="let book of  books | filterdata: queryString : 'title'; let i = index">
       <!-- .ecom-home-catalog-card -->
       <div class="card ecom-home-catalog-card">
           <figure>
