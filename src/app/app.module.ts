@@ -16,6 +16,7 @@ import { BestDealComponent } from './cart/best-deal/best-deal.component';
 import { ModalComponent } from './modal/modal.component';
 import { FilterdataPipe } from './shared/pipes/filterdata.pipe';
 import { CommentsComponent } from './comments/comments.component';
+import { SocialComponent } from './social/social.component';
 
 
 @NgModule({
@@ -28,7 +29,8 @@ import { CommentsComponent } from './comments/comments.component';
     BestDealComponent,
     ModalComponent,
     FilterdataPipe,
-    CommentsComponent
+    CommentsComponent,
+    SocialComponent
     
   ],
   imports: [
