@@ -10,9 +10,11 @@ export class ModalComponent implements OnInit {
   
   @Input () bookModalObjChild;
   data:any;
+  public modalSocialId:number;
   constructor() {}
 
   ngOnInit() {
     this.data = this.bookModalObjChild;
+    this.modalSocialId = 2;
   }
 }
