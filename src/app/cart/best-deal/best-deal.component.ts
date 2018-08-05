@@ -1,6 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
+import {ApiService} from '../../shared/services/api.service';
 @Component({
   selector: 'app-best-deal',
   templateUrl: './best-deal.component.html',
@@ -27,8 +28,10 @@ export class BestDealComponent implements OnInit {
   percentVis:boolean = false;
   minusVis:boolean = false;
   sliceVis:boolean = false;
+  
+  dataArray;
 
-  constructor(private _http:HttpClient) {}
+  constructor(private _http:HttpClient,private _offersService: ApiService) {}
 
   ngOnInit() {
     this.doBestDeal();
@@ -48,35 +51,32 @@ export class BestDealComponent implements OnInit {
     this.doSetbestdealUrl();
     this.getCommercialOffers(this.commercialOffersUrl);
   }
-  //
+  //Todo
   doSetbestdealUrl():any{
     for(let _o in this.isbnArray){
       this.commercialOffersUrl += this.isbnArray[_o] + "," ;
     }
     this.commercialOffersUrl = "http://henri-potier.xebia.fr/books/"+this.commercialOffersUrl+"/commercialOffers";
   }
-  // Get commercial offers //Todo : use service
-  getCommercialOffers(commercialOffersUrl):any{
+  // Get commercial offers
+  getCommercialOffers(commercialOffersUrl){
     this.commercialOffersUrl = commercialOffersUrl;
     if(this.commercialOffersUrl == ""){
       return
     }else{
-      this._http.get(this.commercialOffersUrl).subscribe(
+      this._offersService.getoffers(this.commercialOffersUrl).subscribe(
         data => { 
-          this.dataOffers = data;
-          this.dataOffers = this.dataOffers.offers; 
-          this.calcBestdeal(this.dataOffers);//Todo
-          return this.dataOffers;//Todo
+          this.dataArray = data;
+          this.dataArray = this.dataArray.offers;
+          this.calcBestdeal(this.dataArray);//Todo
+          console.log("dataArray : ",this.dataArray);
+          return this.dataArray;//Todo
         },
-        err => {
-          console.error("Erro : ",err);
-          throw err;
-        },
-        () => console.log('done loading offers')
+        err => console.error(err),
+        () => console.log('done loading books')
       );
     }
-    
-  } 
+  }
   // Calc best deal 
   calcBestdeal(dataOffers):void{
     this.dataOffers = dataOffers;
