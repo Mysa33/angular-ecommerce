@@ -1,0 +1,13 @@
+@import "../variables.scss";
+.ecom-social-col{
+    margin-top:15px;
+    line-height :2em;
+    text-align: center;
+    vertical-align: middle;
+    h6{
+        font-size:1.2em!important;
+        color : $txt-first-color;
+    }
+    i{color:$txt-first-color;font-size:2em;}
+    i:hover{color:$txt-sec-color;cursor: pointer;}
+}
