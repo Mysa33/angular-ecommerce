@@ -47,7 +47,6 @@ export class CommentsComponent implements OnInit {
       }
       this.commentsArray.push(this.usersArray);
     });
-    console.log("this.commentsArray : ", this.commentsArray);
     return this.commentsArray;
 
   }

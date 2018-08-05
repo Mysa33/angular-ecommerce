@@ -45,10 +45,8 @@ export class BestDealComponent implements OnInit {
     .filter(function(elem, index, self) {
       return index === self.indexOf(elem);
     });
-
     this.doSetbestdealUrl();
     this.getCommercialOffers(this.commercialOffersUrl);
-    //this.calcBestdeal(this.dataOffers);
   }
   //
   doSetbestdealUrl():any{
@@ -67,9 +65,7 @@ export class BestDealComponent implements OnInit {
         data => { 
           this.dataOffers = data;
           this.dataOffers = this.dataOffers.offers; 
-          console.log("this.dataOffers",this.dataOffers);
           this.calcBestdeal(this.dataOffers);//Todo
-
           return this.dataOffers;//Todo
         },
         err => {
@@ -78,16 +74,13 @@ export class BestDealComponent implements OnInit {
         },
         () => console.log('done loading offers')
       );
-    
     }
     
   } 
   // Calc best deal 
   calcBestdeal(dataOffers):void{
     this.dataOffers = dataOffers;
-    console.log("this.dataOffers offer",this.dataOffers);
     this.price = this.data.totalCart;
-    console.log("this.price",this.price);
     let percent = !this.dataOffers[0] ?  0: this.dataOffers[0].value;
     let minus =  !this.dataOffers[1] ? 0 : this.dataOffers[1].value;
     let slice = !this.dataOffers[2] ? 0 : this.dataOffers[2].value;
@@ -111,6 +104,4 @@ export class BestDealComponent implements OnInit {
     this.minusVis =  !this.dataOffers[1] ? false : true;
     this.sliceVis = !this.dataOffers[2] ? false : true;
   }
-  
-  
 }
