@@ -4,6 +4,7 @@ import { HttpModule } from '@angular/http';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
+import { RouterModule, Routes } from '@angular/router';
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
@@ -20,6 +21,11 @@ import { SocialComponent } from './social/social.component';
 import { AboutUsComponent } from './about-us/about-us.component';
 import { TeamComponent } from './team/team.component';
 
+const routes: Routes  = [
+  {path :'', redirectTo : 'products', pathMatch:'full'},
+  {path :'home', component: ProductsComponent},
+  {path : 'about', component : AboutUsComponent},
+];
 
 @NgModule({
   declarations: [
@@ -42,7 +48,11 @@ import { TeamComponent } from './team/team.component';
     HttpModule,
     HttpClientModule,
     FormsModule,
-    AppRoutingModule
+    AppRoutingModule,
+    RouterModule.forRoot(
+      routes,
+      { enableTracing: true } // <-- debugging purposes only
+    )
   ],
   providers: [ApiService,DataShareService],
   bootstrap: [AppComponent]

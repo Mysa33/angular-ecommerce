@@ -10,7 +10,7 @@ export class BestDealComponent implements OnInit {
   
   @Input () data;
   @Input () cartTotalBd;
-  //Best deal
+  
   isbnArray:Array<any>
   commercialOffersUrl:string;
   dataOffers;
@@ -50,8 +50,8 @@ export class BestDealComponent implements OnInit {
     this.doSetbestdealUrl();
     this.getCommercialOffers(this.commercialOffersUrl);
   }
-  //Todo
-  doSetbestdealUrl():any{
+  //doSetbestdealUrl
+  doSetbestdealUrl():void{
     for(let _o in this.isbnArray){
       this.commercialOffersUrl += this.isbnArray[_o] + "," ;
     }

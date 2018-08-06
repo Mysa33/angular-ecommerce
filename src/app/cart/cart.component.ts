@@ -19,8 +19,8 @@ export class CartComponent{
     this._dataShareService.shareDataSubject.subscribe(receivedData=>{
       this.cartProdArray = receivedData;
       this.cartLength =  this.cartProdArray.length;
-      this.doCartTotal ();
-      return this.data = { //objet
+      this.doCartTotal ();//calc total when adding item even when cart is opned. 
+      return this.data = {
         "products" : receivedData,
         "totalCart" : this.cartTotal
       };
@@ -48,7 +48,7 @@ export class CartComponent{
     this.bestDealVisibility = false;
     this.cartProdArray = [];
     this.cartTotal = 0;
-    //this.isVisible = false; //Todo
+    //this.isVisible = false; //Todo input from header and event emitter from cart to header.
   }
   //Display bestDeal
   displayBestDeal(){

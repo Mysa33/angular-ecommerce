@@ -24,7 +24,7 @@ export class ProductsComponent implements OnInit {
     this.getProductsData();
   }
 
-  getProductsData(){
+  getProductsData():void{
     this._bookService.getBooks().subscribe(
       data => { this.books = data},
       err => console.error(err),
@@ -33,11 +33,11 @@ export class ProductsComponent implements OnInit {
   }
 
   addToCart(i):void{
-    const bookToCart = {//objet
+    const bookToCart = {
        "isbn" : this.books[i].isbn,
        "title": this.books[i].title,
        "price": this.books[i].price,
-       "cover": this.books[i].cover,
+       "cover": this.books[i].cover
     };
     this.booksCart.push(bookToCart);
     this.passData(this.booksCart);
@@ -63,7 +63,4 @@ export class ProductsComponent implements OnInit {
     this.bookModal = {};
     this.modalVisibility = false;
   }
-
-
-
 }

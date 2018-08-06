@@ -6,12 +6,13 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./social.component.scss']
 })
 export class SocialComponent implements OnInit {
+  
   @Input() parentId:number;
   socialDefaultId:number = 0;
   public footerSocialId:number;
-  constructor() { 
-    
-  }
+  
+  constructor() {}
+
   ngOnInit() {
     this.socialDefaultId = this.parentId;
     console.log("parent Id in social component : ", this.socialDefaultId);
