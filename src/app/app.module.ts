@@ -24,7 +24,7 @@ import { TeamComponent } from './team/team.component';
 import { ContactComponent } from './contact/contact.component';
 
 const routes: Routes  = [
-  {path :'', redirectTo : 'products', pathMatch:'full'},
+  {path :'', redirectTo : 'home', pathMatch:'full'},
   {path :'home', component: ProductsComponent},
   {path : 'about', component : AboutUsComponent},
   {path : 'contact', component : ContactComponent}

@@ -1,22 +1,25 @@
 <footer>
   <div class="container-fluid ecom-footer">
-      <div class="container ecom-no-padding">
-        <div class="row ecom-no-padding">
-          <div class="col-lg-5 col-md-6 col-sm-6 col-xs-12">
-            <app-comments></app-comments>
-          </div>
+      
+    <div class="container ecom-no-padding">
+      <div class="row ecom-no-padding">
+        <div class="col-lg-5 col-md-6 col-sm-6 col-xs-12">
+          <app-comments></app-comments>
+        </div>
 
-          <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+        <div class="col-lg-2 col-md-2 col-sm-12 col-xs-12">
 
-            <app-social [parentId]="footerSocialId"></app-social>
+          <app-social [parentId]="footerSocialId"></app-social>
             
-            <div class="ecom-footer-nav">
-              <a routerLink="/contact" style="display:block">Contact</a>
-              <a routerLink="/about" style="display:block">Qui sommes-nous ?</a>
-            </div>
-
+          <div class="ecom-footer-nav">
+            <h6>Nos pages :</h6>
+            <a routerLink="/home" style="display:block">Notre catalogue</a>
+            <a routerLink="/about" style="display:block">Qui sommes-nous ?</a>
+            <a routerLink="/contact" style="display:block">Contact</a>
           </div>
+
         </div>
       </div>
+    </div>
   </div>
 </footer>

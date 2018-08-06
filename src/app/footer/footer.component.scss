@@ -1,6 +1,10 @@
 /*footer.componenet.scss*/
 @import "../variables.scss";
 footer{
+    h6{
+        font-size:1.2em!important;
+        color:$txt-first-color;;
+    }
     margin-top:50px!important;
     .ecom-footer{
         min-height:250px;
