@@ -1,0 +1,12 @@
+@import "../variables.scss";
+.ecom-contact-container{
+    margin-top:50px;
+    font-family: 'Open Sans', sans-serif!important;
+    label{color:$sec-color;}
+    button{
+        color:$txt-first-color;
+        background-color:$main-bg-color;
+        border-color:$main-color!important;
+    }
+    h4{color:$txt-sec-color!important;}
+}
