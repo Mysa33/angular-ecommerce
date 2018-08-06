@@ -5,6 +5,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { RouterModule, Routes } from '@angular/router';
+import { ReactiveFormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
@@ -20,11 +21,13 @@ import { CommentsComponent } from './comments/comments.component';
 import { SocialComponent } from './social/social.component';
 import { AboutUsComponent } from './about-us/about-us.component';
 import { TeamComponent } from './team/team.component';
+import { ContactComponent } from './contact/contact.component';
 
 const routes: Routes  = [
   {path :'', redirectTo : 'products', pathMatch:'full'},
   {path :'home', component: ProductsComponent},
   {path : 'about', component : AboutUsComponent},
+  {path : 'contact', component : ContactComponent}
 ];
 
 @NgModule({
@@ -40,8 +43,8 @@ const routes: Routes  = [
     CommentsComponent,
     SocialComponent,
     AboutUsComponent,
-    TeamComponent
-    
+    TeamComponent,
+    ContactComponent 
   ],
   imports: [
     BrowserModule,
@@ -52,7 +55,8 @@ const routes: Routes  = [
     RouterModule.forRoot(
       routes,
       { enableTracing: true }
-    )
+    ),
+    ReactiveFormsModule
   ],
   providers: [ApiService,DataShareService],
   bootstrap: [AppComponent]

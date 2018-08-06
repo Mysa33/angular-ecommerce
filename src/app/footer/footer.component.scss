@@ -6,6 +6,9 @@ footer{
         min-height:250px;
         background-color: $secondary-bg-color;
         h4{color:$txt-first-color;}
+        .ecom-footer-nav{
+            a{color:$txt-first-color!important;text-decoration: none;}
+        }
     }
     /**/
     .ecom-no-padding{

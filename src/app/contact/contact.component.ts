@@ -1,0 +1,23 @@
+import { Component, OnInit } from '@angular/core';
+import { FormGroup, FormControl } from '@angular/forms';
+@Component({
+  selector: 'app-contact',
+  templateUrl: './contact.component.html',
+  styleUrls: ['./contact.component.scss']
+})
+export class ContactComponent implements OnInit {
+
+  constructor() { }
+
+  ngOnInit() {
+  }
+  contactForm = new FormGroup({
+    inputEmail: new FormControl(''),
+    inputName: new FormControl(''),
+    inputAddress: new FormControl(''),
+    inputAddress2: new FormControl(''),
+    inputCity: new FormControl(''),
+    inputZip: new FormControl(''),
+  });
+
+}

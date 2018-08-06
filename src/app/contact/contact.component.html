@@ -1,0 +1,35 @@
+<div class="container ecom-contact-container">
+  <form [formGroup]="contactForm">
+    <div class="form-row">
+      <div class="form-group col-md-6">
+        <label for="inputEmail">Email</label>
+        <input type="email" class="form-control" name="inputEmail" formControlName="inputEmail" placeholder="Email">
+      </div>
+      <div class="form-group col-md-6">
+        <label for="inputName">Nom</label>
+        <input type="text" class="form-control" name="inputName" formControlName="inputName" placeholder="Nom">
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="inputAddress">Addresse</label>
+      <input type="text" class="form-control" name="inputAddress" formControlName="inputAddress" placeholder="1234 Main St">
+    </div>
+    <div class="form-group">
+      <label for="inputAddress2">Complèment d'adresse</label>
+      <input type="text" class="form-control" name="inputAddress2" formControlName="inputAddress2" placeholder="Apartment, studio, or floor">
+    </div>
+    <div class="form-row">
+      <div class="form-group col-md-6">
+        <label for="inputCity">Ville</label>
+        <input type="text" class="form-control" name="inputCity" formControlName="inputCity">
+      </div>
+
+      <div class="form-group col-md-2">
+        <label for="inputZip">Code postale</label>
+        <input type="text" class="form-control" name="inputZip" formControlName="inputZip">
+      </div>
+    </div>
+    
+    <button type="submit" class="btn btn-primary">Envoyer</button>
+  </form>
+</div>
