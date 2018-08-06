@@ -32,11 +32,13 @@ Cart container
     }
     .ecom-hedear-cart-bestdeal{
         float:left;
+        color :$txt-first-color!important;
         background-color:$main-bg-color;
         border-color:$main-color;    
     }
     .ecom-header-clear-cart{
         float:right;
+        color :$txt-first-color!important;
         background-color:$secondary-bg-color;
         border-color:$sec-color;
     }

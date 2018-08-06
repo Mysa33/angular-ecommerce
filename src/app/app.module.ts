@@ -51,7 +51,7 @@ const routes: Routes  = [
     AppRoutingModule,
     RouterModule.forRoot(
       routes,
-      { enableTracing: true } // <-- debugging purposes only
+      { enableTracing: true }
     )
   ],
   providers: [ApiService,DataShareService],
