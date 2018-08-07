@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormControl } from '@angular/forms';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
 @Component({
   selector: 'app-contact',
   templateUrl: './contact.component.html',
@@ -12,8 +12,8 @@ export class ContactComponent implements OnInit {
   ngOnInit() {
   }
   contactForm = new FormGroup({
-    inputEmail: new FormControl(''),
-    inputName: new FormControl(''),
+    inputEmail: new FormControl('',[Validators.required]),
+    inputName: new FormControl('',[Validators.required]),
     inputAddress: new FormControl(''),
     inputAddress2: new FormControl(''),
     inputCity: new FormControl(''),
