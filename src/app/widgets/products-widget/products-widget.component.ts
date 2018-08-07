@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
-import {ApiService} from '../shared/services/api.service';
+import {ApiService} from '../../shared/services/api.service';
 
 @Component({
   selector: 'app-products-widget',
@@ -27,5 +27,4 @@ export class ProductsWidgetComponent implements OnInit {
       () => console.log('done loading books into widget')
     );
   }
-
 }

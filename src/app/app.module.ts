@@ -15,15 +15,15 @@ import { ProductsComponent } from './products/products.component';
 import {ApiService} from './shared/services/api.service';
 import { DataShareService } from './shared/services/data-share.service';
 import { BestDealComponent } from './cart/best-deal/best-deal.component';
-import { ModalComponent } from './modal/modal.component';
+import { ModalComponent } from './widgets/modal/modal.component';
 import { FilterdataPipe } from './shared/pipes/filterdata.pipe';
-import { CommentsComponent } from './comments/comments.component';
-import { SocialComponent } from './social/social.component';
+import { CommentsComponent } from './widgets/comments/comments.component';
+import { SocialComponent } from './widgets/social/social.component';
 import { AboutUsComponent } from './about-us/about-us.component';
-import { TeamComponent } from './team/team.component';
+import { TeamComponent } from './widgets/team/team.component';
 import { ContactComponent } from './contact/contact.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
-import { ProductsWidgetComponent } from './products-widget/products-widget.component';
+import { ProductsWidgetComponent } from './widgets/products-widget/products-widget.component';
 
 const routes: Routes  = [
   {path :'', redirectTo : 'home', pathMatch:'full'},
