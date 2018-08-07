@@ -23,6 +23,7 @@ import { AboutUsComponent } from './about-us/about-us.component';
 import { TeamComponent } from './team/team.component';
 import { ContactComponent } from './contact/contact.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
+import { ProductsWidgetComponent } from './products-widget/products-widget.component';
 
 const routes: Routes  = [
   {path :'', redirectTo : 'home', pathMatch:'full'},
@@ -46,7 +47,8 @@ const routes: Routes  = [
     AboutUsComponent,
     TeamComponent,
     ContactComponent,
-    SidebarComponent 
+    SidebarComponent,
+    ProductsWidgetComponent 
   ],
   imports: [
     BrowserModule,

@@ -20,7 +20,6 @@ export class CommentsComponent implements OnInit {
 
   ngOnInit() {
     this.defaultCommentsWidgetId = this.parentWidgetId;
-    console.log("this.parentWidgetId",this.parentWidgetId);
     this.getUsers();
   }
 
