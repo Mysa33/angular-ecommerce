@@ -13,13 +13,14 @@ export class CommentsComponent implements OnInit {
   result;
   commentsArray;
   usersArray;
-  defaultCommentsWidgetId:number;
+  defaultCommentsWidgetId:number =0;
   widgetStyleId:number = 0;
 
   constructor(private _userServices: ApiService) { }
 
   ngOnInit() {
     this.defaultCommentsWidgetId = this.parentWidgetId;
+    console.log("this.parentWidgetId",this.parentWidgetId);
     this.getUsers();
   }
 
@@ -52,13 +53,32 @@ export class CommentsComponent implements OnInit {
   }
   setWidgetColor(defaultCommentsWidgetId):any{
     this.defaultCommentsWidgetId = defaultCommentsWidgetId;
-    console.log(this.defaultCommentsWidgetId);
-    if(this.defaultCommentsWidgetId === 0 || 1){
-      
-      return '#ffffff';//Default or Footer
-    }else{
-      console.log(" comments 2 ");
-      return '#e40046';//sidebar
+    this.defaultCommentsWidgetId = defaultCommentsWidgetId;
+    switch (this.defaultCommentsWidgetId) {
+      case 0:
+        return '#FFF';//Default
+      case 1:
+        return '#FFF';//Footer
+      case 2:
+        return '#333';//Sidebar
+        default:
+          console.log(' erreur ' + this.defaultCommentsWidgetId + ' n"est pas une valeur.');
+        break;
+    }
+  }
+  setWidgetTitleColor(defaultCommentsWidgetId):any{
+    this.defaultCommentsWidgetId = defaultCommentsWidgetId;
+    this.defaultCommentsWidgetId = defaultCommentsWidgetId;
+    switch (this.defaultCommentsWidgetId) {
+      case 0:
+        return '#FFF';//Default
+      case 1:
+        return '#FFF';//Footer
+      case 2:
+        return '#333';//Sidebar
+        default:
+          console.log(' erreur ' + this.defaultCommentsWidgetId + ' n"est pas une valeur.');
+        break;
     }
   }
 }
