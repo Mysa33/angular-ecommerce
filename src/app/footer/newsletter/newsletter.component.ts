@@ -16,11 +16,12 @@ export class NewsletterComponent implements OnInit {
     inputNewsletter: new FormControl('',[Validators.required])
   });
   onSubmit(newsletterFormArray):any { 
-    if(!this.newsletterForm.value){
+    if(this.newsletterForm.value.length === 0){
       alert("le champs est vide.");
       return;
     }else{
       this.newsletterFormArray = newsletterFormArray;
+      this.newsletterFormArray = this.newsletterFormArray;
       const insDate:Date = new Date();
       let flag:boolean = true;
       this.newsletterFormArray = {
@@ -29,7 +30,6 @@ export class NewsletterComponent implements OnInit {
         "flag" : flag
       };
       this.newsletterFormArray = JSON.stringify(this.newsletterFormArray);
-      console.log("newsletterFormArray : ",this.newsletterFormArray);
       localStorage.setItem('newsletterFormArray', this.newsletterFormArray);
       return this.newsletterFormArray = {};
     }
