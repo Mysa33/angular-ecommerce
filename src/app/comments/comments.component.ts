@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 import {ApiService} from '../shared/services/api.service';
 @Component({
@@ -8,48 +8,57 @@ import {ApiService} from '../shared/services/api.service';
 })
 export class CommentsComponent implements OnInit {
   
+  @Input() parentWidgetId; 
   users;
-  test;
   result;
   commentsArray;
   usersArray;
+  defaultCommentsWidgetId:number;
+  widgetStyleId:number = 0;
 
-  
   constructor(private _userServices: ApiService) { }
 
   ngOnInit() {
-    this.getusers();
+    this.defaultCommentsWidgetId = this.parentWidgetId;
+    this.getUsers();
   }
 
-  getusers(){
-    this._userServices.getUsers("https://randomuser.me/api/?results=3").subscribe(
+  getUsers():any{
+    this._userServices.getUsers("https://randomuser.me/api/?results=4").subscribe(
       data => { 
         this.users = data; 
         this.users = this.users.results; 
-        this.setusers(this.users);
+        this.setUsers(this.users);
         return this.users
       },
       err => console.error(err),
       () => console.log('done loading users')
     );
-    
   }
-  setusers(users){
+  setUsers(users):any{
     this.users = users;
     this.commentsArray = [];
-    const fkaeComment:string = "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+    const fakeComment:string = "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
     this.result = this.users.map((data, index, arr) => {
       this.usersArray = {
         "index" : index,
         "name" : data.name,
         "img" : data.picture,
-        "comment" : fkaeComment
+        "comment" : fakeComment
       }
       this.commentsArray.push(this.usersArray);
     });
     return this.commentsArray;
-
   }
-
-
+  setWidgetColor(defaultCommentsWidgetId):any{
+    this.defaultCommentsWidgetId = defaultCommentsWidgetId;
+    console.log(this.defaultCommentsWidgetId);
+    if(this.defaultCommentsWidgetId === 0 || 1){
+      
+      return '#ffffff';//Default or Footer
+    }else{
+      console.log(" comments 2 ");
+      return '#e40046';//sidebar
+    }
+  }
 }

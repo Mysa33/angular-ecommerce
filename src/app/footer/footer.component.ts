@@ -8,11 +8,13 @@ import { Component, OnInit } from '@angular/core';
 export class FooterComponent implements OnInit {
   
   public footerSocialId:number;
+  public footerCommentsWidgetId:number;
 
   constructor() { }
 
   ngOnInit() {
     this.footerSocialId = 1;
+    this.footerCommentsWidgetId = 1;
   }
 
 }

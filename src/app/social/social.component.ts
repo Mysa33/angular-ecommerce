@@ -15,7 +15,6 @@ export class SocialComponent implements OnInit {
 
   ngOnInit() {
     this.socialDefaultId = this.parentId;
-    console.log("parent Id in social component : ", this.socialDefaultId);
     this.setCompColor(this.socialDefaultId);
     this.setCompDisplay(this.socialDefaultId);
   }

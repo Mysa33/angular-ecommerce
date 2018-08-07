@@ -22,6 +22,7 @@ import { SocialComponent } from './social/social.component';
 import { AboutUsComponent } from './about-us/about-us.component';
 import { TeamComponent } from './team/team.component';
 import { ContactComponent } from './contact/contact.component';
+import { SidebarComponent } from './sidebar/sidebar.component';
 
 const routes: Routes  = [
   {path :'', redirectTo : 'home', pathMatch:'full'},
@@ -44,7 +45,8 @@ const routes: Routes  = [
     SocialComponent,
     AboutUsComponent,
     TeamComponent,
-    ContactComponent 
+    ContactComponent,
+    SidebarComponent 
   ],
   imports: [
     BrowserModule,
@@ -52,10 +54,7 @@ const routes: Routes  = [
     HttpClientModule,
     FormsModule,
     AppRoutingModule,
-    RouterModule.forRoot(
-      routes,
-      { enableTracing: true }
-    ),
+    RouterModule.forRoot(routes),
     ReactiveFormsModule
   ],
   providers: [ApiService,DataShareService],
