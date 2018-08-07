@@ -18,6 +18,7 @@ export class ContactComponent implements OnInit {
     inputAddress2: new FormControl(''),
     inputCity: new FormControl(''),
     inputZip: new FormControl(''),
+    inputTxt: new FormControl('')
   });
 
 }
