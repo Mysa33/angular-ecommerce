@@ -29,7 +29,7 @@ export class SocialComponent implements OnInit {
       case 2:
         return '#e40046';
       case 3://Modal
-        return '#ffffff';//todo
+        return '#e40046';//todo
         default:
           console.log(' erreur ' + this.socialDefaultId + ' n"est pas une valeur.');
         break;

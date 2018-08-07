@@ -7,13 +7,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SidebarComponent implements OnInit {
 
-  SiderCommentsWidgetId:number = 2;
+  SiderCommentsWidgetId:number;
 
-  constructor() { }
+  constructor() {
+    
+   }
 
   ngOnInit() {
-    this.SiderCommentsWidgetId = this.SiderCommentsWidgetId;
-    console.log("this.SiderCommentsWidgetId",this.SiderCommentsWidgetId);
+    this.SiderCommentsWidgetId = 2;
   }
 
 }
