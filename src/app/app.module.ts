@@ -25,6 +25,7 @@ import { ContactComponent } from './contact/contact.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { ProductsWidgetComponent } from './widgets/products-widget/products-widget.component';
 import { NewsletterComponent } from './footer/newsletter/newsletter.component';
+import { InfosComponent } from './footer/infos/infos.component';
 
 const routes: Routes  = [
   {path :'', redirectTo : 'home', pathMatch:'full'},
@@ -50,7 +51,8 @@ const routes: Routes  = [
     ContactComponent,
     SidebarComponent,
     ProductsWidgetComponent,
-    NewsletterComponent 
+    NewsletterComponent,
+    InfosComponent 
   ],
   imports: [
     BrowserModule,
