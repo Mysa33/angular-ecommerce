@@ -73,7 +73,7 @@ export class CommentsComponent implements OnInit {
       case 0:
         return '#FFF';//Default
       case 1:
-        return '#FFF';//Footer
+        return '#e40046';//Footer
       case 2:
         return '#333';//Sidebar
         default:

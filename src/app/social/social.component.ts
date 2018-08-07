@@ -46,7 +46,24 @@ export class SocialComponent implements OnInit {
       case 2:
         return 'inline-block';//Modal
       case 3:
-        return 'block';//todo
+        return 'block';//Sidebar
+        default:
+          console.log(' erreur ' + this.socialDefaultId + ' n"est pas une valeur.');
+        break;
+    }
+  }
+  
+  setTitleColor(socialDefaultId){
+    this.socialDefaultId = socialDefaultId;
+    switch (this.socialDefaultId) {
+      case 0:
+        return '#e40046';//Default
+      case 1:
+        return '#e40046';//Footer
+      case 2:
+        return '#333';//Modal
+      case 3:
+        return '#333';//Sidebar
         default:
           console.log(' erreur ' + this.socialDefaultId + ' n"est pas une valeur.');
         break;
