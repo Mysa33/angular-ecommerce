@@ -6,7 +6,7 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
   styleUrls: ['./contact.component.scss']
 })
 export class ContactComponent implements OnInit {
-
+  contactFormArray;
   constructor() { }
 
   ngOnInit() {
@@ -20,5 +20,26 @@ export class ContactComponent implements OnInit {
     inputZip: new FormControl(''),
     inputTxt: new FormControl('')
   });
+
+  onSubmit(contactFormArray):any { 
+    if(this.contactForm.value.length === 0){
+      alert("le champs est vide.");
+      return;
+    }else{
+      this.contactFormArray = contactFormArray;
+      this.contactFormArray = this.contactFormArray;
+      const insDate:Date = new Date();
+      let flag:boolean = true;
+      this.contactFormArray = {
+        "email" : this.contactForm.value,
+        "insDate" : insDate,
+        "flag" : flag
+      };
+      this.contactFormArray = JSON.stringify(this.contactFormArray);
+      localStorage.setItem('contactFormArray', this.contactFormArray);
+      return this.contactFormArray = {};
+    }
+    
+  }
 
 }
