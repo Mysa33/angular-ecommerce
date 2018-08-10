@@ -1,0 +1,10 @@
+<h6 class="ecom-slider-title">Produits à la une :</h6>
+<div class="ecom-slider">  
+    <div class="ecom-slider-wrapper">
+        <figure class="ecom-slider-item" *ngFor="let product of carousselData">
+            <img src="{{product.cover}}" alt="{{product.title}}">
+            <h6>{{product.price}} &euro;</h6>
+        </figure>  
+    </div>
+</div>
+

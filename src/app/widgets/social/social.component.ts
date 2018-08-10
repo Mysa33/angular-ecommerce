@@ -27,8 +27,8 @@ export class SocialComponent implements OnInit {
       case 1:
         return '#ffffff';//Footer
       case 2:
-        return '#e40046';
-      case 3://Modal
+        return '#e40046';//Modal
+      case 3:
         return '#e40046';//todo
         default:
           console.log(' erreur ' + this.socialDefaultId + ' n"est pas une valeur.');

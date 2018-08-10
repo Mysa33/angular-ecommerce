@@ -39,5 +39,5 @@
 
   </div>
   <!-- /.ecom-nav-col -->
-  <app-cart [ngClass]="isVisible ? 'ecom-show-cart' : 'ecom-hide-cart'"></app-cart>
+  <app-cart [ngClass]="isVisible ? 'ecom-show-cart' : 'ecom-hide-cart'" (valueChange)='cartStatus($event)'></app-cart>
 </div>

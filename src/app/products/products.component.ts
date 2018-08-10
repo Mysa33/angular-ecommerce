@@ -39,11 +39,20 @@ export class ProductsComponent implements OnInit {
        "price": this.books[i].price,
        "cover": this.books[i].cover
     };
-    this.booksCart.push(bookToCart);
+    const cartDataStatus = localStorage.getItem("cartCleared"); 
+    if(cartDataStatus === "1"){
+      this.booksCart = [];
+      localStorage.setItem("cartCleared", "0" );
+      this.booksCart.push(bookToCart);
+    }else{
+      this.booksCart = this.booksCart;
+      this.booksCart.push(bookToCart);
+    }
     this.passData(this.booksCart);
+    
   }
 
-  passData(booksCart){
+  passData(booksCart):void{
     this.booksCart = booksCart;
     this._dataShareService.sendDataToOtherComponent(this.booksCart);
   }
