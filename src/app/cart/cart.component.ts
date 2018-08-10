@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter , Output  } from '@angular/core';
 
 import { DataShareService } from '../shared/services/data-share.service';
+import { CartCommon } from '../shared/CartCommon';
 
 @Component({
   selector: 'app-cart',
@@ -8,14 +9,13 @@ import { DataShareService } from '../shared/services/data-share.service';
   styleUrls: ['./cart.component.scss']
 })
 
-export class CartComponent{
-  data;
-  cartProdArray:any[];
-  cartLength:number;
-  cartTotal:number;
-  bestDealVisibility:boolean = false;
- 
+export class CartComponent extends CartCommon{
+  
+  @Output() valueChange = new EventEmitter();
+  clearCartArray:boolean = false;
+
   constructor( private _dataShareService: DataShareService ) { 
+    super();
     this._dataShareService.shareDataSubject.subscribe(receivedData=>{
       this.cartProdArray = receivedData;
       this.cartLength =  this.cartProdArray.length;
@@ -27,32 +27,19 @@ export class CartComponent{
       };
     });
   }
-  // Calc total
-  doCartTotal():number{
-    if(!this.cartLength){
-      this.cartTotal = 0;
-    }else{
-      const add = (a:number, b:number) => a + b;
-      let booksArray:Array<any> = this.cartProdArray.sort();
-      let itemPriceArray:Array<any> = [];
-      for (let _k in booksArray){
-        itemPriceArray.push(Number(booksArray[_k].price));
-      }
-      this.cartTotal = itemPriceArray.reduce(add);
-    }  
-    return this.cartTotal;
-  }
-  // Clear cart
+  
+  //clearCart()
   clearCart(cartProdArray):void{
     this.cartProdArray = cartProdArray;
     this.bestDealVisibility = false;
     this.cartProdArray = [];
     this.cartTotal = 0;
-    //this.isVisible = false; //Todo input from header and event emitter from cart to header.
-    
+    this.valueChanged();
   }
-  //Display bestDeal
-  displayBestDeal(){
-    this.bestDealVisibility = true; 
+  //valueChanged()
+  valueChanged() { 
+    this.clearCartArray = true;
+    localStorage.setItem("cartCleared", "1" );
+    this.valueChange.emit(this.clearCartArray);
   }
 }
