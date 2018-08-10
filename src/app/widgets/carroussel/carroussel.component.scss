@@ -1,34 +1,16 @@
 @import "../../variables.scss";
 @keyframes slide {
-    0% { left: 0%; }
-    5% { left: -30%; }
-    10% { left: -60%; }
-    15%{ left: -90% }
-    20% { left: -1200%; }
-    25% { left: -150%; }
-    30% { left: -180%; }
-    35% { left: -210%; }
-    40% { left: -240%; }
-    45% { left: -270%; }
-    50% { left: -300%; }
-    55% { left: -330%; }
-    60% { left: -360%; }
-    65% { left: -390%; }
-    70% { left: -410%; }
-    75% { left: -440%; }
-    80% { left: -480%; }
-    85% { left: -510%; }
-    90% { left: -540%; }
-    95% { left: -550%; }
-    100% { left: 0%; }
+    0% {left: 0%;}
+    90%{left:-80%}
+    100%{left:0%;}
 }
 .ecom-slider{
     width:300px;
-    height :400px;
+    height :auto;
     overflow: hidden;
     display:inline-block;
     .ecom-slider-wrapper{
-        width:550%;
+        width:1350px;
         figure.ecom-slider-item{
             display:inline-block;
             width:150px;
@@ -38,7 +20,7 @@
             left: 0;
             text-align: left;
             font-size: 0;
-            animation: 150s slide infinite;
+            animation: 20s slide infinite;
             img{width:150px;}
             h6{margin-top:10px;color:$txt-sec-color;font-weight:600;}
         }
