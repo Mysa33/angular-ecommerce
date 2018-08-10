@@ -31,17 +31,18 @@
             </figcaption>
           </figure>
           <div class="card-body">
-          <h5 class="card-title ecom-home-catalog-book-title">{{book.title}}</h5>
-          <p class="card-text ecom-home-catalog-book-price">
-            <span>{{book.price}}</span>
-            <span>&euro;</span>
-          </p>
-          <a class="btn btn-primary ecom-home-catalog-add-cart" id="{{i}}" (click)="addToCart(i);">
-            <span>Ajouter au panier</span>
-            <span class="ecom-home-add-to-cart-icon">
-                <i class="material-icons">add_shopping_cart</i>
-            </span>
-          </a>
+            <h5 class="card-title ecom-home-catalog-book-title">{{book.title}}</h5>
+            <p class="card-text ecom-home-catalog-book-price">
+              <span>{{book.price}}</span>
+              <span>&euro;</span>
+            </p>
+            <a class="btn btn-primary ecom-home-catalog-add-cart" id="{{i}}" (click)="addToCart(i);">
+              <span>Ajouter au panier</span>
+              <span class="ecom-home-add-to-cart-icon">
+                  <i class="material-icons">add_shopping_cart</i>
+              </span>
+            </a><!-- todo verifier -->
+          </div>
       </div>
       <!-- /.ecom-home-catalog-card -->
     </div>

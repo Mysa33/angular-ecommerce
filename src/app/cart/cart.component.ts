@@ -14,19 +14,19 @@ export class CartComponent{
   cartLength:number;
   cartTotal:number;
   bestDealVisibility:boolean = false;
-  
+ 
   constructor( private _dataShareService: DataShareService ) { 
     this._dataShareService.shareDataSubject.subscribe(receivedData=>{
       this.cartProdArray = receivedData;
       this.cartLength =  this.cartProdArray.length;
-      this.doCartTotal ();//calc total when adding item even when cart is opned. 
+      // doCartTotal ()
+      this.doCartTotal ();
       return this.data = {
         "products" : receivedData,
         "totalCart" : this.cartTotal
       };
     });
   }
-
   // Calc total
   doCartTotal():number{
     if(!this.cartLength){
@@ -49,10 +49,10 @@ export class CartComponent{
     this.cartProdArray = [];
     this.cartTotal = 0;
     //this.isVisible = false; //Todo input from header and event emitter from cart to header.
+    
   }
   //Display bestDeal
   displayBestDeal(){
     this.bestDealVisibility = true; 
   }
-  
 }

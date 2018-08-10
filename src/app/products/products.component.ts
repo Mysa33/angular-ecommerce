@@ -43,7 +43,7 @@ export class ProductsComponent implements OnInit {
     this.passData(this.booksCart);
   }
 
-  passData(booksCart){
+  passData(booksCart):void{
     this.booksCart = booksCart;
     this._dataShareService.sendDataToOtherComponent(this.booksCart);
   }

@@ -27,7 +27,6 @@ export class BestDealComponent implements OnInit {
   percentVis:boolean = false;
   minusVis:boolean = false;
   sliceVis:boolean = false;
-  
   dataArray;
 
   constructor(private _offersService: ApiService) {}
