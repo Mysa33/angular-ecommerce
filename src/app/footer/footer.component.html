@@ -4,18 +4,12 @@
     <div class="container ecom-no-padding">
       <div class="row ecom-no-padding">
 
-        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-          <!--<h6 style="color:#e40046;margin-top:15px;margin-bottom:0px!important;">Nos produits :</h6>
-          <app-products-widget></app-products-widget>-->
-          <app-newsletter></app-newsletter>
-          <app-infos></app-infos>
-        </div>
-
+        
         <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5">
           <app-comments [parentWidgetId]="footerSocialId"></app-comments>
         </div>
 
-        <div class="col-lg-3 col-md-3 col-sm-12 col-xs-3">
+        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
 
           <app-social [parentId]="footerSocialId"></app-social>
             
@@ -27,6 +21,12 @@
           </div>
 
         </div>
+
+        <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5"> 
+          <app-newsletter></app-newsletter>
+          <app-infos></app-infos>
+        </div>
+
 
        
         

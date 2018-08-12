@@ -27,6 +27,7 @@ import { ProductsWidgetComponent } from './widgets/products-widget/products-widg
 import { NewsletterComponent } from './footer/newsletter/newsletter.component';
 import { InfosComponent } from './footer/infos/infos.component';
 import { CarrousselComponent } from './widgets/carroussel/carroussel.component';
+import { MobileNavComponent } from './header/mobile-nav/mobile-nav.component';
 
 const routes: Routes  = [
   {path :'', redirectTo : 'home', pathMatch:'full'},
@@ -54,7 +55,8 @@ const routes: Routes  = [
     ProductsWidgetComponent,
     NewsletterComponent,
     InfosComponent,
-    CarrousselComponent 
+    CarrousselComponent,
+    MobileNavComponent 
   ],
   imports: [
     BrowserModule,

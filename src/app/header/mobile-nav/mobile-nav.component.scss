@@ -1,0 +1,22 @@
+@import "../../variables.scss";
+.ecom-m-nav-row{
+    position:absolute;
+    top:63px;
+    left:0px;
+    min-width:35vw;
+    width:auto;
+    min-height:50vh;
+    z-index:100;
+    -webkit-box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    background-color: #FFF;
+    ul {
+        li{
+            a{
+                margin-top:15px;
+                color : $sec-color;
+                font-size:1.4em;
+            }
+        }
+    }
+}

@@ -1,4 +1,4 @@
-import { Component, EventEmitter , Output } from '@angular/core';
+import { Component } from '@angular/core';
 
 import { DataShareService } from '../shared/services/data-share.service';
 
@@ -7,22 +7,29 @@ import { DataShareService } from '../shared/services/data-share.service';
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss']
 })
-export class HeaderComponent{
+export class HeaderComponent {
   
-  @Output() dataChange = new EventEmitter();
   clearReceivedData:boolean = false;
   catLength:number = 0;
   cartData:any[] = [];
   isVisible:boolean = false;
+  mobileNavVis:boolean = false;
   
   constructor( private _dataShareService: DataShareService) { 
-
     this._dataShareService.shareDataSubject.subscribe(receiveddata=>{
       this.cartData = receiveddata;
       this.catLength =  this.cartData.length;
     });
   }
-  
+
+  //mobileNavToggle()
+  mobileNavToggle(){
+    if(!this.mobileNavVis){
+      this.mobileNavVis = true;
+    }else{
+      this.mobileNavVis = false;
+    }
+  }
   //cartToggle()
   cartToggle():void{
     this.catLength = this.cartData.length;

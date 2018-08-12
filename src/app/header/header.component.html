@@ -4,26 +4,36 @@
   <div class="col-lg-12 ecom-nav-col">
   
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
-      <a class="navbar-brand d-none d-lg-block" routerLink="/home" >BestDeal</a>
+      <div (click)="mobileNavToggle();" class="ecom-mobile-icon">
+        <span>
+          <i class="material-icons">
+            view_headline
+          </i>
+        </span>
+        <span>
+          Menu
+        </span>
+      </div>
+      <a class="navbar-brand" routerLink="/home" >BestDeal</a>
       <ul class="navbar-nav mr-auto">
         <li class="nav-item">
           <a class="nav-link" routerLink="/home" routerLinkActive="active">
               <i class="material-icons">home</i>
           </a>
         </li>
-        <li class="nav-item d-none d-lg-block">
+        <li class="nav-item">
           <a class="nav-link ecom-custom-nav-link" routerLink="/home">Notre catalogue</a>
         </li>
-        <li class="nav-item d-none d-lg-block">
+        <li class="nav-item">
           <a class="nav-link ecom-custom-nav-link" routerLink="/about">Qui sommes-nous ?</a>
         </li>
-        <li class="nav-item d-none d-lg-block">
+        <li class="nav-item">
           <a class="nav-link ecom-custom-nav-link" routerLink="/contact">Contact</a>
         </li>
         </ul>
         
-        <form class="form-inline my-2 my-lg-0 d-none d-none d-lg-block">
-          <input class="form-control mr-sm-2" type="search" placeholder="Rechercher par titre" disabled="disabled">
+        <form class="form-inline">
+          <input class="form-control" type="search" placeholder="Rechercher par titre" disabled="disabled">
         </form>
         
         <div class="ecom-home-cart-wrapper" (click)="cartToggle();">
@@ -32,12 +42,15 @@
           <div class="ecom-cart-items-nb">{{catLength}}</div>
         </div>
         <div class="ecom-home-cart-wrapper d-none d-none d-lg-block">
-            <span>S'indentifier</span>
+          <span>Votre profil</span>
             <i class="material-icons ecom-header-profil">person</i>
         </div>
     </nav>
 
   </div>
   <!-- /.ecom-nav-col -->
+ 
+  <app-mobile-nav [ngClass]="mobileNavVis ? 'ecom-show-cart' : 'ecom-hide-cart'"></app-mobile-nav>
+ 
   <app-cart [ngClass]="isVisible ? 'ecom-show-cart' : 'ecom-hide-cart'" (valueChange)='cartStatus($event)'></app-cart>
 </div>

@@ -3,11 +3,18 @@
 Header & NavBar
 ************/
 .ecom-header-row{
+    display: -ms-flexbox;
+	display: -webkit-flex;
+	display: flex;
+	-ms-flex-align: center;
+	-webkit-align-items: center;
+	-webkit-box-align: center;
+	align-items: center;
     padding:0px!important;
     background-color:$main-bg-color;
     .ecom-hedaer-cart-bestdeal{
         background-color:$main-bg-color;
-        border-color: #e40046;
+        border-color: $main-bg-color;
     }
     .ecom-show-cart{display:block!important;}
     .ecom-hide-cart{display:none!important;}
@@ -15,12 +22,31 @@ Header & NavBar
     .ecom-nav-col{
         padding:0px!important;
         background-color:$main-bg-color;
+        .ecom-mobile-icon{
+            display: -ms-flexbox;
+            display: -webkit-flex;
+            display: flex;
+            -ms-flex-align: center;
+            -webkit-align-items: center;
+            -webkit-box-align: center;
+            align-items: center;
+            color:$txt-first-color;
+            font-size :1.2em;
+            font-weight: 500;
+        }
         .bg-light{background-color:$main-bg-color!important;}
         .navbar-brand{
             font-size:1.2rem;
             line-height: 1.2rem;
             vertical-align: middle;
             color:$txt-first-color;
+        }
+        nav{
+            ul{
+                li{
+                    a{padding-top:10px!important;}
+                }
+            }
         }
         input:hover{cursor:not-allowed;}
         .material-icons{
@@ -50,6 +76,7 @@ Header & NavBar
         .ecom-custom-nav-link{
             font-size:1.2rem;
             line-height: 1.85rem;
+            line-height:1.85rem;
             vertical-align: middle;
             color:$txt-first-color;
         }
@@ -58,3 +85,72 @@ Header & NavBar
 }
 .ecom-show-cart{display:block!important;}
 .ecom-hide-cart{display:none!important;}
+/************
+Responsive
+************/
+@media (min-width:320px) and (max-width:991px){
+    .ecom-header-row{
+        .ecom-nav-col{
+            .navbar-brand,.form-inline{
+                display:none;
+                visibility:hidden;
+            }
+            .navbar-nav{
+                .nav-item{
+                    display:none;
+                    visibility:hidden;
+                }
+            }
+            .ecom-mobile-icon{
+                display:block;
+                visibility:visible;
+            }
+            
+        }
+    }
+}
+@media (min-width:992px) and (max-width:1199px){
+    .ecom-header-row{
+        .ecom-nav-col{
+            .navbar-brand,.form-inline{
+                display:none;
+                visibility:hidden;
+            }
+            .navbar-nav{
+                .nav-item{
+                    display:none;
+                    visibility:hidden;
+                }
+            }
+            .ecom-mobile-icon{
+                display:block;
+                visibility:visible;
+            }
+            
+        }
+    }
+}
+@media (min-width:1200px) and (max-width:1600px){
+    .ecom-header-row{
+        .ecom-nav-col{
+           
+            .ecom-mobile-icon{
+                display:none;
+                visibility:hidden;
+            }
+            
+        }
+    }
+}
+@media (min-width:1200px){
+    .ecom-header-row{
+        .ecom-nav-col{
+            
+            .ecom-mobile-icon{
+                display:none;
+                visibility:hidden;
+            }
+            
+        }
+    }
+}
