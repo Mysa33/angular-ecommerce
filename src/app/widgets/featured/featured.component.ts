@@ -37,8 +37,6 @@ export class FeaturedComponent implements OnInit {
   setWidgetStatus(firstRowStatus,secRowStatus){
     this.firstRowStatus = firstRowStatus;
     this.secRowStatus = secRowStatus;
-    console.log("firstRowStatus : ",this.firstRowStatus);
-    console.log("secRowStatus : ",this.secRowStatus);
     if(this.firstRowStatus == true){
       this.firstRowStatus = false;
       this.secRowStatus = true;

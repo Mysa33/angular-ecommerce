@@ -22,7 +22,7 @@
         <figure>
           <img class="card-img-top" src="{{item.cover}}" alt="{{item.title}}">
           <figcaption>
-            <i class="material-icons">
+            <i class="material-icons" routerLink="/shop">
               zoom_in
             </i>
           </figcaption>
@@ -34,7 +34,7 @@
             <span>{{item.price}}</span>
             <span>&euro;</span>
           </p>
-          <a class="btn btn-primary ecom-home-featured-add-cart" id="i">
+          <a class="btn btn-primary ecom-home-featured-add-cart" id="i" routerLink="/shop">
             <span>Shop now !</span>
             <span class="ecom-home-add-to-cart-icon">
               <i class="material-icons">add_shopping_cart</i>
