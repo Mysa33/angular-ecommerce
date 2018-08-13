@@ -40,7 +40,6 @@ export class TeamComponent implements OnInit {
         "phone" :data[index].phone,
         "email" : data[index].mail
       };
-      console.log("new member : ", teamMember);
       this.teamArray.push(teamMember);
     });
   }

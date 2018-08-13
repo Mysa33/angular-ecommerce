@@ -28,6 +28,7 @@ import { NewsletterComponent } from './footer/newsletter/newsletter.component';
 import { InfosComponent } from './footer/infos/infos.component';
 import { CarrousselComponent } from './widgets/carroussel/carroussel.component';
 import { MobileNavComponent } from './header/mobile-nav/mobile-nav.component';
+import { MarketingComponent } from './widgets/marketing/marketing.component';
 
 const routes: Routes  = [
   {path :'', redirectTo : 'home', pathMatch:'full'},
@@ -56,7 +57,8 @@ const routes: Routes  = [
     NewsletterComponent,
     InfosComponent,
     CarrousselComponent,
-    MobileNavComponent 
+    MobileNavComponent,
+    MarketingComponent 
   ],
   imports: [
     BrowserModule,
