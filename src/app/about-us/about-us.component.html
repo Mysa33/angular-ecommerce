@@ -1,13 +1,13 @@
 <div class="container ecom-page-margin-top">
   <div class="row">
-    <div class="col-lg-8 ecom-about-main-container">
+    <!-- .ecom-about-main-container -->
+    <div class="col-lg-6 ecom-about-main-container">
 
       <h4 class="ecom-p-title">Qui sommes-nous ?</h4>
       <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
         Pellentesque placerat nunc ac odio pharetra, vitae sagittis odio convallis. 
         Vivamus vestibulum nec mauris in tempus. Sed urna ante, molestie convallis facilisis et, 
         imperdiet quis nisl. 
-    
       </p>
       <p>
           Phasellus vel odio quis ex convallis faucibus vitae in augue. 
@@ -19,38 +19,88 @@
           Phasellus a leo nec felis imperdiet pretium a quis neque. Vivamus dignissim, dolor dignissim auctor euismod, 
           elit sapien aliquam orci, tincidunt sollicitudin sem nisi porta orci.
       </p>
-      <!-- <h4 class="ecom-p-title"> Adresse :</h4> -->
-      <h4 class="ecom-p-title"> Contacts :</h4>
-      <div>
-        <i class="material-icons">
-          phone
-        </i>
-        <span>Tél :</span>
-        <span>0144512010</span>
-      </div>
-      <div>
-        <i class="material-icons">
-          stay_primary_portrait
-        </i>
-        <span>Mobile :</span>
-        <span>0644512010</span>
-      </div>
-      <div>
-        <i class="material-icons">
-          mail_outline
-        </i>
-        <span>Email :</span>
-        <span>perso@mail.com</span>
-      </div>
-      <br>
-      <h4>Notre équipe :</h4>
-      <app-team></app-team>
-    
     </div>
-    <div class="col-lg-4">
-      <app-sidebar></app-sidebar>
-      
+    <div class="col-lg-6">
+      <img src="http://librairie-expression.com/images/litterature.jpg" style="max-width:90%;height:auto;margin-top:40px;" alt="">
     </div>
-  </div>
+    <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 ecom-infos-container">
+        <h4 class="ecom-p-title"> Contact :</h4>
+        <div>
+          <i class="material-icons">
+            phone
+          </i>
+          <span>Tél :</span>
+          <span>0144512010</span>
+        </div>
+        <div>
+          <i class="material-icons">
+            stay_primary_portrait
+          </i>
+          <span>Mobile :</span>
+          <span>0644512010</span>
+        </div>
+        <div>
+          <i class="material-icons">
+            mail_outline
+          </i>
+          <span>Email :</span>
+          <span>perso@mail.com</span>
+        </div>
+    </div>
+    <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 ecom-infos-container">
+        <h4 class="ecom-p-title"> Adresse :</h4>
+        <div>
+          <span>bestDEal S.A.S</span>
+        </div>
+        <div>
+          <span>72 rue Victor Hugo</span>
+        </div>
+        <div>
+          <span>75016 Paris</span>
+        </div>
+        
+    </div>
 
+    <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 ecom-infos-container">
+        <h4 class="ecom-p-title"> Accès :</h4>
+        <div>
+          <i class="material-icons">
+              tram
+          </i>
+          <span>T4a :</span>
+          <span>Lorem ipsum</span>
+        </div>
+        <div>
+          <i class="material-icons">
+              directions_subway
+          </i>
+          <span>M8</span>
+          <span>Lorem ipsum</span>
+        </div>
+        <div>
+          <i class="material-icons">
+              directions_bus
+          </i>
+          <span>Bus 76</span>
+          <span>Lorem ipsum</span>
+        </div>
+    </div>
+    <!-- /.ecom-about-main-container -->
+  </div>
+</div>
+
+<!--.ecom-team-container -->
+<div class="container-fluid ecom-team-container">
+  <app-marketing [parentId] = "1"></app-marketing>
+</div>
+<!--/.ecom-team-container -->
+
+<div class="container ecom-page-margin-top custom-margin">
+  <div class="row">
+      <div class="col-lg-12 ecom-about-main-container">
+          <h4 style="margin-bottom:15xp;">Notre équipe :</h4>
+          <app-team></app-team>
+        </div>
+  </div>
+  
 </div>

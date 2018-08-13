@@ -9,5 +9,9 @@
         background-color:$main-bg-color;
         border-color:$main-color!important;
     }
+    button:hover{
+        background-color:$secondary-bg-color;
+        border-color:$sec-color!important;
+    }
     h4{color:$txt-sec-color!important;}
 }

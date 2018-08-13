@@ -9,24 +9,27 @@ export class MarketingComponent implements OnInit {
 
   @Input() parentId;
   widgetStyleId:number;
+  iconColor:string;
+  numberColor:string;
+  txtColor:string;
 
   constructor() {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.setWidgetStyle(this.parentId);
+  }
 
   setWidgetStyle(parentId):void{
     this.widgetStyleId = parentId;
-    let iconColor:string;
-    let numberColor:string;
-    let txtColor:string;
+    
     if(this.widgetStyleId === 0 || 1){
-      iconColor="#333";
-      numberColor = "#e40046";
-      txtColor = "#333";
+      this.iconColor="#333";
+      this.numberColor = "#e40046";
+      this.txtColor = "#333";
     }else{
-      iconColor="#e40046";
-      numberColor = "#333";
-      txtColor = "#e40046";
+      this.iconColor="#e40046";
+      this.numberColor = "#333";
+      this.txtColor = "#e40046";
     }
 
   }
@@ -49,7 +52,7 @@ export class MarketingComponent implements OnInit {
     {
       "icon":"sentiment_very_satisfied",
       "number":"100%",
-      "text":"Commentaires positifs"
+      "text":"Clients satisfaits"
     }
   ];
 

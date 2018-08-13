@@ -36,11 +36,19 @@ Cart container
         background-color:$main-bg-color;
         border-color:$main-color;    
     }
+    .ecom-hedear-cart-bestdeal:hover{
+        background-color:$secondary-bg-color;
+        border-color:$secondary-bg-color;
+    }
     .ecom-header-clear-cart{
         float:right;
         color :$txt-first-color!important;
         background-color:$secondary-bg-color;
         border-color:$sec-color;
+    }
+    .ecom-header-clear-cart:hover{
+        background-color:$main-bg-color;
+        border-color:$main-color
     }
     .ecom-hedaer-clear-cart:hover{cursor:not-allowed;}
     .ecom-hide-total{text-decoration:none;}

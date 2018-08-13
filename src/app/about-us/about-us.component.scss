@@ -2,13 +2,29 @@
 /**/
 .ecom-page-margin-top{
     margin-top:50px;
-    min-height: 80vh;
     .ecom-about-main-container{
-        min-height:60vh;
         h4{color:$txt-sec-color!important;}
         p{text-align: justify;font-size:1.1em;color:$sec-color;}
         i{color:$txt-sec-color;font-size:0.95em!important;margin-top:5px;}
         span{color:$sec-color;}
     }
+    .ecom-infos-container{
+        h4{color:$txt-sec-color!important;}
+        p{text-align: justify;font-size:1.1em;color:$sec-color;}
+        i{color:$txt-sec-color;font-size:0.95em!important;margin-top:5px;}
+        span{color:$sec-color;}
+    }
+    .ecom-custom-margin{
+        margin-top:30px;
+    }
     
 }
+.ecom-team-container{
+    margin-top:15px;
+    background-color: #f8f9f9;
+    min-height:180px;
+    padding-top:50px;
+    padding-bottom:50px;
+}
+.custom-margin{margin-top:15px;}
+.custom-margin-bottom{margin-top:15px;}
