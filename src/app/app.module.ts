@@ -30,10 +30,12 @@ import { CarrousselComponent } from './widgets/carroussel/carroussel.component';
 import { MobileNavComponent } from './header/mobile-nav/mobile-nav.component';
 import { MarketingComponent } from './widgets/marketing/marketing.component';
 import { FeaturedComponent } from './widgets/featured/featured.component';
+import { HomeComponent } from './home/home.component';
 
 const routes: Routes  = [
   {path :'', redirectTo : 'home', pathMatch:'full'},
-  {path :'home', component: ProductsComponent},
+  {path :'home', component: HomeComponent},
+  {path :'shop', component: ProductsComponent},
   {path : 'about', component : AboutUsComponent},
   {path : 'contact', component : ContactComponent}
 ];
@@ -60,7 +62,8 @@ const routes: Routes  = [
     CarrousselComponent,
     MobileNavComponent,
     MarketingComponent,
-    FeaturedComponent 
+    FeaturedComponent,
+    HomeComponent 
   ],
   imports: [
     BrowserModule,
