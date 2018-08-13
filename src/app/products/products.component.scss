@@ -1,11 +1,12 @@
+@import "../variables.scss";
 /****
 Search row
 ****/
 .ecom-home-catalog-serach-row{
     margin-top:20px;
     .input-group-text{
-        color:#FFF;
-        background-color: #333;
+        color:$txt-first-color;
+        background-color: $secondary-bg-color;
     }
 }
 /****
@@ -32,13 +33,16 @@ Catalog row
                 display:none;
                 width:75%;
                 min-height:100px;
-                color:#FFF;
+                color:$txt-first-color;
                 border-radius:4px;
                 /*background-color:#333;*/
                 button{
                     font-size:1.2rem;
-                    color:#FFF;
-                    background-color: #333;
+                    color:$txt-first-color;
+                    background-color: $secondary-bg-color;
+                }
+                button:hover{
+                    background-color: $main-color;
                 }
                 h4:hover{cursor:pointer;}
             }
@@ -54,7 +58,7 @@ Catalog row
         strong{font-size: 0.8rem;}
         .ecom-home-catalog-book-price{
             span{
-                color:#e40046;
+                color:$txt-sec-color;
                 font-size: 2rem;
                 font-weight: 500;
             }
@@ -63,17 +67,21 @@ Catalog row
             float:left!important;
             margin-right:15px;
             font-size:1.2rem;
-            color:#FFF;
+            color:$txt-first-color;
             line-height:28.4px;
             vertical-align: middle;
         
         }
-        .ecom-home-catalog-add-cart:hover{cursor: pointer;}
+        .ecom-home-catalog-add-cart:hover{
+            cursor: pointer;
+            background-color:$secondary-bg-color;
+            border-color:$secondary-bg-color!important;
+        }
         .ecom-home-catalog-add-cart{
             font-size: 1rem;
-            color:#FFF;
-            background-color: #e40046;
-            border-color: #e40046!important;
+            color:$txt-first-color;
+            background-color: $main-bg-color;
+            border-color: $txt-sec-color!important;
             
         }
     }
@@ -104,6 +112,9 @@ Modal
         width: 50%;
     }
     .ecom-modal-close{
-        background-color:#333;
+        background-color:$secondary-bg-color;
+    }
+    .ecom-modal-close:hover{
+        background-color:$main-bg-color;
     }
 }

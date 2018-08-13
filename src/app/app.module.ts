@@ -29,6 +29,7 @@ import { InfosComponent } from './footer/infos/infos.component';
 import { CarrousselComponent } from './widgets/carroussel/carroussel.component';
 import { MobileNavComponent } from './header/mobile-nav/mobile-nav.component';
 import { MarketingComponent } from './widgets/marketing/marketing.component';
+import { FeaturedComponent } from './widgets/featured/featured.component';
 
 const routes: Routes  = [
   {path :'', redirectTo : 'home', pathMatch:'full'},
@@ -58,7 +59,8 @@ const routes: Routes  = [
     InfosComponent,
     CarrousselComponent,
     MobileNavComponent,
-    MarketingComponent 
+    MarketingComponent,
+    FeaturedComponent 
   ],
   imports: [
     BrowserModule,
