@@ -4,9 +4,22 @@
     min-height:80vh;
     font-family: 'Open Sans', sans-serif!important;
     h4{color:$txt-sec-color!important;}
-    .ecom-profil-item-title>span,h6{color:$sec-color!important;}
-    .ecom-profil-nl{
-        margin-top:30px;
-        h6{font-weight:500!important;color:$sec-color;}
+    .ecom-profil-nl-row,.ecom-profil-contact-row{
+        margin-left:0px;
+        margin-top :30px;
+        h6{font-size:1.2em;font-weight: 500;}
+        .ecm-profil-msg-count{
+            position :relative;
+            top:-15px;
+            left:-30px;
+            height:25px;
+            width:25px;
+            color:$txt-first-color;
+            background-color:$main-bg-color;
+            border-radius:50%;
+            text-align:center;
+        }
+    
     }
+    
 }

@@ -1,43 +1,61 @@
 <div class="container ecom-profil-container">
     <!-- .row -->
     <div class="row">
+      
       <!--.col-lg-8-->
       <div class="col-lg-8">
         <h4 class="ecom-p-title">Profile</h4>
-        <!-- .row -->
-        <div class="row ecom-profil-nl">
-
-          <div class="col-lg-5">
-              <h6>Déjà inscrit à notre newsletter ? </h6>
+        
+        <!--.ecom-profil-nl-row-->
+        <div class="row ecom-profil-nl-row">
+          <h6>Newsletter :</h6>
+          <div class="col-lg-12">
+            <span *ngIf="newsletterStatus">Vous êtes déjà inscrit à notre newsletter.</span>
+            <span *ngIf="!newsletterStatus">Vous n'êtes pas inscrit à notre newsletter.</span>
           </div>
-
-          <div class="col-lg-7">
-            
-            <div class="alert alert-success" style="width:20%;">
-                Oui
-            </div>
-
-            <div class="alert alert-warning" style="width:20%;">
-              Non
-            </div>
-
+          <div class="col-lg-12" *ngIf="newsletterStatus">
+            <span>Date d'inscription :</span>
+            <span>{{userNlInfos.date}}</span>
           </div>
-
+          <div class="col-lg-12" *ngIf="newsletterStatus">
+            <span>Votre email :</span>
+            <span>{{userNlInfos.email}}</span>
+          </div>
         </div>
-        <!-- /.row -->
-        <!-- .row -->
-        <div class="row ecom-profil-nl">
-
-          <div class="col-lg-5">
-            <h6>Date d'inscription : </h6>
+        <!--/.ecom-profil-nl-row-->
+        
+        <!--.ecom-profil-contact-row-->
+        <div class="row ecom-profil-contact-row">
+            <h6>Messages :</h6>
+            <div class="ecm-profil-msg-count">
+              {{profilInfos.count}}
+            </div>
+            <div class="col-lg-12">
+              <span *ngIf="profilStatus">Vous avez envoyé {{profilInfos.count}} message(s).</span>
+              <span *ngIf="!profilStatus">Vous n'avez pas encore envoyé de message.</span>
+            </div>
+            <div class="col-lg-12" *ngIf="profilStatus">
+              <span>Date :</span>
+              <span>{{profilInfos.date}}</span>
+            </div>
+            <div class="col-lg-12" *ngIf="profilStatus">
+              <span>Votre nom :</span>
+              <span>{{profilInfos.name}}</span>
+            </div>
+            <div class="col-lg-12" *ngIf="profilStatus">
+              <span>Votre email :</span>
+              <span>{{profilInfos.email}}</span>
+            </div>
+            <div class="col-lg-12" *ngIf="profilStatus">
+              <span>Votre adresse :</span>
+              <div>{{profilInfos.address}}</div>
+              <div>{{profilInfos.address2}}</div>
+              <div>{{profilInfos.zip}}</div>
+              <div>{{profilInfos.city}}</div>
+            </div>
           </div>
-  
-          <div class="col-lg-7">
-            le 24/06/18
-          </div>
-  
-        </div>
-        <!-- /.row -->
+          <!--/.ecom-profil-contact-row-->
+        
       </div>
       <!--.col-lg-8-->
 
