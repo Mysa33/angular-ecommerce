@@ -11,13 +11,14 @@ export class ProfileComponent implements OnInit {
   
   arrayName:string = "contactFormArray";
   data;
-  newsletterArray:string = "contactFormArray";
+  newsletterArray:string = "newsletterFormArray";
   newsletterData;
 
   constructor(private _profilService:LocalStorageService) { }
 
   ngOnInit() {
     this.getProfilInfos(this.data,this.arrayName);
+    this.getNewsletterInfos(this.newsletterData,this.newsletterArray);
   }
 
   getProfilInfos(data,arrayName){
@@ -28,5 +29,12 @@ export class ProfileComponent implements OnInit {
     return this.data;
   }
 
+  getNewsletterInfos(newsletterData,newsletterArray){
+    this.newsletterData= newsletterData;
+    this.newsletterArray = newsletterArray;
+    this.newsletterData = this._profilService.getLocalstorage(this.newsletterData,this.newsletterArray);
+    console.log("newsletterData in profil : ",this.newsletterData);
+    return this.newsletterData;
+  }
 
 }

@@ -28,8 +28,8 @@ export class ContactComponent implements OnInit {
   });
 
   onSubmit(contactFormArray):any { 
-    if(this.contactForm.value.length === 0){
-      alert("le champs est vide.");
+    if(this.contactForm.value.inputEmail === ""){
+      alert("le formulaire est invalide est vide.");
       return;
     }else{
       this.contactFormArray = contactFormArray;
@@ -37,7 +37,7 @@ export class ContactComponent implements OnInit {
       const insDate:Date = new Date();
       let flag:boolean = true;
       this.contactFormArray = {
-        "email" : this.contactForm.value,
+        "data" : this.contactForm.value,
         "insDate" : insDate,
         "flag" : flag
       };
