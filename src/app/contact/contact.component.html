@@ -6,12 +6,12 @@
       <form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
         <div class="form-row">
           <div class="form-group col-md-6">
-            <label for="inputEmail">Email</label>
-            <input type="email" class="form-control" name="inputEmail" formControlName="inputEmail" placeholder="Email">
+            <label for="inputEmail">Email *</label>
+            <input type="email" class="form-control" name="inputEmail" formControlName="inputEmail" placeholder="Email" required="required">
           </div>
           <div class="form-group col-md-6">
-            <label for="inputName">Nom</label>
-            <input type="text" class="form-control" name="inputName" formControlName="inputName" placeholder="Nom">
+            <label for="inputName">Nom *</label>
+            <input type="text" class="form-control" name="inputName" formControlName="inputName" placeholder="Nom" required="required">
           </div>
         </div>
         <div class="form-group">
@@ -32,8 +32,8 @@
             <input type="text" class="form-control" name="inputZip" formControlName="inputZip" placeholder = "75008">
           </div>
           <div class="form-group col-md-12">
-              <label for="inputTxt">Votre message</label>
-              <textarea rows="10" class="form-control" name="inputZip" formControlName="inputTxt" placeholder="Votre message">
+              <label for="inputTxt">Votre message *</label>
+              <textarea rows="10" class="form-control" name="inputZip" formControlName="inputTxt" placeholder="Votre message" required="required">
               </textarea>
             </div>
         </div>

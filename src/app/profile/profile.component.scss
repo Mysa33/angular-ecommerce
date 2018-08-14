@@ -1,0 +1,12 @@
+@import "../variables.scss";
+.ecom-profil-container{
+    margin-top:50px;
+    min-height:80vh;
+    font-family: 'Open Sans', sans-serif!important;
+    h4{color:$txt-sec-color!important;}
+    .ecom-profil-item-title>span,h6{color:$sec-color!important;}
+    .ecom-profil-nl{
+        margin-top:30px;
+        h6{font-weight:500!important;color:$sec-color;}
+    }
+}

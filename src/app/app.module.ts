@@ -31,13 +31,16 @@ import { MobileNavComponent } from './header/mobile-nav/mobile-nav.component';
 import { MarketingComponent } from './widgets/marketing/marketing.component';
 import { FeaturedComponent } from './widgets/featured/featured.component';
 import { HomeComponent } from './home/home.component';
+import { SliderComponent } from './widgets/slider/slider.component';
+import { ProfileComponent } from './profile/profile.component';
 
 const routes: Routes  = [
   {path :'', redirectTo : 'home', pathMatch:'full'},
   {path :'home', component: HomeComponent},
   {path :'shop', component: ProductsComponent},
   {path : 'about', component : AboutUsComponent},
-  {path : 'contact', component : ContactComponent}
+  {path : 'contact', component : ContactComponent},
+  {path :'profil', component: ProfileComponent}
 ];
 
 @NgModule({
@@ -63,7 +66,9 @@ const routes: Routes  = [
     MobileNavComponent,
     MarketingComponent,
     FeaturedComponent,
-    HomeComponent 
+    HomeComponent,
+    SliderComponent,
+    ProfileComponent 
   ],
   imports: [
     BrowserModule,

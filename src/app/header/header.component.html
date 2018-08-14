@@ -14,7 +14,7 @@
           Menu
         </span>
       </div>
-      <a class="navbar-brand" routerLink="/home" >BestDeal</a>
+      <a class="navbar-brand" routerLink="/home" ><strong>BestDeal</strong></a>
       <ul class="navbar-nav mr-auto">
         <li class="nav-item">
           <a class="nav-link" routerLink="/home" routerLinkActive="active">
@@ -32,8 +32,8 @@
         </li>
         </ul>
         
-        <form class="form-inline">
-          <input class="form-control" type="search" placeholder="Rechercher par titre" disabled="disabled">
+        <form class="form-inline"> 
+          <input class="form-control" type="search" placeholder="Rechercher par titre" disabled="disabled" style="width:300px;">
         </form>
         
         <div class="ecom-home-cart-wrapper" (click)="cartToggle();">
@@ -41,8 +41,8 @@
           <i class="material-icons">shopping_cart</i>
           <div class="ecom-cart-items-nb">{{catLength}}</div>
         </div>
-        <div class="ecom-home-cart-wrapper d-none d-none d-lg-block">
-          <span>Votre profil</span>
+        <div class="ecom-home-cart-wrapper d-none d-none d-lg-block" routerLink="/profil">
+          <span>Votre profile</span>
             <i class="material-icons ecom-header-profil">person</i>
         </div>
     </nav>
