@@ -33,6 +33,8 @@ import { FeaturedComponent } from './widgets/featured/featured.component';
 import { HomeComponent } from './home/home.component';
 import { SliderComponent } from './widgets/slider/slider.component';
 import { ProfileComponent } from './profile/profile.component';
+import { LocalStorageService } from './shared/services/local-storage.service';
+import { ContactFormComponent } from './widgets/contact-form/contact-form.component';
 
 const routes: Routes  = [
   {path :'', redirectTo : 'home', pathMatch:'full'},
@@ -68,7 +70,8 @@ const routes: Routes  = [
     FeaturedComponent,
     HomeComponent,
     SliderComponent,
-    ProfileComponent 
+    ProfileComponent,
+    ContactFormComponent 
   ],
   imports: [
     BrowserModule,
@@ -79,7 +82,7 @@ const routes: Routes  = [
     RouterModule.forRoot(routes),
     ReactiveFormsModule
   ],
-  providers: [ApiService,DataShareService],
+  providers: [ApiService,DataShareService,LocalStorageService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

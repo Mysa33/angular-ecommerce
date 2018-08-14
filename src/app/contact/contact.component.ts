@@ -1,17 +1,22 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
+
+import { LocalStorageService } from '../shared/services/local-storage.service';
 @Component({
   selector: 'app-contact',
   templateUrl: './contact.component.html',
   styleUrls: ['./contact.component.scss']
 })
+
 export class ContactComponent implements OnInit {
   contactFormArray;
-  constructor() { }
+  arrayName:string = "contactFormArray";
+
+  constructor(private _profilService:LocalStorageService) { }
 
   ngOnInit() {
   }
-  
+
   contactForm = new FormGroup({
     inputEmail: new FormControl('',[Validators.required]),
     inputName: new FormControl('',[Validators.required]),
@@ -36,11 +41,9 @@ export class ContactComponent implements OnInit {
         "insDate" : insDate,
         "flag" : flag
       };
-      this.contactFormArray = JSON.stringify(this.contactFormArray);
-      localStorage.setItem('contactFormArray', this.contactFormArray);
+      this._profilService.setLocalstorage(this.contactFormArray,this.arrayName);
       return this.contactFormArray = {};
-    }
-    
+    }   
   }
 
 }

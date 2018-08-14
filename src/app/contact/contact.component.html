@@ -3,6 +3,7 @@
   <div class="row">
     <div class="col-lg-8">
       <h4 class="ecom-p-title">Contact</h4>
+
       <form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
         <div class="form-row">
           <div class="form-group col-md-6">
@@ -39,7 +40,9 @@
         </div>
         
         <button type="submit" class="btn btn-primary">Envoyer</button>
+        
       </form>
+
     </div>
     <div class="col-lg-4">
       <app-sidebar></app-sidebar>
