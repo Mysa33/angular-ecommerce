@@ -9,7 +9,7 @@
         <span><strong>{{member.name.first}}</strong></span>
         <span><strong>{{member.name.last}}</strong></span>
     </div>
-    <div>
+    <div *ngIf="emailStatus">
         <i class="material-icons">
             mail_outline
         </i>

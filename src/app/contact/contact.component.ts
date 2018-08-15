@@ -1,7 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormControl, Validators } from '@angular/forms';
 
-import { LocalStorageService } from '../shared/services/local-storage.service';
 @Component({
   selector: 'app-contact',
   templateUrl: './contact.component.html',
@@ -9,41 +7,14 @@ import { LocalStorageService } from '../shared/services/local-storage.service';
 })
 
 export class ContactComponent implements OnInit {
-  contactFormArray;
-  arrayName:string = "contactFormArray";
+  
+  widgetTeamId:number = 2;
 
-  constructor(private _profilService:LocalStorageService) { }
+  constructor() { }
 
   ngOnInit() {
   }
 
-  contactForm = new FormGroup({
-    inputEmail: new FormControl('',[Validators.required]),
-    inputName: new FormControl('',[Validators.required]),
-    inputAddress: new FormControl(''),
-    inputAddress2: new FormControl(''),
-    inputCity: new FormControl(''),
-    inputZip: new FormControl(''),
-    inputTxt: new FormControl('')
-  });
-
-  onSubmit(contactFormArray):any { 
-    if(this.contactForm.value.inputEmail === ""){
-      alert("le formulaire est invalide est vide.");
-      return;
-    }else{
-      this.contactFormArray = contactFormArray;
-      this.contactFormArray = this.contactFormArray;
-      const insDate:Date = new Date();
-      let flag:boolean = true;
-      this.contactFormArray = {
-        "data" : this.contactForm.value,
-        "insDate" : insDate,
-        "flag" : flag
-      };
-      this._profilService.setLocalstorage(this.contactFormArray,this.arrayName);
-      return this.contactFormArray = {};
-    }   
-  }
+  
 
 }

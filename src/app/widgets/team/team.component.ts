@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 import {ApiService} from '../../shared/services/api.service';
 
@@ -9,10 +9,14 @@ import {ApiService} from '../../shared/services/api.service';
 })
 
 export class TeamComponent implements OnInit {
+  
+  @Input() emittedPrantId;
   team;
   teamArray = [];
   allTeam;
   widgetSatus:boolean = false;
+  widgetParent:number = 0;
+  emailStatus:boolean = true;
 
   constructor(private _teamService: ApiService) {
     
@@ -20,6 +24,7 @@ export class TeamComponent implements OnInit {
 
   ngOnInit() {
     this.getTeam(this.team);
+    this.customWidgetDisplay(this.emittedPrantId,this.emailStatus);
   }
 
   getTeam(team):any{
@@ -61,7 +66,19 @@ export class TeamComponent implements OnInit {
     });
   }
   
-  
+  customWidgetDisplay(emittedPrantId,emailStatus):boolean{
+    this.emittedPrantId = emittedPrantId;
+    this.emailStatus = emailStatus;
+    this.widgetParent = this.emittedPrantId;
+    if(this.emittedPrantId == 0){
+      this.emailStatus = true;
+    }else if(this.emittedPrantId == 1){
+      this.emailStatus = true;
+    }else{
+      this.emailStatus = false;
+    }
+    return this.emailStatus;
+  }
   
   
 
