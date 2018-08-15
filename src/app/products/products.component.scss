@@ -13,6 +13,7 @@ Search row
 Catalog row
 ****/
 .ecom-home-catalog-row{
+    font-family: $main-font;
     .ecom-home-catalog-card{
         margin-bottom:1.4em;
         figure:hover{
@@ -92,6 +93,7 @@ Modal
 .ecom-modal-show{display:block;}
 .ecom-modal-hide{display:none;}
 .ecom-modal-container{
+    font-family: $main-font;
     .ecom-modal {
         display: block;
         position: fixed;

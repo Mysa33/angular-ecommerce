@@ -57,7 +57,7 @@ export class TeamComponent implements OnInit {
         this.setTeam(this.widgetSatus);
         resolve('resolved');
       }, 
-      1000);
+      300);
     });
   }
   

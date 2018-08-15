@@ -1,6 +1,7 @@
 /*footer.componenet.scss*/
 @import "../variables.scss";
 footer{
+    font-family: $main-font;
     h6{
         font-size:1.2em!important;
         color:$txt-sec-color;
