@@ -1,16 +1,18 @@
+@import "../../variables.scss";
 .ecom-cart-best-deal-col{
     text-align:center;
     margin-top:15px;
     margin-bottom:15px;
+    font-family: $main-font;
     h2{
         display:inline-block;
-        color:#e40046
+        color:$txt-sec-color
     }
     h3{
         display:inline-block;
         margin-left: 2%;
         font-size:1.8rem;
         font-weight:600;
-        color:#333;
+        color:$sec-color;
     }
 }

@@ -28,12 +28,21 @@ import { NewsletterComponent } from './footer/newsletter/newsletter.component';
 import { InfosComponent } from './footer/infos/infos.component';
 import { CarrousselComponent } from './widgets/carroussel/carroussel.component';
 import { MobileNavComponent } from './header/mobile-nav/mobile-nav.component';
+import { MarketingComponent } from './widgets/marketing/marketing.component';
+import { FeaturedComponent } from './widgets/featured/featured.component';
+import { HomeComponent } from './home/home.component';
+import { SliderComponent } from './widgets/slider/slider.component';
+import { ProfileComponent } from './profile/profile.component';
+import { LocalStorageService } from './shared/services/local-storage.service';
+import { ContactFormComponent } from './widgets/contact-form/contact-form.component';
 
 const routes: Routes  = [
   {path :'', redirectTo : 'home', pathMatch:'full'},
-  {path :'home', component: ProductsComponent},
+  {path :'home', component: HomeComponent},
+  {path :'shop', component: ProductsComponent},
   {path : 'about', component : AboutUsComponent},
-  {path : 'contact', component : ContactComponent}
+  {path : 'contact', component : ContactComponent},
+  {path :'profil', component: ProfileComponent}
 ];
 
 @NgModule({
@@ -56,7 +65,13 @@ const routes: Routes  = [
     NewsletterComponent,
     InfosComponent,
     CarrousselComponent,
-    MobileNavComponent 
+    MobileNavComponent,
+    MarketingComponent,
+    FeaturedComponent,
+    HomeComponent,
+    SliderComponent,
+    ProfileComponent,
+    ContactFormComponent 
   ],
   imports: [
     BrowserModule,
@@ -67,7 +82,7 @@ const routes: Routes  = [
     RouterModule.forRoot(routes),
     ReactiveFormsModule
   ],
-  providers: [ApiService,DataShareService],
+  providers: [ApiService,DataShareService,LocalStorageService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

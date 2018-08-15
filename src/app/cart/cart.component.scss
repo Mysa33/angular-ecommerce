@@ -11,6 +11,7 @@ Cart container
     min-height:250px;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     background-color:$white-bg;
+    font-family: $main-font;
     img{
         width:60%;
         height:auto;
@@ -36,11 +37,19 @@ Cart container
         background-color:$main-bg-color;
         border-color:$main-color;    
     }
+    .ecom-hedear-cart-bestdeal:hover{
+        background-color:$secondary-bg-color;
+        border-color:$secondary-bg-color;
+    }
     .ecom-header-clear-cart{
         float:right;
         color :$txt-first-color!important;
         background-color:$secondary-bg-color;
         border-color:$sec-color;
+    }
+    .ecom-header-clear-cart:hover{
+        background-color:$main-bg-color;
+        border-color:$main-color
     }
     .ecom-hedaer-clear-cart:hover{cursor:not-allowed;}
     .ecom-hide-total{text-decoration:none;}

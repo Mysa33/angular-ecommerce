@@ -1,30 +1,39 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+
 import {ApiService} from '../../shared/services/api.service';
+
 @Component({
   selector: 'app-team',
   templateUrl: './team.component.html',
   styleUrls: ['./team.component.scss']
 })
+
 export class TeamComponent implements OnInit {
+  
+  @Input() emittedPrantId;
   team;
   teamArray = [];
   allTeam;
+  widgetSatus:boolean = false;
+  widgetParent:number = 0;
+  emailStatus:boolean = true;
+
   constructor(private _teamService: ApiService) {
     
    }
 
   ngOnInit() {
     this.getTeam(this.team);
+    this.customWidgetDisplay(this.emittedPrantId,this.emailStatus);
   }
 
-  getTeam(team){
+  getTeam(team):any{
     this.team = team;
     this._teamService.getUsers("https://randomuser.me/api/?results=3").subscribe(
       data => { 
         this.team = data; 
         this.team = this.team.results;
-        //set team
-        this.setTeam();
+        this.resolveAfterdelay(this.widgetSatus);
         return this.team;
       },
       err => console.error(err),
@@ -32,16 +41,45 @@ export class TeamComponent implements OnInit {
     );
   }
   
-  setTeam(){
+  setTeam(widgetSatus):boolean{
+    this.widgetSatus = widgetSatus;
     this.team.map((val, index, data)=>{
       let teamMember = {
         "name" : data[index].name,
-        "img" : data[index].picture,
+        "img" : data[index].picture.large,
         "phone" :data[index].phone,
-        "email" : data[index].mail
+        "email" : data[index].email
       };
-      console.log("new member : ", teamMember);
       this.teamArray.push(teamMember);
     });
+    return this.widgetSatus = true;
   }
+
+  resolveAfterdelay(widgetSatus) {
+    this.widgetSatus = widgetSatus;
+    return new Promise(resolve => {
+      setTimeout(() => {
+        this.setTeam(this.widgetSatus);
+        resolve('resolved');
+      }, 
+      300);
+    });
+  }
+  
+  customWidgetDisplay(emittedPrantId,emailStatus):boolean{
+    this.emittedPrantId = emittedPrantId;
+    this.emailStatus = emailStatus;
+    this.widgetParent = this.emittedPrantId;
+    if(this.emittedPrantId == 0){
+      this.emailStatus = true;
+    }else if(this.emittedPrantId == 1){
+      this.emailStatus = true;
+    }else{
+      this.emailStatus = false;
+    }
+    return this.emailStatus;
+  }
+  
+  
+
 }

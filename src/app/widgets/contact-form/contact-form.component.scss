@@ -1,0 +1,13 @@
+@import "../../variables.scss";
+form{
+    label{color:$sec-color;}
+    button{
+        color:$txt-first-color;
+        background-color:$main-bg-color;
+        border-color:$main-color!important;
+    }
+    button:hover{
+        background-color:$secondary-bg-color;
+        border-color:$sec-color!important;
+    }
+}

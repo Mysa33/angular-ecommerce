@@ -55,11 +55,11 @@ export class CommentsComponent implements OnInit {
     this.defaultCommentsWidgetId = defaultCommentsWidgetId;
     switch (this.defaultCommentsWidgetId) {
       case 0:
-        return '#FFF';//Default
+        return '#FFF';//default
       case 1:
-        return '#FFF';//Footer
+        return '#FFF';//footer
       case 2:
-        return '#333';//Sidebar
+        return '#333';//sidebar
         default:
           console.log(' erreur ' + this.defaultCommentsWidgetId + ' n"est pas une valeur.');
         break;
@@ -70,11 +70,11 @@ export class CommentsComponent implements OnInit {
     this.defaultCommentsWidgetId = defaultCommentsWidgetId;
     switch (this.defaultCommentsWidgetId) {
       case 0:
-        return '#FFF';//Default
+        return '#FFF';//default
       case 1:
-        return '#e40046';//Footer
+        return '#e40046';//footer
       case 2:
-        return '#333';//Sidebar
+        return '#333';//sidebar
         default:
           console.log(' erreur ' + this.defaultCommentsWidgetId + ' n"est pas une valeur.');
         break;

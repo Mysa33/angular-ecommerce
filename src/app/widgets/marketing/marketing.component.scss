@@ -1,0 +1,46 @@
+@import "../../variables.scss";
+.ecom-marketing-container{
+    display: -ms-flexbox;
+	display: -webkit-flex;
+	display: flex;
+	-ms-flex-align: center;
+	-webkit-align-items: center;
+	-webkit-box-align: center;
+    align-items: center;
+    font-family: $main-font;
+    .row{
+        width:100%;
+        .col-lg-3{
+            .ecom-marketing-item-prop{
+                width:100%;
+                text-align: center;
+                i{
+                    font-size:4em;
+                    color:$sec-color;
+                }
+            }
+            .ecom-marketing-item-number{
+                color:$main-color;
+                font-size:1.5em;
+                font-weight: 600;
+            }
+            .ecom-marketing-item-txt{
+                color:$sec-color;
+                font-size:1.3em;
+                font-weight: 200;
+            }
+        }
+    }   
+}
+/************
+Responsive
+************/
+@media (max-width:767px){
+    .ecom-marketing-container{height:auto;}
+}
+@media (min-width:768px) and (max-width:991px){
+    .ecom-marketing-container{height:auto;}
+}
+@media (min-width:992px){
+    .ecom-marketing-container{height:180px;}
+}

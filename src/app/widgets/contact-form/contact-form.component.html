@@ -1,0 +1,38 @@
+<form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <label for="inputEmail">Email *</label>
+      <input type="email" class="form-control" name="inputEmail" formControlName="inputEmail" placeholder="Email" required="required">
+    </div>
+    <div class="form-group col-md-6">
+      <label for="inputName">Nom *</label>
+      <input type="text" class="form-control" name="inputName" formControlName="inputName" placeholder="Nom" required="required">
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="inputAddress">Adresse</label>
+    <input type="text" class="form-control" name="inputAddress" formControlName="inputAddress" placeholder="Votre adresse">
+  </div>
+  <div class="form-group">
+    <label for="inputAddress2">Complèment d'adresse</label>
+    <input type="text" class="form-control" name="inputAddress2" formControlName="inputAddress2" placeholder="Appartement, studio, ou étage">
+  </div>
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <label for="inputCity">Ville</label>
+      <input type="text" class="form-control" name="inputCity" formControlName="inputCity" placeholder="Votre ville">
+    </div>
+    <div class="form-group col-md-2">
+      <label for="inputZip">Code postal</label>
+      <input type="text" class="form-control" name="inputZip" formControlName="inputZip" placeholder = "75008">
+    </div>
+    <div class="form-group col-md-12">
+        <label for="inputTxt">Votre message *</label>
+        <textarea rows="10" class="form-control" name="inputZip" formControlName="inputTxt" placeholder="Votre message" required="required">
+        </textarea>
+      </div>
+  </div>
+  
+  <button type="submit" class="btn btn-primary">Envoyer</button>
+  
+</form>

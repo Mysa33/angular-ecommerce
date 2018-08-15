@@ -1,7 +1,12 @@
 @import "../../variables.scss";
 .ecom-team-row{
+    margin-top:15px;
+    font-family: $main-font;
     text-align: center;
     i{color:$txt-sec-color;font-size:0.95em!important;margin-top:5px;}
     span{text-transform: capitalize;color:$sec-color;}
+    .ecom-team-name-wrapper{
+        margin-top:15px;
+    }
     .ecom-team-mail-span{max-width: 70%!important;overflow: hidden;}
 }

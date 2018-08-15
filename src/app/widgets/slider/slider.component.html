@@ -1,0 +1,58 @@
+<div class="container ecom-slider-container">
+  <!-- .row -->
+  <div class="row ecom-slider-row" *ngIf ="slideSectRow">
+
+    <div class="ecom-slider-second-title">
+      <h4>Nouvelles offres</h4>
+    </div>
+    <div class="ecom-slider-main-title">
+      <h2>Lorem ipsum dolor !</h2>
+      <span>jusqu'au 27/08/2018</span>
+    </div>
+    <div class="ecom-slider-btn-cont">
+      <a class="btn ecom-home-featured-add-cart" routerLink="/shop">
+        <span>Shop now !</span>
+        <span class="ecom-home-add-to-cart-icon">
+          <i class="material-icons">add_shopping_cart</i>
+        </span>
+      </a>
+    </div>
+  </div>
+  <!-- /.row -->
+
+  <!-- .row -->
+  <div class="row ecom-slider-row-sec" *ngIf ="slideFirstRow">
+
+    <div class="ecom-slider-second-title">
+      <h4>Spécial rentrée</h4>
+    </div>
+    <div class="ecom-slider-main-title">
+      <h2>Sed ut elementum libero !</h2>
+      <span>jusqu'au 03/09/2018</span>
+    </div>
+    <div class="ecom-slider-btn-cont">
+      <a class="btn ecom-home-featured-add-cart" routerLink="/shop">
+        <span>Shop now !</span>
+        <span class="ecom-home-add-to-cart-icon">
+          <i class="material-icons">add_shopping_cart</i>
+        </span>
+      </a>
+      </div>
+    </div>
+    <!-- /.row -->
+
+  <!-- .row -->
+  <div class="row ecom-slider-nav-wrapper">
+    <div class="ecom-slider-btn">
+      <div class="ecom-slider-btn-wrapper ecom-slider-btn-left" (click)="setWidgetStatus(slideFirstRow,slideSectRow);">
+        <i class="material-icons">keyboard_arrow_left</i>
+      </div>
+        
+      <div class="ecom-slider-btn-wrapper ecom-slider-btn-right" (click)="setWidgetStatus(slideFirstRow,slideSectRow);">
+        <i class="material-icons">keyboard_arrow_right</i>
+      </div>
+    </div>
+  </div>
+  <!-- /.row -->
+
+</div>

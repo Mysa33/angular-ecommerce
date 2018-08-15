@@ -1,0 +1,115 @@
+@import "../../variables.scss";
+/****
+Catalog row
+****/
+.ecom-featured-container{
+    font-family: $main-font;
+    .ecom-featured-title{
+        padding-left:15px;
+        margin-top:30px;
+        h4{
+            color:$txt-sec-color;
+        }
+    }
+    .ecom-featured-nav-wrapper{
+        position: relative;
+        right:-95px;
+        top:15px;
+        
+        div{
+            right:0px;
+            display:inline-block;
+            background-color:#efefef;
+            border-radius:4px;
+            i{  
+                padding:10px;
+                font-size:1.2em!important;
+            }
+        }
+        div:hover{
+            cursor: pointer;
+            background-color:$secondary-bg-color;
+            i{
+                color:$txt-sec-color;
+            }
+        }
+    }
+    .ecom-home-featured-row{
+        .ecom-home-featured-card{
+            margin-bottom:1.4em;
+            figure:hover{
+                figcaption{
+                    display:block;
+                    height:60%;
+                    width: 100%;
+                    opacity: 0.8;
+                    background-color: $secondary-bg-color;
+                }
+            }
+            figure{
+                margin:auto;
+                text-align:center;
+                .card-img-top{
+                    width:75%;
+                    height:auto;
+                    margin:auto;
+                }
+                figcaption{
+                    position:absolute;
+                    left:0px;
+                    top:0px;
+                    display:none;
+                    width:75%;
+                    min-height:100px;
+                    text-align: center;
+                    color:$txt-first-color;
+                    border-radius:4px;
+                    i:hover{cursor:pointer;color:$txt-sec-color!important;}
+                    i{
+                       margin-left:40%!important;
+                       margin-top:48%!important;
+                       padding:auto!important;
+                       color:$txt-first-color;
+                       font-size:3em;
+                    }
+                }
+            } 
+            .card-text{
+                span{font-size: 0.8rem;}
+            }
+            .ecom-home-featured-book-title{
+                font-size: 1rem;
+                margin-bottom:5px!important;
+            }
+            strong{font-size: 0.8rem;}
+            .ecom-home-featured-book-price{
+                span{
+                    color:$txt-sec-color;
+                    font-size: 2rem;
+                    font-weight: 500;
+                }
+            }
+            .material-icons{
+                float:left!important;
+                margin-right:15px;
+                font-size:1.2rem;
+                color:$txt-first-color;
+                line-height:28.4px;
+                vertical-align: middle;
+            
+            }
+            .ecom-home-featured-add-cart:hover{
+                cursor: pointer;
+                background-color:$secondary-bg-color;
+                border-color:$secondary-bg-color!important;
+            }
+            .ecom-home-featured-add-cart{
+                font-size: 1rem;
+                color:$txt-first-color;
+                background-color: $main-bg-color;
+                border-color: $txt-sec-color!important;
+                
+            }
+        }
+    }
+}

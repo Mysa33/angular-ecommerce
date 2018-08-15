@@ -1,15 +1,15 @@
-<div class="row ecom-team-row">
-  <div class="col-lg-4" *ngFor ="let member of team; let i=index">
+<div class="row ecom-team-row" *ngIf ="widgetSatus">
+  <div class="col-lg-4" *ngFor ="let member of teamArray; let i=index">
     
     <div>
-      <img class="rounded-circle" src="https://randomuser.me/api/portraits/women/55.jpg" alt="{{member.name.first}}">
+      <img class="rounded-circle" src="{{member.img}}" alt="{{member.name.first}}">
     </div>
-    <div>
-        <span>{{member.name.title}}</span>
-        <span>{{member.name.first}}</span>
-        <span>{{member.name.last}}</span>
+    <div class="ecom-team-name-wrapper">
+        <span><strong>{{member.name.title}}</strong></span>
+        <span><strong>{{member.name.first}}</strong></span>
+        <span><strong>{{member.name.last}}</strong></span>
     </div>
-    <div>
+    <div *ngIf="emailStatus">
         <i class="material-icons">
             mail_outline
         </i>

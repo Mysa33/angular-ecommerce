@@ -2,12 +2,12 @@
 .ecom-contact-container{
     margin-top:50px;
     min-height:80vh;
-    font-family: 'Open Sans', sans-serif!important;
-    label{color:$sec-color;}
-    button{
-        color:$txt-first-color;
-        background-color:$main-bg-color;
-        border-color:$main-color!important;
-    }
+    font-family: $main-font;
     h4{color:$txt-sec-color!important;}
+    .ecom-contact-team-row{
+        margin-top:45px;
+        .ecom-about-contact-container{
+            margin-bottom:15xp;
+        }
+    }
 }

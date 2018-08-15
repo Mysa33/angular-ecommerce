@@ -1,0 +1,128 @@
+@import "../../variables.scss";
+.ecom-slider-container{
+    font-family:$main-font;
+    .ecom-slider-row{
+        height:485px;
+        background-image: url('https://covervault.com/wp-content/uploads/2015/11/015-6x9-Book-Ereader-Mockup-Preview1.jpg');
+        display:block;
+        .ecom-slider-second-title{
+            position:relative;
+            top:15%!important;
+            left:5%;
+            h4{
+                color:$txt-sec-color;
+                font-weight: bold;
+            }
+        }
+        .ecom-slider-main-title{
+            position:relative;
+            top:20%!important;
+            left:5%;
+        }
+        .ecom-slider-btn-cont{
+            position:relative;
+            top:35%!important;
+            left:5%;
+            a.ecom-home-featured-add-cart{
+                color:$txt-first-color!important;
+                background-color: $main-bg-color;
+                border-color: $txt-sec-color!important;
+                span.ecom-home-add-to-cart-icon{
+                    font-size: 1rem;
+                    color:$txt-first-color!important;
+                    background-color: $main-bg-color;
+                    border-color: $txt-sec-color!important;
+                    .material-icons{
+                        float:left!important;
+                        margin-right:15px;
+                        font-size:1.2rem;
+                        color:$txt-first-color;
+                        line-height:28.4px;
+                        vertical-align: middle;
+                    
+                    }
+                }
+            }
+            a.ecom-home-featured-add-cart:hover{
+                cursor:pointer;
+                background-color: $secondary-bg-color;
+                border-color: $sec-color!important;
+            }
+        }
+    }
+    .ecom-slider-row-sec{
+        height:485px;
+        background-image: url('https://covervault.com/wp-content/uploads/2016/04/045-Book-Promo-Template-with-Phone-Ereader-Mockup-Prev2.jpg');
+        display:block;
+        .ecom-slider-second-title{
+            position:relative;
+            top:15%!important;
+            left:5%;
+            h4{
+                color:$txt-sec-color;
+                font-weight: bold;
+            }
+        }
+        .ecom-slider-main-title{
+            position:relative;
+            top:20%!important;
+            left:5%;
+        }
+        .ecom-slider-btn-cont{
+            position:relative;
+            top:35%!important;
+            left:5%;
+            a.ecom-home-featured-add-cart{
+                color:$txt-first-color!important;
+                background-color: $main-bg-color;
+                border-color: $txt-sec-color!important;
+                span.ecom-home-add-to-cart-icon{
+                    font-size: 1rem;
+                    color:$txt-first-color!important;
+                    background-color: $main-bg-color;
+                    border-color: $txt-sec-color!important;
+                    .material-icons{
+                        float:left!important;
+                        margin-right:15px;
+                        font-size:1.2rem;
+                        color:$txt-first-color;
+                        line-height:28.4px;
+                        vertical-align: middle;
+                    
+                    }
+                }
+            }
+            a.ecom-home-featured-add-cart:hover{
+                cursor:pointer;
+                background-color: $secondary-bg-color;
+                border-color: $sec-color!important;
+            }
+            
+        }
+
+    }
+    .ecom-slider-nav-wrapper{
+        .ecom-slider-btn{
+            position:relative!important;
+            z-index:1000!important;
+            margin:auto;
+            top:-60px;
+            .ecom-slider-btn-wrapper{
+                display: inline-block;
+                i{  
+                    text-align: center;
+                    font-size:2.5em;
+                    color:$sec-color;
+                    background-color: $white-bg;
+                    border-radius:50%;
+                }
+                i:hover{
+                    cursor:pointer;
+                    color:$txt-first-color;
+                    background-color:$main-bg-color;
+                }
+            }
+        }
+    }
+    
+}

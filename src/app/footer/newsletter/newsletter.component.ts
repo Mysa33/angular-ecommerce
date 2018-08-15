@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
+
+import { LocalStorageService } from '../../shared/services/local-storage.service';
+
 @Component({
   selector: 'app-newsletter',
   templateUrl: './newsletter.component.html',
@@ -7,8 +10,9 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
 })
 export class NewsletterComponent implements OnInit {
   newsletterFormArray;
+  newsletterArray:string = "newsletterFormArray"
   
-  constructor() {}
+  constructor(private _newsletterService:LocalStorageService) {}
 
   ngOnInit() {}
   
@@ -21,16 +25,15 @@ export class NewsletterComponent implements OnInit {
       return;
     }else{
       this.newsletterFormArray = newsletterFormArray;
-      this.newsletterFormArray = this.newsletterFormArray;
-      const insDate:Date = new Date();
+      this.newsletterArray = this.newsletterArray;
+      let insDate:Date = new Date();
       let flag:boolean = true;
       this.newsletterFormArray = {
         "email" : this.newsletterForm.value,
         "insDate" : insDate,
         "flag" : flag
       };
-      this.newsletterFormArray = JSON.stringify(this.newsletterFormArray);
-      localStorage.setItem('newsletterFormArray', this.newsletterFormArray);
+      this._newsletterService.setLocalstorage(this.newsletterFormArray,this.newsletterArray);
       return this.newsletterFormArray = {};
     }
     

@@ -23,11 +23,11 @@ export class SocialComponent implements OnInit {
     this.socialDefaultId = socialDefaultId;
     switch (this.socialDefaultId) {
       case 0:
-        return '#e40046';//Default
+        return '#e40046';//default
       case 1:
-        return '#ffffff';//Footer
+        return '#ffffff';//footer
       case 2:
-        return '#e40046';//Modal
+        return '#e40046';//modal
       case 3:
         return '#e40046';//todo
         default:
