@@ -35,6 +35,8 @@ import { SliderComponent } from './widgets/slider/slider.component';
 import { ProfileComponent } from './profile/profile.component';
 import { LocalStorageService } from './shared/services/local-storage.service';
 import { ContactFormComponent } from './widgets/contact-form/contact-form.component';
+import { NewsComponent } from './news/news.component';
+import { PostsComponent } from './sidebar/posts/posts.component';
 
 const routes: Routes  = [
   {path :'', redirectTo : 'home', pathMatch:'full'},
@@ -71,7 +73,9 @@ const routes: Routes  = [
     HomeComponent,
     SliderComponent,
     ProfileComponent,
-    ContactFormComponent 
+    ContactFormComponent,
+    NewsComponent,
+    PostsComponent 
   ],
   imports: [
     BrowserModule,

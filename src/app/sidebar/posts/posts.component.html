@@ -1,0 +1,51 @@
+
+<div class="ecom-sidebar-posts-wrapper">
+  <h6>Notre actualité :</h6>
+  <div class="ecom-posts-nav-wrapper">
+    <div (click)="setPostStatus(firstRowStatus,secRowStatus);">
+      <i class="material-icons">keyboard_arrow_left</i>
+    </div>
+    <div (click)="setPostStatus(firstRowStatus,secRowStatus);">
+      <i class="material-icons">keyboard_arrow_right</i>
+    </div>
+  </div>
+  <div class="ecom-posts-item-wrapper" *ngIf ="firstRowStatus">
+    <div>
+      <figure>
+        <img src="http://latinalista.com/wp-content/uploads/2013/09/e-book-self-publishing-620x349.jpg" alt="">
+        <figcaption>
+  
+        </figcaption>
+        
+      </figure>
+      <span class="ecom-post-title">Lorem ipsum dolor sit amet.</span>
+      <br>
+      <span class="ecom-post-date"><strong>Publié le : </strong> 16/08/2018</span>  
+    </div>
+    <p>
+      Phasellus vel odio quis ex convallis faucibus vitae in augue. 
+      Donec id nibh sed enim tincidunt elementum. 
+    </p>
+  </div>
+
+  <div class="ecom-posts-item-wrapper" *ngIf ="secRowStatus">
+    <div>
+      <figure>
+        <img src="http://www.unelma-arpa.fi/wp-content/uploads/2015/02/gift-2.jpg" alt="">
+        <figcaption>
+  
+        </figcaption>
+        
+      </figure>
+      <span class="ecom-post-title">Etiam tortor eros, finibus quis.</span>
+      <br>
+      <span class="ecom-post-date"><strong>Publié le : </strong>10/08/2018</span>  
+    </div>
+    <p>
+      Maecenas varius efficitur eros. Etiam tortor eros, finibus quis erat id, mattis ornare tellus. 
+      Ut gravida tristique semper. Integer mattis justo sed consequat vehicula.  
+    </p>
+  </div>
+
+</div>
+
