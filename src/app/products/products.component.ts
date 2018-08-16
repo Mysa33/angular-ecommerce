@@ -49,7 +49,6 @@ export class ProductsComponent implements OnInit {
       this.booksCart.push(bookToCart);
     }
     this.passData(this.booksCart);
-    
   }
 
   passData(booksCart):void{

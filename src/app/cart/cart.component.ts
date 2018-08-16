@@ -19,7 +19,6 @@ export class CartComponent extends CartCommon{
     this._dataShareService.shareDataSubject.subscribe(receivedData=>{
       this.cartProdArray = receivedData;
       this.cartLength =  this.cartProdArray.length;
-      // doCartTotal ()
       this.doCartTotal ();
       return this.data = {
         "products" : receivedData,
@@ -28,7 +27,6 @@ export class CartComponent extends CartCommon{
     });
   }
   
-  //clearCart()
   clearCart(cartProdArray):void{
     this.cartProdArray = cartProdArray;
     this.bestDealVisibility = false;
@@ -36,7 +34,7 @@ export class CartComponent extends CartCommon{
     this.cartTotal = 0;
     this.valueChanged();
   }
-  //valueChanged()
+ 
   valueChanged() { 
     this.clearCartArray = true;
     localStorage.setItem("cartCleared", "1" );
