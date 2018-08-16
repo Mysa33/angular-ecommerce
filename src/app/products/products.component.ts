@@ -18,7 +18,8 @@ export class ProductsComponent implements OnInit {
   bookModalObj = [];
   bookModal = {};
   
-  constructor(private _bookService: ApiService,private _dataShareService: DataShareService) {}
+  constructor(
+    private _bookService: ApiService,private _dataShareService: DataShareService) {}
 
   ngOnInit() {
     this.getProductsData();

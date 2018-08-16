@@ -2,7 +2,7 @@ import { Component, EventEmitter , Output  } from '@angular/core';
 
 import { DataShareService } from '../shared/services/data-share.service';
 import { CartCommon } from '../shared/CartCommon';
-
+import { LocalStorageService } from '../shared/services/local-storage.service';
 @Component({
   selector: 'app-cart',
   templateUrl: './cart.component.html',
@@ -14,7 +14,7 @@ export class CartComponent extends CartCommon{
   @Output() valueChange = new EventEmitter();
   clearCartArray:boolean = false;
 
-  constructor( private _dataShareService: DataShareService ) { 
+  constructor( private _dataShareService: DataShareService, private _localstorageService : LocalStorageService ) { 
     super();
     this._dataShareService.shareDataSubject.subscribe(receivedData=>{
       this.cartProdArray = receivedData;
@@ -37,7 +37,7 @@ export class CartComponent extends CartCommon{
  
   valueChanged() { 
     this.clearCartArray = true;
-    localStorage.setItem("cartCleared", "1" );
+    this._localstorageService.setLocalstorage(1,"cartCleared");
     this.valueChange.emit(this.clearCartArray);
   }
 }
