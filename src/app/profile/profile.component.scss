@@ -4,10 +4,14 @@
     min-height:80vh;
     font-family: $main-font;
     h4{color:$txt-sec-color!important;}
-    .ecom-profil-nl-row,.ecom-profil-contact-row{
+    .ecom-profil-nl-row,.ecom-profil-msg-row{
         margin-left:0px;
         margin-top :30px;
+        line-height: 2em;
         h6{font-size:1.2em;font-weight: 500;}
+        
+    }
+    .ecom-profil-msg-row{
         .ecm-profil-msg-count{
             position :relative;
             top:-15px;
@@ -19,7 +23,9 @@
             border-radius:50%;
             text-align:center;
         }
-    
+    }
+    .ecom-msg-table-wrapper{
+        margin-top:15px;
     }
     
 }

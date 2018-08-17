@@ -25,6 +25,7 @@ export class ContactFormComponent implements OnInit {
     inputAddress2: new FormControl(''),
     inputCity: new FormControl(''),
     inputZip: new FormControl(''),
+    inputTitle : new FormControl(''),
     inputTxt: new FormControl('')
   });
 
@@ -35,11 +36,12 @@ export class ContactFormComponent implements OnInit {
     }else{
       this.contactFormArray = contactFormArray;
       this.contactFormArray = this.contactFormArray;
-      const insDate:Date = new Date();
+      let postDate:any = new Date();
+      postDate = postDate.getDate() + "/" + postDate.getMonth() + "/" + postDate.getFullYear();
       let flag:boolean = true;
       this.contactFormArray = {
         "data" : this.contactForm.value,
-        "insDate" : insDate,
+        "postDate" : postDate,
         "flag" : flag
       };
       this._profilService.setLocalstorage(this.contactFormArray,this.arrayName);

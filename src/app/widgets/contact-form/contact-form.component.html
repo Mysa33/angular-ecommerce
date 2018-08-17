@@ -26,11 +26,16 @@
       <label for="inputZip">Code postal</label>
       <input type="text" class="form-control" name="inputZip" formControlName="inputZip" placeholder = "75008">
     </div>
+    
     <div class="form-group col-md-12">
-        <label for="inputTxt">Votre message *</label>
-        <textarea rows="10" class="form-control" name="inputZip" formControlName="inputTxt" placeholder="Votre message" required="required">
-        </textarea>
+      <div class="form-group col-md-5 ecom-title-wrapper">
+        <label for="inputZip">Titre</label>
+          <input type="text" class="form-control" name="inputTitle" formControlName="inputTitle" placeholder = "Titre">
       </div>
+      <label for="inputTxt">Votre message *</label>
+      <textarea rows="10" class="form-control" name="inputZip" formControlName="inputTxt" placeholder="Votre message" required="required">
+      </textarea>
+    </div>
   </div>
   
   <button type="submit" class="btn btn-primary">Envoyer</button>

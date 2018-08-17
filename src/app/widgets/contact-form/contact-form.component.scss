@@ -1,6 +1,7 @@
 @import "../../variables.scss";
 form{
     label{color:$sec-color;}
+    .ecom-title-wrapper{padding:0px!important;}
     button{
         color:$txt-first-color;
         background-color:$main-bg-color;

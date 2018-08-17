@@ -26,7 +26,8 @@ export class NewsletterComponent implements OnInit {
     }else{
       this.newsletterFormArray = newsletterFormArray;
       this.newsletterArray = this.newsletterArray;
-      let insDate:Date = new Date();
+      let insDate:any = new Date();
+      insDate = insDate.getDate() + "/" + insDate.getMonth() + "/" +insDate.getFullYear();
       let flag:boolean = true;
       this.newsletterFormArray = {
         "email" : this.newsletterForm.value,

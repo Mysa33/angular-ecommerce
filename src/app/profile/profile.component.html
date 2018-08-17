@@ -27,12 +27,12 @@
         </div>
         <!--/.ecom-profil-nl-row-->
         
-        <!--.ecom-profil-contact-row-->
-        <div class="row ecom-profil-contact-row">
+        <!--.ecom-profil-msg-row-->
+        <div class="row ecom-profil-msg-row">
             <h6>Messages :</h6>
-            <div class="ecm-profil-msg-count">
+            <!--<div class="ecm-profil-msg-count">
               {{profilInfos.count}}
-            </div>
+            </div>-->
             <div class="col-lg-12">
               <span *ngIf="profilStatus">Vous avez envoyé {{profilInfos.count}} message(s).</span>
               <span *ngIf="!profilStatus">Vous n'avez pas encore envoyé de message.</span>
@@ -49,15 +49,60 @@
               <span>Votre email :</span>
               <span>{{profilInfos.email}}</span>
             </div>
-            <div class="col-lg-12" *ngIf="profilStatus">
-              <span>Votre adresse :</span>
-              <div>{{profilInfos.address}}</div>
-              <div>{{profilInfos.address2}}</div>
-              <div>{{profilInfos.zip}}</div>
-              <div>{{profilInfos.city}}</div>
+            <div class="col-lg-12 ecom-msg-table-wrapper">
+              <table class="table table-striped">
+                <thead>
+                  <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Titre</th>
+                    <th scope="col">Message</th>
+                    <th scope="col">Date</th>
+                    <th scope="col">Actions</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th scope="row">1</th>
+                    <td>{{profilInfos.name}}</td>
+                    <td>{{profilInfos.message}}</td>
+                    <td>{{profilInfos.date}}</td>
+                    <td>
+                      <i class="material-icons" style="color:red;">edit</i>
+                      <i class="material-icons" style="color:#333;">delete_forever</i> 
+                    </td>
+                  </tr>
+                  
+                </tbody>
+              </table>
             </div>
           </div>
-          <!--/.ecom-profil-contact-row-->
+          <!--/.ecom-profil-msg-row-->
+
+          <!--.ecom-profil-msg-row-->
+        <div class="row ecom-profil-msg-row">
+          <h6>Vos coordonnées :</h6>
+          <div class="col-lg-12" *ngIf="profilStatus">
+            <span>Nom :</span>
+            <span>{{profilInfos.name}}</span>
+          </div>
+          <div class="col-lg-12" *ngIf="profilStatus">
+            <span>Adresse :</span>
+            <span>{{profilInfos.address}}</span>
+          </div>
+          <div class="col-lg-12" *ngIf="profilStatus">
+            <span>Complèment d'adresse :</span>
+            <span>{{profilInfos.address2}}</span>
+          </div>
+          <div class="col-lg-12" *ngIf="profilStatus">
+            <span>Ville :</span>
+            <span>{{profilInfos.city}}</span>
+          </div>
+          <div class="col-lg-12" *ngIf="profilStatus">
+            <span>Code postal :</span>
+            <span>{{profilInfos.zip}}</span>
+          </div>
+        </div>
+        <!--/.ecom-profil-msg-row-->
         
       </div>
       <!--.col-lg-8-->
