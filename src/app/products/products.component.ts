@@ -11,6 +11,7 @@ import { DataShareService } from '../shared/services/data-share.service';
 })
 export class ProductsComponent implements OnInit {
   
+  page:string = "shop";
   books;
   booksCart  = [];
   booksCartLength :number = 0;

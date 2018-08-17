@@ -9,6 +9,7 @@ import { Component, OnInit } from '@angular/core';
 export class ContactComponent implements OnInit {
   
   widgetTeamId:number = 2;
+  page:string = "contact";
 
   constructor() { }
 

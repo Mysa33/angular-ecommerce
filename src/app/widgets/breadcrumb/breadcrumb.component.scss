@@ -1,0 +1,33 @@
+@import "../../variables.scss";
+.ecom-breadcrumb-wrapper{
+    display: -ms-flexbox;
+	display: -webkit-flex;
+	display: flex;
+	-ms-flex-align: center;
+	-webkit-align-items: center;
+	-webkit-box-align: center;
+	align-items: center;
+    height:20px;
+    margin-top:0px;
+    padding-top:25px;
+    padding-bottom:25px;
+    background-color:$grey-bg;
+    .container{
+        .row{
+            .col-lg-12{
+                .ecom-breadcrumb-home{
+                    font-size:1em;
+                    font-weight:400;
+                    color:$sec-color;
+                }
+                .ecom-breadcrumb-home:hover{font-weight:600;}
+                .ecom-breadcrumb-page{
+                    font-size:1em;
+                    font-weight:600;
+                    text-transform: capitalize;
+                    color:$txt-sec-color;
+                }
+            }
+        }
+    }
+}

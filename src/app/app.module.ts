@@ -38,6 +38,7 @@ import { ContactFormComponent } from './widgets/contact-form/contact-form.compon
 import { NewsComponent } from './widgets/news/news.component';
 import { PostsComponent } from './sidebar/posts/posts.component';
 import { BannerComponent } from './widgets/banner/banner.component';
+import { BreadcrumbComponent } from './widgets/breadcrumb/breadcrumb.component';
 
 const routes: Routes  = [
   {path :'', redirectTo : 'home', pathMatch:'full'},
@@ -77,7 +78,8 @@ const routes: Routes  = [
     ContactFormComponent,
     NewsComponent,
     PostsComponent,
-    BannerComponent 
+    BannerComponent,
+    BreadcrumbComponent 
   ],
   imports: [
     BrowserModule,

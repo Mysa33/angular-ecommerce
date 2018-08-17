@@ -9,6 +9,7 @@ import { LocalStorageService } from '../shared/services/local-storage.service';
 })
 export class ProfileComponent implements OnInit {
   
+  page:string = "profile";
   arrayName:string = "contactFormArray";
   data;
   profilStatus:boolean = false;
