@@ -11,11 +11,13 @@ import { LocalStorageService } from '../../shared/services/local-storage.service
 export class ContactFormComponent implements OnInit {
 
   contactFormArray;
+  storedData;
   arrayName:string = "contactFormArray";
   
   constructor(private _profilService:LocalStorageService) { }
 
   ngOnInit() {
+    this.getContactData(this.storedData,this.arrayName);
   }
 
   contactForm = new FormGroup({
@@ -25,11 +27,11 @@ export class ContactFormComponent implements OnInit {
     inputAddress2: new FormControl(''),
     inputCity: new FormControl(''),
     inputZip: new FormControl(''),
-    inputTitle : new FormControl(''),
-    inputTxt: new FormControl('')
+    inputTitle : new FormControl('',[Validators.required]),
+    inputTxt: new FormControl('',[Validators.required])
   });
 
-  onSubmit(contactFormArray):any { 
+  onSubmit(contactFormArray):void { 
     if(this.contactForm.value.inputEmail === ""){
       alert("le formulaire est invalide est vide.");
       return;
@@ -44,8 +46,20 @@ export class ContactFormComponent implements OnInit {
         "postDate" : postDate,
         "flag" : flag
       };
-      this._profilService.setLocalstorage(this.contactFormArray,this.arrayName);
-      return this.contactFormArray = {};
+      this.storedData.push(this.contactFormArray);
+      this._profilService.setLocalstorage(this.storedData,this.arrayName);
     }   
+  }
+
+  getContactData(storedData,arrayName):any{
+    this.storedData= storedData;
+    this.arrayName = arrayName;
+    this.storedData = this._profilService.getLocalstorage(this.storedData,this.arrayName);
+    console.log("storedData", this.storedData);
+    if(this.storedData === null){
+      console.log("nul :",)
+
+    }
+    return this.storedData;
   }
 }

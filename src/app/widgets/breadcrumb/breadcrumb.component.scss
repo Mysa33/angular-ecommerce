@@ -16,16 +16,21 @@
         .row{
             .col-lg-12{
                 .ecom-breadcrumb-home{
+                    margin-right:10px;
                     font-size:1em;
                     font-weight:400;
                     color:$sec-color;
                 }
-                .ecom-breadcrumb-home:hover{font-weight:600;}
+                .ecom-breadcrumb-home:hover{font-weight:600;cursor: pointer;}
                 .ecom-breadcrumb-page{
+                    margin-left:10px;
                     font-size:1em;
                     font-weight:600;
                     text-transform: capitalize;
                     color:$txt-sec-color;
+                }
+                .ecom-breadcrumb-separator{
+                    color:#d4d0d0;
                 }
             }
         }

@@ -37,13 +37,17 @@ export class ProfileComponent implements OnInit {
   }
 
   setProfilInfos(data,profilStatus,profilInfos):boolean{
-    this.data = data.data;
+    this.data = data;
     this.profilStatus = profilStatus;
     this.profilInfos = profilInfos;
+
+    console.log("data :", this.data);
+
     if(!this.data){
-      this.profilStatus = false;
+      /*this.profilStatus = false;
+      this.data = [];*/
     }else{ 
-      this.profilInfos = {
+      /*this.profilInfos = {
         "count":1,
         "email":this.data.inputEmail,
         "date":"N.A",
@@ -54,7 +58,7 @@ export class ProfileComponent implements OnInit {
         "zip":this.data.inputZip,
         "message":this.data.inputTxt
       };
-      this.profilStatus = true;
+      this.profilStatus = true;*/
     }
     return this.profilStatus;
   }
