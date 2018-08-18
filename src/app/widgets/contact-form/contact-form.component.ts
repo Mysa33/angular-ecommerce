@@ -17,7 +17,7 @@ export class ContactFormComponent implements OnInit {
   constructor(private _profilService:LocalStorageService) { }
 
   ngOnInit() {
-    this.getContactData(this.storedData,this.arrayName);
+    
   }
 
   contactForm = new FormGroup({
@@ -31,13 +31,14 @@ export class ContactFormComponent implements OnInit {
     inputTxt: new FormControl('',[Validators.required])
   });
 
-  onSubmit(contactFormArray):void { 
+  onSubmit(contactFormArray,storedData):void { 
     if(this.contactForm.value.inputEmail === ""){
       alert("le formulaire est invalide est vide.");
       return;
     }else{
+      this.storedData = storedData;
+      this.getContactData(this.storedData,this.arrayName);
       this.contactFormArray = contactFormArray;
-      this.contactFormArray = this.contactFormArray;
       let postDate:any = new Date();
       postDate = postDate.getDate() + "/" + postDate.getMonth() + "/" + postDate.getFullYear();
       let flag:boolean = true;
@@ -55,11 +56,11 @@ export class ContactFormComponent implements OnInit {
     this.storedData= storedData;
     this.arrayName = arrayName;
     this.storedData = this._profilService.getLocalstorage(this.storedData,this.arrayName);
-    console.log("storedData", this.storedData);
     if(this.storedData === null){
-      console.log("nul :",)
-
+      console.log("storedData is nul !");
+      this.storedData = [];
     }
+    console.log("storedData :",this.storedData);
     return this.storedData;
   }
 }
