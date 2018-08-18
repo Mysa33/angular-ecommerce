@@ -57,10 +57,8 @@ export class ContactFormComponent implements OnInit {
     this.arrayName = arrayName;
     this.storedData = this._profilService.getLocalstorage(this.storedData,this.arrayName);
     if(this.storedData === null){
-      console.log("storedData is nul !");
       this.storedData = [];
     }
-    console.log("storedData :",this.storedData);
     return this.storedData;
   }
 }

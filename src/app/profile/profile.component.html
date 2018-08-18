@@ -5,13 +5,13 @@
     <!-- .row -->
     <div class="row">
       
-      <!--.col-lg-8-->
-      <div class="col-lg-8">
-        <h4 class="ecom-p-title">Profile</h4>
-        
-        <!--.ecom-profil-nl-row-->
-        <div class="row ecom-profil-nl-row">
-          <h6>Newsletter :</h6>
+    <!--.col-lg-8-->
+    <div class="col-lg-8">
+      <h4 class="ecom-p-title">Profile</h4>
+          
+      <!--.ecom-profil-nl-row-->
+      <div class="row ecom-profil-nl-row">
+        <h6>Newsletter :</h6>
           <div class="col-lg-12">
             <span *ngIf="newsletterStatus">Vous êtes déjà inscrit à notre newsletter.</span>
             <span *ngIf="!newsletterStatus">Vous n'êtes pas inscrit à notre newsletter.</span>
@@ -29,89 +29,101 @@
         
         <!--.ecom-profil-msg-row-->
         <div class="row ecom-profil-msg-row">
-            <h6>Messages :</h6>
-            <!--<div class="ecm-profil-msg-count">
-              {{profilInfos.count}}
-            </div>-->
-            <!--<div class="col-lg-12">
-              <span *ngIf="profilStatus">Vous avez envoyé {{profilInfos.count}} message(s).</span>
-              <span *ngIf="!profilStatus">Vous n'avez pas encore envoyé de message.</span>
+          <h6>Messages :</h6>
+          
+          <div class="col-lg-12">
+            <span *ngIf="profilStatus">Vous avez envoyé </span>
+            <span class="ecom-msg-count" *ngIf="profilStatus">{{count}}</span>
+            <span *ngIf="profilStatus"> message(s).</span>
+            <span *ngIf="!profilStatus">Vous n'avez pas encore envoyé de message.</span>
+          </div>
+          <div class="col-lg-12" *ngIf="profilStatus">
+            <span>Dernier message envoyé le :</span>
+            <span>{{headerDate}}</span>
+          </div>
+          <div class="col-lg-12" *ngIf="profilStatus">
+            <span>Votre nom :</span>
+            <span>{{headerName}}</span>
+          </div>
+          <div class="col-lg-12" *ngIf="profilStatus">
+            <span>Votre email :</span>
+            <span>{{headerEmail}}</span>
+          </div>
+          <div class="col-lg-12 ecom-msg-table-wrapper">
+            <div class="ecm-profil-msg-count">
+              {{count}}
             </div>
-            <div class="col-lg-12" *ngIf="profilStatus">
-              <span>Date :</span>
-              <span>{{profilInfos.date}}</span>
-            </div>
-            <div class="col-lg-12" *ngIf="profilStatus">
-              <span>Votre nom :</span>
-              <span>{{profilInfos.name}}</span>
-            </div>
-            <div class="col-lg-12" *ngIf="profilStatus">
-              <span>Votre email :</span>
-              <span>{{profilInfos.email}}</span>
-            </div>
-            <div class="col-lg-12 ecom-msg-table-wrapper">
-              <table class="table table-striped">
-                <thead>
-                  <tr>
-                    <th scope="col">#</th>
-                    <th scope="col">Titre</th>
-                    <th scope="col">Message</th>
-                    <th scope="col">Date</th>
-                    <th scope="col">Actions</th>
+            <span class="ecom-msg-icon">
+              <i class="material-icons">message</i>
+            </span>
+            <table class="table table-striped">
+              <thead>
+                <tr>
+                  <th scope="col">#</th>
+                  <th scope="col">Titre</th>
+                  <th scope="col">Message</th>
+                  <th scope="col">Date</th>
+                  <th scope="col">Actions</th>
                   </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <th scope="row">1</th>
-                    <td>{{profilInfos.name}}</td>
-                    <td>{{profilInfos.message}}</td>
-                    <td>{{profilInfos.date}}</td>
-                    <td>
-                      <i class="material-icons" style="color:#333;">edit</i>
-                      <i class="material-icons" style="color:#333;">delete_forever</i> 
-                    </td>
-                  </tr>
-                  
-                </tbody>
+              </thead>
+              <tbody>
+                <tr *ngFor="let msg of profilsInfos; let i = index">
+                  <th scope="row">{{i+1}}</th>
+                  <td>{{msg.title}}</td>
+                  <td>{{msg.message}}</td>
+                  <td>{{msg.date}}</td>
+                  <td>
+                    <i class="material-icons" style="color:#333;">edit</i>
+                    <i class="material-icons" style="color:#333;">delete_forever</i> 
+                  </td>
+                </tr>    
+              </tbody>
               </table>
-            </div>-->
+            </div>
           </div>
           <!--/.ecom-profil-msg-row-->
 
           <!--.ecom-profil-msg-row-->
-        <div class="row ecom-profil-msg-row">
-          <h6>Vos coordonnées :</h6>
-          <div class="col-lg-12" *ngIf="profilStatus">
-            <span>Nom :</span>
-            <span>{{profilInfos.name}}</span>
+          <div class="row ecom-profil-msg-row">
+            
+            <h6>Vos coordonnées :</h6>
+            
+            <div class="col-lg-12" *ngIf="profilStatus">
+              <span>Nom :</span>
+              <span>{{headerName}}</span>
+            </div>
+
+            <div class="col-lg-12" *ngIf="profilStatus">
+              <span>Adresse :</span>
+              <span>{{userAddress}}</span>
+            </div>
+
+            <div class="col-lg-12" *ngIf="profilStatus">
+              <span>Complèment d'adresse :</span>
+              <span>{{userSecAddress}}</span>
+            </div>
+
+            <div class="col-lg-12" *ngIf="profilStatus">
+              <span>Ville :</span>
+              <span>{{userCity}}</span>
+            </div>
+            
+            <div class="col-lg-12" *ngIf="profilStatus">
+              <span>Code postal :</span>
+              <span>{{userZip}}</span>
+            </div>
+
           </div>
-          <div class="col-lg-12" *ngIf="profilStatus">
-            <span>Adresse :</span>
-            <span>{{profilInfos.address}}</span>
-          </div>
-          <div class="col-lg-12" *ngIf="profilStatus">
-            <span>Complèment d'adresse :</span>
-            <span>{{profilInfos.address2}}</span>
-          </div>
-          <div class="col-lg-12" *ngIf="profilStatus">
-            <span>Ville :</span>
-            <span>{{profilInfos.city}}</span>
-          </div>
-          <div class="col-lg-12" *ngIf="profilStatus">
-            <span>Code postal :</span>
-            <span>{{profilInfos.zip}}</span>
-          </div>
-        </div>
-        <!--/.ecom-profil-msg-row-->
+          <!--/.ecom-profil-msg-row-->
         
-      </div>
-      <!--.col-lg-8-->
+        </div>
+        <!--.col-lg-8-->
 
-      <div class="col-lg-4">
+        <div class="col-lg-4">
 
-        <app-sidebar></app-sidebar>
+          <app-sidebar></app-sidebar>
 
-      </div>
+        </div>
       
     </div>
     <!-- /.row -->

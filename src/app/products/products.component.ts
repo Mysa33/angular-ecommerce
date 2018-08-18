@@ -19,7 +19,10 @@ export class ProductsComponent implements OnInit {
   bookModalObj = [];
   bookModal = {};
   
-  constructor(private _bookService:ApiService, private _dataShareService:DataShareService) {}
+  constructor(
+    private _bookService:ApiService, 
+    private _dataShareService:DataShareService
+  ) {}
 
   ngOnInit() {
     this.getProductsData();
@@ -40,7 +43,7 @@ export class ProductsComponent implements OnInit {
        "price": this.books[i].price,
        "cover": this.books[i].cover
     };
-    const cartDataStatus = localStorage.getItem("cartCleared"); 
+    const cartDataStatus = localStorage.getItem("cartCleared");//Todo : local storage service 
     if(cartDataStatus === "1"){
       this.booksCart = [];
       localStorage.setItem("cartCleared", "0" );
