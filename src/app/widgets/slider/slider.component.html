@@ -1,13 +1,13 @@
-<div class="container ecom-slider-container">
+<div class="container ecom-slider-container" *ngIf="widgetStatus">
   <!-- .row -->
-  <div class="row ecom-slider-row" *ngIf ="slideSectRow">
+  <div class="row ecom-slider-row" *ngIf ="slideSecRow">
 
     <div class="ecom-slider-second-title">
-      <h4>Nouvelles offres</h4>
+      <h4>{{firstSlide.main}}</h4>
     </div>
     <div class="ecom-slider-main-title">
-      <h2>Lorem ipsum dolor !</h2>
-      <span>jusqu'au 27/08/2018</span>
+      <h2>{{firstSlide.title}}</h2>
+      <span>jusqu'au {{firstSlide.date}}</span>
     </div>
     <div class="ecom-slider-btn-cont">
       <a class="btn ecom-home-featured-add-cart" routerLink="/shop">
@@ -24,11 +24,11 @@
   <div class="row ecom-slider-row-sec" *ngIf ="slideFirstRow">
 
     <div class="ecom-slider-second-title">
-      <h4>Spécial rentrée</h4>
+      <h4>{{secSlide.main}}</h4>
     </div>
     <div class="ecom-slider-main-title">
-      <h2>Sed ut elementum libero !</h2>
-      <span>jusqu'au 03/09/2018</span>
+      <h2>{{secSlide.title}}</h2>
+      <span>jusqu'au {{secSlide.date}}</span>
     </div>
     <div class="ecom-slider-btn-cont">
       <a class="btn ecom-home-featured-add-cart" routerLink="/shop">

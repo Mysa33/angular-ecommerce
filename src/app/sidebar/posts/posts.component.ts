@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+import {ApiService} from '../../shared/services/api.service';
 @Component({
   selector: 'app-posts',
   templateUrl: './posts.component.html',
@@ -7,15 +7,33 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PostsComponent implements OnInit {
   
+  dataUrl:string = "http://localhost:4200/assets/data/postsData.json";
+  postsData;
   firstRowStatus:boolean = true;
   secRowStatus:boolean = false;
+  firstRowData;
+  secRowData;
+  widgetStatus;
 
-  constructor() { }
+  constructor(private _postsService:ApiService) {}
 
   ngOnInit() {
+    this.widgetStatus = false;
+    this.getPostsData();
   }
 
-  setPostStatus(firstRowStatus,secRowStatus){
+  getPostsData(){
+    this._postsService.getData(this.dataUrl).subscribe(
+      data => { 
+        this.postsData = data;
+        this.setPostsData(this.postsData);
+      },
+      err => console.error(err),
+      () => console.log('done loading posts')
+    );
+  }
+
+  setPostStatus(firstRowStatus,secRowStatus):void{
     this.firstRowStatus = firstRowStatus;
     this.secRowStatus = secRowStatus;
     if(this.firstRowStatus == true){
@@ -26,6 +44,11 @@ export class PostsComponent implements OnInit {
       this.secRowStatus = false;
     }
   }
-  
 
+  setPostsData(postsData):boolean{
+    this.postsData = postsData;
+    this.firstRowData = this.postsData[0];
+    this.secRowData = this.postsData[1];
+    return this.widgetStatus = true;
+  }
 }

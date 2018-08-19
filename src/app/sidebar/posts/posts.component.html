@@ -1,5 +1,5 @@
 
-<div class="ecom-sidebar-posts-wrapper">
+<div class="ecom-sidebar-posts-wrapper" *ngIf="widgetStatus">
   <h6>Notre actualité :</h6>
   <div class="ecom-posts-nav-wrapper">
     <div (click)="setPostStatus(firstRowStatus,secRowStatus);">
@@ -12,38 +12,36 @@
   <div class="ecom-posts-item-wrapper" *ngIf ="firstRowStatus">
     <div>
       <figure>
-        <img src="http://latinalista.com/wp-content/uploads/2013/09/e-book-self-publishing-620x349.jpg" alt="">
+        <img src="{{firstRowData.img}}" alt="">
         <figcaption>
   
         </figcaption>
         
       </figure>
-      <span class="ecom-post-title">Lorem ipsum dolor sit amet.</span>
+      <span class="ecom-post-title">{{firstRowData.title}}</span>
       <br>
-      <span class="ecom-post-date"><strong>Publié le : </strong> 16/08/2018</span>  
+      <span class="ecom-post-date"><strong>Publié le : </strong> {{firstRowData.date}}</span>  
     </div>
     <p>
-      Phasellus vel odio quis ex convallis faucibus vitae in augue. 
-      Donec id nibh sed enim tincidunt elementum. 
+      {{firstRowData.txt}} 
     </p>
   </div>
 
   <div class="ecom-posts-item-wrapper" *ngIf ="secRowStatus">
     <div>
       <figure>
-        <img src="http://www.unelma-arpa.fi/wp-content/uploads/2015/02/gift-2.jpg" alt="">
+        <img src="{{secRowData.img}}" alt="">
         <figcaption>
   
         </figcaption>
         
       </figure>
-      <span class="ecom-post-title">Etiam tortor eros, finibus quis.</span>
+      <span class="ecom-post-title">{{secRowData.title}}</span>
       <br>
-      <span class="ecom-post-date"><strong>Publié le : </strong>10/08/2018</span>  
+      <span class="ecom-post-date"><strong>Publié le : </strong>{{secRowData.date}}</span>  
     </div>
     <p>
-      Maecenas varius efficitur eros. Etiam tortor eros, finibus quis erat id, mattis ornare tellus. 
-      Ut gravida tristique semper. Integer mattis justo sed consequat vehicula.  
+      {{secRowData.txt}}  
     </p>
   </div>
 
