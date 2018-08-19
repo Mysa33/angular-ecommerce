@@ -1,3 +1,37 @@
-<p>
-  news works!
-</p>
+<div class="ecom-news-wrapper" *ngIf="widgetStatus">
+  <div class="ecom-news-nav-wrapper">
+    <div (click)="setPostStatus(firstRowStatus,secRowStatus);">
+      <i class="material-icons">keyboard_arrow_left</i>
+    </div>
+    <div (click)="setPostStatus(firstRowStatus,secRowStatus);">
+      <i class="material-icons">keyboard_arrow_right</i>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4" *ngFor="let item of newsData;let i = index">
+      <div class="ecom-news-item-wrapper">
+    
+        <div>
+          
+          <figure>
+            <img src="{{item.img}}" alt="{{item.title}}">
+            <figcaption>
+      
+            </figcaption>
+            
+          </figure>
+    
+          <span class="ecom-news-title">{{item.title}}</span>
+          <br>
+          <span class="ecom-news-date"><strong>Publié le : </strong> {{item.title}}</span>  
+        </div>
+        <p>
+          {{item.txt}} 
+        </p>
+      </div>
+    </div>
+  </div>
+
+
+
+</div>

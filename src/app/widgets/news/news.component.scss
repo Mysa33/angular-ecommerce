@@ -1,0 +1,58 @@
+@import "../../variables.scss";
+.ecom-news-wrapper{
+    width:100%;
+    height:auto;
+    display: inline-block;
+    margin-top:15px;
+    .ecom-news-nav-wrapper{
+        position: relative;
+        left:0px;
+        top:0px;
+        
+        div{
+            right:0px;
+            display:inline-block;
+            background-color:#efefef;
+            border-radius:4px;
+            i{  
+                padding:10px;
+                font-size:1.2em!important;
+            }
+        }
+        div:hover{
+            cursor: pointer;
+            background-color:$secondary-bg-color;
+            i{
+                color:$txt-sec-color;
+            }
+        }
+    }
+    figure{
+        margin-top:10px;
+        height:198px;
+        overflow: hidden;
+        img{
+            width:100%;
+            height:auto;
+        }
+    }
+    span{
+        font-family: $main-font;
+    }
+    .ecom-news-title{
+        font-family: $main-font;
+        font-size:1.1em;
+        color:$txt-sec-color;
+        font-weight: 600;
+    }
+    .ecom-news-date{
+        font-size:0.8em;
+        font-family: $main-font;
+        color:$sec-color;
+    }
+    p{
+        margin-top:15px;
+        font-family: $main-font;
+        color:$sec-color;
+    }
+}
