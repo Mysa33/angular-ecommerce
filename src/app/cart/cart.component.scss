@@ -5,8 +5,7 @@ Cart container
 .ecom-cart-container{
     position: absolute;
     float:right;
-    right:160px;
-    top:64px!important;
+    top:49px!important;
     z-index: 100;
     min-height:250px;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
@@ -66,7 +65,7 @@ Responsive
 }
 @media (min-width:992px) and (max-width:1199px){
     .ecom-cart-container{
-        right:160px;
+        right:0px;
         min-width:250px!important;
     }
 }

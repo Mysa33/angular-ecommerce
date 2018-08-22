@@ -13,6 +13,12 @@ Header & NavBar
     padding:0px!important;
     font-family: $main-font;
     background-color:$main-bg-color;
+    nav{
+        margin-left:0px;
+        padding-left:0px;
+        margin-right:0px;
+        padding-right:0px;
+    }
     .ecom-hedaer-cart-bestdeal{
         background-color:$main-bg-color;
         border-color: $main-bg-color;
