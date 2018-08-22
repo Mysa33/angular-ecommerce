@@ -47,7 +47,7 @@ export class ProductsComponent implements OnInit {
     if(cartDataStatus === "1"){
       this.booksCart = [];
       localStorage.setItem("cartCleared", "0" );
-      this.booksCart.push(bookToCart);
+      this.booksCart.push(bookToCart);//Todo : local storage service 
     }else{
       this.booksCart = this.booksCart;
       this.booksCart.push(bookToCart);
