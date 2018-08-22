@@ -55,7 +55,4 @@ export class MarketingComponent implements OnInit {
       "text":"Clients satisfaits"
     }
   ];
-
-
-
 }

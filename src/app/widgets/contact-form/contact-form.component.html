@@ -14,7 +14,7 @@
     <input type="text" class="form-control" name="inputAddress" formControlName="inputAddress" placeholder="Votre adresse">
   </div>
   <div class="form-group">
-    <label for="inputAddress2">Complèment d'adresse</label>
+    <label for="inputAddress2">Complément d'adresse</label>
     <input type="text" class="form-control" name="inputAddress2" formControlName="inputAddress2" placeholder="Appartement, studio, ou étage">
   </div>
   <div class="form-row">
@@ -38,6 +38,6 @@
     </div>
   </div>
   
-  <button type="submit" class="btn btn-primary">Envoyer</button>
+  <button type="submit" class="btn btn-primary" [disabled]="!contactForm.valid">Envoyer</button>
   
 </form>

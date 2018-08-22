@@ -32,14 +32,11 @@
           <hr>
           <!-- .ecom-cart-best-deal-row -->
           <div class="row ecom-cart-best-deal-row"><!-- Todo : scss -->
+            
             <!-- bestdeal component -->
-            <app-best-deal 
-              *ngIf="bestDealVisibility" 
-              [data]="data" 
-              [cartTotalBd]="cartTotal" 
-              style="width:100%!important;padding-left:15px; padding-right:15px;">
-          </app-best-deal>
+            <app-best-deal *ngIf="bestDealVisibility" [data]="data" [cartTotalBd]="cartTotal"></app-best-deal>  
             <!-- /bestdeal component -->
+            
           </div>
           <!-- /.ecom-cart-best-deal-row -->
           <hr *ngIf="bestDealVisibility">

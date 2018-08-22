@@ -1,5 +1,12 @@
 @import "../../variables.scss";
 form{
+    .ng-valid{
+        border: solid #82af3c 1px;
+    }
+ 
+    button:disabled{
+        cursor:not-allowed;
+    }
     label{color:$sec-color;}
     .ecom-title-wrapper{padding:0px!important;}
     button{

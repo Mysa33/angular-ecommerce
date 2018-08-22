@@ -21,19 +21,19 @@ export class ContactFormComponent implements OnInit {
   }
 
   contactForm = new FormGroup({
-    inputEmail: new FormControl('',[Validators.required]),
-    inputName: new FormControl('',[Validators.required]),
-    inputAddress: new FormControl(''),
-    inputAddress2: new FormControl(''),
-    inputCity: new FormControl(''),
-    inputZip: new FormControl(''),
-    inputTitle : new FormControl('',[Validators.required]),
-    inputTxt: new FormControl('',[Validators.required])
+    inputEmail: new FormControl('',[Validators.required, Validators.minLength(3),Validators.maxLength(10)]),
+    inputName: new FormControl('',[Validators.required, Validators.minLength(3),Validators.maxLength(10)]),
+    inputAddress: new FormControl('',[Validators.required,Validators.minLength(3),Validators.maxLength(20)]),
+    inputAddress2: new FormControl('',[Validators.minLength(3), Validators.maxLength(20)]),
+    inputCity: new FormControl('',[Validators.required,Validators.minLength(3),Validators.maxLength(10)]),
+    inputZip: new FormControl('',[Validators.required,Validators.minLength(5),Validators.maxLength(5)]),
+    inputTitle : new FormControl('',[Validators.required,Validators.minLength(4),Validators.maxLength(15)]),
+    inputTxt: new FormControl('',[Validators.required, Validators.minLength(20), Validators.maxLength(250)])
   });
 
   onSubmit(contactFormArray,storedData):void { 
-    if(this.contactForm.value.inputEmail === ""){
-      alert("le formulaire est invalide est vide.");
+    if(!this.contactForm.valid){
+      alert("le formulaire est invalide.");
       return;
     }else{
       this.storedData = storedData;
