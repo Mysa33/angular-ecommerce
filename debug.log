@@ -57,3 +57,21 @@
 [0819/000315.716:ERROR:crash_report_database_win.cc(428)] unexpected header
 [0819/025421.018:ERROR:crash_report_database_win.cc(428)] unexpected header
 [0821/213012.535:ERROR:crash_report_database_win.cc(428)] unexpected header
+[0827/224129.000:ERROR:process_reader_win.cc(242)] ReadMemory at 0x3aeafab0d0 of 512 bytes failed: Seule une partie d’une requête ReadProcessMemory ou WriteProcessMemory a été effectuée. (0x12B)
+[0827/224129.084:ERROR:crash_report_exception_handler.cc(111)] WriteEverything failed
+[0827/224129.084:ERROR:filesystem_win.cc(148)] DeleteFile C:\Users\Samy\AppData\Local\Google\Chrome\User Data\Crashpad\reports\31973449-bca2-4a51-a443-fd90a56cf437.dmp: Le processus ne peut pas accéder au fichier car ce fichier est utilisé par un autre processus. (0x20)
+[0827/224257.001:ERROR:process_reader_win.cc(242)] ReadMemory at 0x8512c0b0d0 of 512 bytes failed: Seule une partie d’une requête ReadProcessMemory ou WriteProcessMemory a été effectuée. (0x12B)
+[0827/224257.001:ERROR:crash_report_exception_handler.cc(111)] WriteEverything failed
+[0827/224257.001:ERROR:filesystem_win.cc(148)] DeleteFile C:\Users\Samy\AppData\Local\Google\Chrome\User Data\Crashpad\reports\21a3ed8e-7520-4d8e-9b5e-3cdab4f16bf2.dmp: Le processus ne peut pas accéder au fichier car ce fichier est utilisé par un autre processus. (0x20)
+[0827/224345.169:ERROR:process_reader_win.cc(242)] ReadMemory at 0xa4aeaeb0d0 of 512 bytes failed: Seule une partie d’une requête ReadProcessMemory ou WriteProcessMemory a été effectuée. (0x12B)
+[0827/224345.169:ERROR:crash_report_exception_handler.cc(111)] WriteEverything failed
+[0827/224345.169:ERROR:filesystem_win.cc(148)] DeleteFile C:\Users\Samy\AppData\Local\Google\Chrome\User Data\Crashpad\reports\afee354d-6e99-4f73-9241-e274387ef129.dmp: Le processus ne peut pas accéder au fichier car ce fichier est utilisé par un autre processus. (0x20)
+[0827/224509.628:ERROR:process_reader_win.cc(242)] ReadMemory at 0x83ec24b0d0 of 512 bytes failed: Seule une partie d’une requête ReadProcessMemory ou WriteProcessMemory a été effectuée. (0x12B)
+[0827/224509.628:ERROR:crash_report_exception_handler.cc(111)] WriteEverything failed
+[0827/224609.162:ERROR:filesystem_win.cc(148)] DeleteFile C:\Users\Samy\AppData\Local\Google\Chrome\User Data\Crashpad\reports\6a77cb28-fa43-49ab-a7ee-8792e141d2a3.dmp: Le processus ne peut pas accéder au fichier car ce fichier est utilisé par un autre processus. (0x20)
+[0827/224609.162:ERROR:scoped_process_suspend.cc(40)] NtResumeProcess: Tentative d’accès à un processus en cours d’arrêt. (0xc000010a)
+[0827/224609.366:ERROR:scoped_process_suspend.cc(31)] NtSuspendProcess: Tentative d’accès à un processus en cours d’arrêt. (0xc000010a)
+[0827/224609.366:ERROR:process_info.cc(118)] ReadProcessMemory bool __cdecl crashpad::(anonymous namespace)::ReadStruct(HANDLE, crashpad::WinVMAddress, T *) [T = crashpad::process_types::PEB<crashpad::process_types::internal::Traits64>]: Seule une partie d’une requête ReadProcessMemory ou WriteProcessMemory a été effectuée. (0x12B)
+[0827/224609.366:ERROR:process_info.cc(545)] ReadProcessData failed
+[0827/224609.366:ERROR:process_reader_win.cc(242)] ReadMemory at 0x7ffec06824e0 of 12 bytes failed: Seule une partie d’une requête ReadProcessMemory ou WriteProcessMemory a été effectuée. (0x12B)
+[0827/224609.366:WARNING:process_snapshot_win.cc(69)] ReadMemory ExceptionInformation failed
