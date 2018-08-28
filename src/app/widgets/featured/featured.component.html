@@ -35,7 +35,7 @@
             <span>&euro;</span>
           </p>
           <a class="btn btn-primary ecom-home-featured-add-cart" id="i" routerLink="/shop">
-            <span>Shop now !</span>
+            <span class="ecom-responsive">Shop now !</span>
             <span class="ecom-home-add-to-cart-icon">
               <i class="material-icons">shop</i>
             </span>
@@ -51,7 +51,7 @@
 
   <div class="row ecom-home-featured-row" *ngIf ="secRowStatus">
     <!-- .col-lg-3-->
-    <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6" *ngFor="let item of sliderSecRow; let j = index">
+    <div class="col-lg-3 col-md-4 col-sm-6 col-xs-6" *ngFor="let item of sliderSecRow; let j = index">
         <!-- .ecom-home-featured-card -->
         <div class="card ecom-home-featured-card">
           <figure>
@@ -69,8 +69,8 @@
               <span>{{item.price}}</span>
               <span>&euro;</span>
             </p>
-            <a class="btn btn-primary ecom-home-featured-add-cart" id="j">
-              <span>Shop now !</span>
+            <a class="btn btn-primary ecom-home-featured-add-cart" id="j" routerLink="/shop">
+              <span class="ecom-responsive">Shop now !</span>
               <span class="ecom-home-add-to-cart-icon">
                   <i class="material-icons">shop</i>
               </span>

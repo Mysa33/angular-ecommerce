@@ -50,11 +50,16 @@
         background-image: url('https://covervault.com/wp-content/uploads/2016/04/045-Book-Promo-Template-with-Phone-Ereader-Mockup-Prev2.jpg');
     }
     .ecom-slider-nav-wrapper{
+        margin:auto;
+        width:50%;
+        position:relative!important;
+        z-index:1000!important;
+        top:-60px;
         .ecom-slider-btn{
-            position:relative!important;
-            z-index:1000!important;
-            margin:auto;
-            top:-60px;
+            width:50%; 
+            margin-left:auto;
+            margin-right:auto;
+            text-align: center;
             .ecom-slider-btn-wrapper{
                 display: inline-block;
                 i{  

@@ -1,6 +1,5 @@
 @import "../variables.scss";
 .ecom-home-slider-container{
-    height:485px;
     background-color:$grey-bg;
     padding-left:0px!important;
     padding-right:0px!important;
@@ -23,5 +22,28 @@
     h4{
         margin-bottom:15px;
         color:$txt-sec-color;
+    }
+}
+/************
+Responsive
+************/
+@media (min-width:320px) and (max-width:991px){
+    .ecom-home-slider-container{
+        height:385px;
+    }
+}
+@media (min-width:992px) and (max-width:1199px){
+    .ecom-home-slider-container{
+        height:485px;
+    }
+}
+@media (min-width:1200px) and (max-width:1600px){
+    .ecom-home-slider-container{
+        height:485px;
+    }
+}
+@media (min-width:1601px){
+    .ecom-home-slider-container{
+        height:485px;
     }
 }

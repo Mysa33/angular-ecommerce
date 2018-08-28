@@ -11,11 +11,7 @@ Catalog row
             color:$txt-sec-color;
         }
     }
-    .ecom-featured-nav-wrapper{
-        position: relative;
-        right:-95px;
-        top:15px;
-        
+    .ecom-featured-nav-wrapper{   
         div{
             right:0px;
             display:inline-block;
@@ -96,7 +92,6 @@ Catalog row
                 color:$txt-first-color;
                 line-height:28.4px;
                 vertical-align: middle;
-            
             }
             .ecom-home-featured-add-cart:hover{
                 cursor: pointer;
@@ -107,9 +102,43 @@ Catalog row
                 font-size: 1rem;
                 color:$txt-first-color;
                 background-color: $main-bg-color;
-                border-color: $txt-sec-color!important;
-                
+                border-color: $txt-sec-color!important;   
             }
         }
+    }
+}
+/************
+Responsive
+************/
+@media (min-width:320px) and (max-width:991px){
+    .ecom-featured-nav-wrapper{
+        position: relative; 
+        left:0px;
+        top:-5px;  
+    }
+    .ecom-responsive{
+        display:none!important;
+    }
+}
+@media (min-width:992px) and (max-width:1199px){
+    .ecom-responsive{
+        display:inline-block;
+    }
+    .ecom-featured-nav-wrapper{
+        position: relative; 
+        right:-95px;
+        top:15px;
+    }
+}
+@media (min-width:1200px){
+    .ecom-responsive{
+        display:inline-block;
+        right:-95px;
+        top:15px;
+    }
+    .ecom-featured-nav-wrapper{
+        position: relative; 
+        right:-95px;
+        top:15px;
     }
 }

@@ -25,8 +25,8 @@ export class FeaturedComponent implements OnInit {
     this._featuredService.getBooks().subscribe(
       data => { 
         this.featured = data;
-        this.sliderSecRow = this.featured.slice(4);
-        this.sliderFirstRow = this.featured.splice(3,4);
+        this.sliderFirstRow = this.featured.slice(3);
+        this.sliderSecRow = this.featured.splice(2,4);
         this.firstRowStatus = !firstRowStatus;
         this.secRowStatus = secRowStatus;
       },
