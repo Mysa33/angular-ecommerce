@@ -21,5 +21,5 @@ describe('BreadcrumbComponent', () => {
 
   it('should create', () => {
     expect(component).toBeTruthy();
-  });
+  }); 
 });

@@ -46,8 +46,8 @@ export class ProductsComponent implements OnInit {
     const cartDataStatus = localStorage.getItem("cartCleared");//Todo : local storage service 
     if(cartDataStatus === "1"){
       this.booksCart = [];
-      localStorage.setItem("cartCleared", "0" );
-      this.booksCart.push(bookToCart);//Todo : local storage service 
+      localStorage.setItem("cartCleared", "0" );//Todo : local storage service 
+      this.booksCart.push(bookToCart);
     }else{
       this.booksCart = this.booksCart;
       this.booksCart.push(bookToCart);
@@ -75,4 +75,5 @@ export class ProductsComponent implements OnInit {
     this.bookModal = {};
     this.modalVisibility = false;
   }
+  
 }

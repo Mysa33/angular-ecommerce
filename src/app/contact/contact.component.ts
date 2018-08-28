@@ -8,12 +8,14 @@ import { Component, OnInit } from '@angular/core';
 
 export class ContactComponent implements OnInit {
   
-  widgetTeamId:number = 2;
-  page:string = "contact";
+  widgetTeamId:number;
+  page:string;
 
   constructor() { }
 
   ngOnInit() {
+    this.widgetTeamId = 2;
+    this.page = "Contact";
   }
 
   
