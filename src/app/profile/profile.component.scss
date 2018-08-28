@@ -37,3 +37,19 @@
     }
     
 }
+/**/
+@media (min-width:320px) and (max-width:767px){
+    .ecom-profil-responsive{
+        display:none;
+    }
+}
+@media (min-width:992px) and (max-width:1199px){
+    .ecom-profil-responsive{
+        display:initial;
+    }
+}
+@media (min-width:1200px) {
+    .ecom-profil-responsive{
+        display:initial;
+    }
+}

@@ -61,18 +61,18 @@
                 <tr>
                   <th scope="col">#</th>
                   <th scope="col">Titre</th>
-                  <th scope="col">Message</th>
+                  <th scope="col" class="ecom-profil-responsive">Message</th>
                   <th scope="col">Date</th>
-                  <th scope="col">Actions</th>
+                  <th scope="col" class="ecom-profil-responsive">Actions</th>
                   </tr>
               </thead>
               <tbody>
                 <tr *ngFor="let msg of profilsInfos; let i = index">
                   <th scope="row">{{i+1}}</th>
                   <td>{{msg.title}}</td>
-                  <td>{{msg.message}}</td>
+                  <td class="ecom-profil-responsive">{{msg.message}}</td>
                   <td>{{msg.date}}</td>
-                  <td>
+                  <td class="ecom-profil-responsive">
                     <i class="material-icons" style="color:#333;">edit</i>
                     <i class="material-icons" style="color:#333;">delete_forever</i> 
                   </td>
