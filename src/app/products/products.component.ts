@@ -70,7 +70,7 @@ export class ProductsComponent implements OnInit {
     }
     this.modalVisibility = true;
   }
-
+  
   closeModal():void{
     this.bookModal = {};
     this.modalVisibility = false;

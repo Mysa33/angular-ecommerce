@@ -9,9 +9,9 @@
         font-size:1.2em;
     }
     .ecom-posts-nav-wrapper{
-        position: relative;
+        /*position: relative;
         right:-268px;
-        top:0px;
+        top:0px;*/
         
         div{
             right:0px;
@@ -58,5 +58,29 @@
         margin-top:15px;
         font-family: $main-font;
         color:$sec-color;
+    }
+}
+/************
+Responsive
+************/
+@media (min-width:320px) and (max-width:991px){
+    .ecom-posts-nav-wrapper{
+        position: relative;
+        left:0px;
+        top:0px;
+    }
+}
+@media (min-width:992px) and (max-width:1199px){
+    .ecom-posts-nav-wrapper{
+        position: relative;
+        right:-238px;
+        top:0px;
+    }
+}
+@media (min-width:1200px){
+    .ecom-posts-nav-wrapper{
+        position: relative;
+        right:-268px;
+        top:0px;
     }
 }
