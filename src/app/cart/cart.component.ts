@@ -23,7 +23,7 @@ export class CartComponent extends CartCommon{
     this._dataShareService.shareDataSubject.subscribe(receivedData=>{
       this.cartProdArray = receivedData;
       this.cartLength =  this.cartProdArray.length;
-      this.doCartTotal ();
+      this.doCartTotal();
       return this.data = {
         "products" : receivedData,
         "totalCart" : this.cartTotal
