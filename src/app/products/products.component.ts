@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import {ApiService} from '../shared/services/api.service';
 import { DataShareService } from '../shared/services/data-share.service';
 import { LocalStorageService } from '../shared/services/local-storage.service';
+import { DataToCart } from '../shared/data-to-cart';
 import { Modal } from '../shared/modal';
 
 @Component({
@@ -45,13 +46,7 @@ export class ProductsComponent implements OnInit {
   }
 
   addToCart(i):void{
-    const bookToCart = {
-       "isbn" : this.books[i].isbn,
-       "title": this.books[i].title,
-       "price": this.books[i].price,
-       "cover": this.books[i].cover
-    };
-    
+    const bookToCart = new DataToCart().setData(this.books,i);
     const cartDataStatus = this._localstorageService.getLocalstorage(this.books,this.localData);
     if(cartDataStatus === "1"){
       this.booksCart = [];
