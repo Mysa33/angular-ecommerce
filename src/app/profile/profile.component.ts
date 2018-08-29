@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 import { LocalStorageService } from '../shared/services/local-storage.service';
+import { Json } from '../shared/json';
 
 @Component({
   selector: 'app-profile',

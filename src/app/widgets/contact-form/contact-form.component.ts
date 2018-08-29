@@ -21,12 +21,12 @@ export class ContactFormComponent implements OnInit {
   }
 
   contactForm = new FormGroup({
-    inputEmail: new FormControl('',[Validators.required, Validators.minLength(3),Validators.maxLength(10)]),
+    inputEmail: new FormControl('',[Validators.required, Validators.minLength(3),Validators.maxLength(20)]),
     inputName: new FormControl('',[Validators.required, Validators.minLength(3),Validators.maxLength(10)]),
-    inputAddress: new FormControl('',[Validators.required,Validators.minLength(3),Validators.maxLength(20)]),
-    inputAddress2: new FormControl('',[Validators.minLength(3), Validators.maxLength(20)]),
+    inputAddress: new FormControl('',[Validators.required,Validators.minLength(3),Validators.maxLength(50)]),
+    inputAddress2: new FormControl(''),
     inputCity: new FormControl('',[Validators.required,Validators.minLength(3),Validators.maxLength(10)]),
-    inputZip: new FormControl('',[Validators.required,Validators.minLength(5),Validators.maxLength(5)]),
+    inputZip: new FormControl('',[Validators.required,Validators.minLength(5),Validators.maxLength(8)]),
     inputTitle : new FormControl('',[Validators.required,Validators.minLength(4),Validators.maxLength(15)]),
     inputTxt: new FormControl('',[Validators.required, Validators.minLength(20), Validators.maxLength(250)])
   });
@@ -49,10 +49,11 @@ export class ContactFormComponent implements OnInit {
       };
       this.storedData.push(this.contactFormArray);
       this._profilService.setLocalstorage(this.storedData,this.arrayName);
+      this.contactForm.reset();
     }   
   }
 
-  getContactData(storedData,arrayName):any{
+  getContactData(storedData,arrayName):any{ //Config Messages data
     this.storedData= storedData;
     this.arrayName = arrayName;
     this.storedData = this._profilService.getLocalstorage(this.storedData,this.arrayName);
