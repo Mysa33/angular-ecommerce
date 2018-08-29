@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 
 import { LocalStorageService } from '../../shared/services/local-storage.service';
+import { Json } from '../../shared/json';
 
 @Component({
   selector: 'app-newsletter',
@@ -35,6 +36,7 @@ export class NewsletterComponent implements OnInit {
         "flag" : flag
       };
       this._newsletterService.setLocalstorage(this.newsletterFormArray,this.newsletterArray);
+      this.newsletterForm.reset();
       return this.newsletterFormArray = {};
     }
     

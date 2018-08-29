@@ -3,7 +3,6 @@ import { Component, OnInit } from '@angular/core';
 import {ApiService} from '../shared/services/api.service';
 import { DataShareService } from '../shared/services/data-share.service';
 
-
 @Component({
   selector: 'app-products',
   templateUrl: './products.component.html',
@@ -11,13 +10,13 @@ import { DataShareService } from '../shared/services/data-share.service';
 })
 export class ProductsComponent implements OnInit {
   
-  page:string = "shop";
+  page:string;
   books;
-  booksCart  = [];
-  booksCartLength :number = 0;
+  booksCart:any[];
+  booksCartLength:number;
   modalVisibility;
-  bookModalObj = [];
-  bookModal = {};
+  bookModalObj:any[];
+  bookModal;
   
   constructor(
     private _bookService:ApiService, 
@@ -25,6 +24,10 @@ export class ProductsComponent implements OnInit {
   ) {}
 
   ngOnInit() {
+    this.page  = "shop";
+    this.booksCartLength = 0
+    this.bookModal = {};
+    this.booksCart = [];
     this.getProductsData();
   }
 
@@ -46,8 +49,8 @@ export class ProductsComponent implements OnInit {
     const cartDataStatus = localStorage.getItem("cartCleared");//Todo : local storage service 
     if(cartDataStatus === "1"){
       this.booksCart = [];
-      localStorage.setItem("cartCleared", "0" );
-      this.booksCart.push(bookToCart);//Todo : local storage service 
+      localStorage.setItem("cartCleared", "0" );//Todo : local storage service 
+      this.booksCart.push(bookToCart);
     }else{
       this.booksCart = this.booksCart;
       this.booksCart.push(bookToCart);
@@ -75,4 +78,5 @@ export class ProductsComponent implements OnInit {
     this.bookModal = {};
     this.modalVisibility = false;
   }
+  
 }

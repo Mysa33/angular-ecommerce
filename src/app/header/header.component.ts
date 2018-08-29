@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 
 import { DataShareService } from '../shared/services/data-share.service';
+import { Toggle } from '../shared/toggle';
 
 @Component({
   selector: 'app-header',
@@ -15,6 +16,7 @@ export class HeaderComponent {
   isVisible:boolean = false;
   mobileNavVis:boolean = false;
   
+  
   constructor( private _dataShareService: DataShareService) { 
     this._dataShareService.shareDataSubject.subscribe(receiveddata=>{
       this.cartData = receiveddata;
@@ -23,24 +25,22 @@ export class HeaderComponent {
   }
 
   //mobileNavToggle()
-  mobileNavToggle(){
-    if(!this.mobileNavVis){
-      this.mobileNavVis = true;
-    }else{
-      this.mobileNavVis = false;
-    }
+  mobileNavToggle():boolean{
+    let widgetStatus:boolean = new Toggle(this.mobileNavVis).simpleToggle(this.mobileNavVis);
+    return this.mobileNavVis = widgetStatus;
   }
   //cartToggle()
   cartToggle():void{
     this.catLength = this.cartData.length;
     if(this.catLength !== 0){
-      this.isVisible = !this.isVisible;
+      let widgetStatus:boolean = new Toggle(this.isVisible).simpleToggle(this.isVisible);
+      this.isVisible = widgetStatus;
     }else{
       this.isVisible = this.isVisible;
     }
   }
-  //cartStatus()
-  cartStatus(status) {
+  //cartStatus() 
+  cartStatus(status) { //Event from Cart component (child) emitted by clearCart()
     if(status == false){
       return;
     }else{
