@@ -52,7 +52,6 @@ export class CommentsComponent implements OnInit {
   }
   setWidgetColor(defaultCommentsWidgetId):any{
     this.defaultCommentsWidgetId = defaultCommentsWidgetId;
-    this.defaultCommentsWidgetId = defaultCommentsWidgetId;
     switch (this.defaultCommentsWidgetId) {
       case 0:
         return '#FFF';//default
@@ -66,7 +65,6 @@ export class CommentsComponent implements OnInit {
     }
   }
   setWidgetTitleColor(defaultCommentsWidgetId):any{
-    this.defaultCommentsWidgetId = defaultCommentsWidgetId;
     this.defaultCommentsWidgetId = defaultCommentsWidgetId;
     switch (this.defaultCommentsWidgetId) {
       case 0:

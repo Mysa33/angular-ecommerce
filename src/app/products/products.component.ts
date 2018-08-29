@@ -47,15 +47,16 @@ export class ProductsComponent implements OnInit {
 
   addToCart(i):void{
     const bookToCart = new DataToCart().setData(this.books,i);
-    const cartDataStatus = this._localstorageService.getLocalstorage(this.books,this.localData);
-    if(cartDataStatus === "1"){
+    let cartDataStatus = this._localstorageService.getLocalstorage(this.books,this.localData);
+    if(cartDataStatus === 1){
       this.booksCart = [];
-      localStorage.setItem("cartCleared", "0" );//Todo : local storage service 
+      localStorage.setItem(this.localData,"0");//Todo : local storage service 
       this.booksCart.push(bookToCart);
     }else{
       this.booksCart = this.booksCart;
       this.booksCart.push(bookToCart);
     }
+    console.log("this.booksCart apres : ",this.booksCart);
     this.passData(this.booksCart);
   }
 

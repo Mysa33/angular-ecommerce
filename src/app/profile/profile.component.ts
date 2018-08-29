@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 import { LocalStorageService } from '../shared/services/local-storage.service';
-
+import { Customer } from '../shared/customer';
 
 @Component({
   selector: 'app-profile',
@@ -54,21 +54,11 @@ export class ProfileComponent implements OnInit {
     }else{ 
       this.setCommonInfos(this.data);
       this.profilsInfos = [];
-      let userData:any =[];
-      for(let _i in this.data){//Todo à vérifier
-        userData = {
-          "email":this.data[_i].data.inputEmail,
-          "date":this.data[_i].postDate,
-          "name":this.data[_i].data.inputName,
-          "address":this.data[_i].data.inputAddress,
-          "address2":this.data[_i].data.inputAddress2,
-          "city":this.data[_i].data.inputCity,
-          "zip":this.data[_i].data.inputZip,
-          "title":this.data[_i].data.inputTitle,
-          "message":this.data[_i].data.inputTxt
-        };
+      let userData:any;
+      this.data.map((value, index) => {
+        userData = new Customer().setCustomer(this.data,index);
         this.profilsInfos.push(userData);
-      }
+      });
       this.profilStatus = true;
     }
     return this.profilStatus;
