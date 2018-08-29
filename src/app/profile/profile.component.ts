@@ -54,7 +54,7 @@ export class ProfileComponent implements OnInit {
       this.setCommonInfos(this.data);
       this.profilsInfos = [];
       let userData:any =[];
-      for(let _i in this.data){
+      for(let _i in this.data){//Todo à vérifier
         userData = {
           "email":this.data[_i].data.inputEmail,
           "date":this.data[_i].postDate,
