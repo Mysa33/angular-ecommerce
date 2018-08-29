@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 
 import {ApiService} from '../shared/services/api.service';
 import { DataShareService } from '../shared/services/data-share.service';
+import { LocalStorageService } from '../shared/services/local-storage.service';
+import { Modal } from '../shared/modal';
 
 @Component({
   selector: 'app-products',
@@ -17,14 +19,17 @@ export class ProductsComponent implements OnInit {
   modalVisibility;
   bookModalObj:any[];
   bookModal;
+  localData:string;
   
   constructor(
     private _bookService:ApiService, 
-    private _dataShareService:DataShareService
+    private _dataShareService:DataShareService,
+    private _localstorageService:LocalStorageService,
   ) {}
 
   ngOnInit() {
     this.page  = "shop";
+    this.localData = "cartCleared";
     this.booksCartLength = 0
     this.bookModal = {};
     this.booksCart = [];
@@ -46,7 +51,8 @@ export class ProductsComponent implements OnInit {
        "price": this.books[i].price,
        "cover": this.books[i].cover
     };
-    const cartDataStatus = localStorage.getItem("cartCleared");//Todo : local storage service 
+    
+    const cartDataStatus = this._localstorageService.getLocalstorage(this.books,this.localData);
     if(cartDataStatus === "1"){
       this.booksCart = [];
       localStorage.setItem("cartCleared", "0" );//Todo : local storage service 
@@ -64,13 +70,8 @@ export class ProductsComponent implements OnInit {
   }
 
   openModal(i):void{
-    this.bookModal = {
-      "isbn" : this.books[i].isbn,
-       "title": this.books[i].title,
-       "price": this.books[i].price,
-       "cover": this.books[i].cover,
-       "synopsis":this.books[i].synopsis[0]
-    }
+    let array = new Modal().setBookModal(this.books,i);
+    this.bookModal = array;
     this.modalVisibility = true;
   }
   
