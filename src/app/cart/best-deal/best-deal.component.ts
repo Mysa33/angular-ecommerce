@@ -1,7 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 
 import { ApiService } from '../../shared/services/api.service';
-import { BestdealCommon } from  '../../shared/bestDealCommon';
+import { BestdealCommon } from  '../../shared/class/bestDealCommon';
 
 @Component({
   selector: 'app-best-deal',

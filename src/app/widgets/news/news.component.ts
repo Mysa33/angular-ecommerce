@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 import {ApiService} from '../../shared/services/api.service';
-import { Slide } from '../../shared/slide';
+import { Slide } from '../../shared/class/slide';
 
 @Component({
   selector: 'app-news',

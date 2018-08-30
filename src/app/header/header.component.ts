@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 
 import { DataShareService } from '../shared/services/data-share.service';
-import { Toggle } from '../shared/toggle';
+import { Toggle } from '../shared/class/toggle';
 
 @Component({
   selector: 'app-header',

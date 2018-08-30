@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 
 import { LocalStorageService } from '../../shared/services/local-storage.service';
-import { Json } from '../../shared/json';
+import { Json } from '../../shared/class/json';
 
 @Component({
   selector: 'app-newsletter',

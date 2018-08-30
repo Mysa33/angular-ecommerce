@@ -1,10 +1,10 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule, CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA } from '@angular/core';
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { HttpModule } from '@angular/http';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { RouterModule, Routes } from '@angular/router';
-import { FormControl, Validators, ReactiveFormsModule, FormGroup, FormsModule } from '@angular/forms';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
@@ -85,21 +85,20 @@ const routes: Routes  = [
     BrowserModule,
     HttpModule,
     HttpClientModule,
-    HttpClient,
     FormsModule,
     AppRoutingModule,
     RouterModule.forRoot(routes),
     ReactiveFormsModule,
-    FormGroup,
-    FormControl, 
-    Validators, 
     ReactiveFormsModule
   ],
   schemas: [
-    CUSTOM_ELEMENTS_SCHEMA,
-    NO_ERRORS_SCHEMA
+    CUSTOM_ELEMENTS_SCHEMA
   ],
-  providers: [ApiService,DataShareService,LocalStorageService],
+  providers: [
+    ApiService,
+    DataShareService,
+    LocalStorageService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -3,8 +3,8 @@ import { Component, OnInit } from '@angular/core';
 import {ApiService} from '../shared/services/api.service';
 import { DataShareService } from '../shared/services/data-share.service';
 import { LocalStorageService } from '../shared/services/local-storage.service';
-import { DataToCart } from '../shared/data-to-cart';
-import { Modal } from '../shared/modal';
+import { DataToCart } from '../shared/class/data-to-cart';
+import { Modal } from '../shared/class/modal';
 
 @Component({
   selector: 'app-products',

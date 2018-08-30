@@ -35,6 +35,7 @@ export class CommentsComponent implements OnInit {
       () => console.log('done loading users')
     );
   }
+
   setUsers(users):any{
     this.users = users;
     this.commentsArray = [];
@@ -50,6 +51,7 @@ export class CommentsComponent implements OnInit {
     });
     return this.commentsArray;
   }
+
   setWidgetColor(defaultCommentsWidgetId):any{
     this.defaultCommentsWidgetId = defaultCommentsWidgetId;
     switch (this.defaultCommentsWidgetId) {
@@ -64,6 +66,7 @@ export class CommentsComponent implements OnInit {
         break;
     }
   }
+
   setWidgetTitleColor(defaultCommentsWidgetId):any{
     this.defaultCommentsWidgetId = defaultCommentsWidgetId;
     switch (this.defaultCommentsWidgetId) {
@@ -78,4 +81,5 @@ export class CommentsComponent implements OnInit {
         break;
     }
   }
+  
 }

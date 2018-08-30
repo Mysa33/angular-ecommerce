@@ -2,7 +2,7 @@ import { Component, EventEmitter , Output  } from '@angular/core';
 
 import { DataShareService } from '../shared/services/data-share.service';
 import { LocalStorageService } from '../shared/services/local-storage.service';
-import { CartCommon } from '../shared/CartCommon';
+import { CartCommon } from '../shared/class/CartCommon';
 
 
 @Component({
