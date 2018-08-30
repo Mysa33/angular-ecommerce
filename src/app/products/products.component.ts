@@ -29,7 +29,7 @@ export class ProductsComponent implements OnInit {
   ) {}
 
   ngOnInit() {
-    this.page  = "shop";
+    this.page  = "Shop";
     this.localData = "cartCleared";
     this.booksCartLength = 0
     this.bookModal = {};
@@ -56,7 +56,6 @@ export class ProductsComponent implements OnInit {
       this.booksCart = this.booksCart;
       this.booksCart.push(bookToCart);
     }
-    console.log("this.booksCart apres : ",this.booksCart);
     this.passData(this.booksCart);
   }
 

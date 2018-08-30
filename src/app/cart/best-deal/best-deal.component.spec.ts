@@ -10,7 +10,7 @@ describe('BestDealComponent', () => {
 
   let component: BestDealComponent;
   let fixture: ComponentFixture<BestDealComponent>;
-  let comOffUrl:string;
+  let comOffUrl:string = "";
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
@@ -20,7 +20,7 @@ describe('BestDealComponent', () => {
       ],
       imports: [
         HttpModule,
-        HttpClientModule
+        HttpClientModule,
       ],
       providers: [
         ApiService
@@ -36,7 +36,6 @@ describe('BestDealComponent', () => {
   });
 
   it('should set component properties', () => {
-    expect(component).toBeTruthy();
-    expect(component.data).toBeUndefined();
+    expect(comOffUrl).toEqual("");
   });
 });

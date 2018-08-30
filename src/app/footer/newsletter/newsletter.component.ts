@@ -20,6 +20,7 @@ export class NewsletterComponent implements OnInit {
   newsletterForm = new FormGroup({
     inputNewsletter: new FormControl('',[Validators.required])
   });
+  
   onSubmit(newsletterFormArray):any { 
     if(this.newsletterForm.value.length === 0){
       alert("le champs est vide.");

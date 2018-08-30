@@ -1,4 +1,5 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import {  CUSTOM_ELEMENTS_SCHEMA  } from '@angular/core';
 
 import { ModalComponent } from './modal.component';
 
@@ -8,7 +9,10 @@ describe('ModalComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ModalComponent ]
+      declarations: [ ModalComponent ],
+      schemas: [
+        CUSTOM_ELEMENTS_SCHEMA
+      ]
     })
     .compileComponents();
   }));
@@ -20,6 +24,6 @@ describe('ModalComponent', () => {
   });
 
   it('should create', () => {
-    expect(component).toBeTruthy();
+    expect(component.modalSocialId).toBeGreaterThan(1);
   });
 });

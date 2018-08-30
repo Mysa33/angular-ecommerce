@@ -1,5 +1,8 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { HttpModule } from '@angular/http';
+import { HttpClientModule } from '@angular/common/http';
 
+import {ApiService} from '../../shared/services/api.service';
 import { PostsComponent } from './posts.component';
 
 describe('PostsComponent', () => {
@@ -8,7 +11,14 @@ describe('PostsComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ PostsComponent ]
+      declarations: [ PostsComponent ],
+      imports: [
+        HttpModule,
+        HttpClientModule
+      ],
+      providers: [
+        ApiService
+      ]
     })
     .compileComponents();
   }));

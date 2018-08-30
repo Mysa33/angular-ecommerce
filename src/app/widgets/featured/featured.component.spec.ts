@@ -1,5 +1,8 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { HttpModule } from '@angular/http';
+import { HttpClientModule } from '@angular/common/http';
 
+import {ApiService} from '../../shared/services/api.service';
 import { FeaturedComponent } from './featured.component';
 
 describe('FeaturedComponent', () => {
@@ -8,7 +11,14 @@ describe('FeaturedComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ FeaturedComponent ]
+      declarations: [ FeaturedComponent ],
+      imports: [
+        HttpModule,
+        HttpClientModule
+      ],
+        providers: [
+        ApiService
+      ]
     })
     .compileComponents();
   }));

@@ -1,5 +1,8 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { async, ComponentFixture, TestBed, inject } from '@angular/core/testing';
+import { HttpModule } from '@angular/http';
+import { HttpClientModule } from '@angular/common/http';
 
+import {ApiService} from '../../shared/services/api.service';
 import { CarrousselComponent } from './carroussel.component';
 
 describe('CarrousselComponent', () => {
@@ -8,7 +11,14 @@ describe('CarrousselComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ CarrousselComponent ]
+      declarations: [ CarrousselComponent ],
+      imports: [
+        HttpModule,
+        HttpClientModule
+      ],
+      providers: [
+        ApiService
+      ]
     })
     .compileComponents();
   }));

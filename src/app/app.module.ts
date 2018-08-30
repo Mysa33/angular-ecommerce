@@ -2,10 +2,9 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA } from '@angular/core';
 import { HttpModule } from '@angular/http';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
-import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { RouterModule, Routes } from '@angular/router';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormControl, Validators, ReactiveFormsModule, FormGroup, FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
@@ -90,6 +89,10 @@ const routes: Routes  = [
     FormsModule,
     AppRoutingModule,
     RouterModule.forRoot(routes),
+    ReactiveFormsModule,
+    FormGroup,
+    FormControl, 
+    Validators, 
     ReactiveFormsModule
   ],
   schemas: [

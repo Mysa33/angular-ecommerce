@@ -1,5 +1,10 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { HttpModule } from '@angular/http';
+import { HttpClientModule } from '@angular/common/http';
 
+import {ApiService} from '../../shared/services/api.service';
+import { DataShareService } from '../../shared/services/data-share.service';
+import { LocalStorageService } from '../../shared/services/local-storage.service';
 import { CommentsComponent } from './comments.component';
 
 describe('CommentsComponent', () => {
@@ -8,7 +13,16 @@ describe('CommentsComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ CommentsComponent ]
+      declarations: [ CommentsComponent ],
+      imports: [
+        HttpModule,
+        HttpClientModule
+      ],
+        providers: [
+        DataShareService,
+        LocalStorageService,
+        ApiService
+      ]
     })
     .compileComponents();
   }));

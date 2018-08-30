@@ -1,5 +1,10 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import {  CUSTOM_ELEMENTS_SCHEMA  } from '@angular/core';
+import { HttpModule } from '@angular/http';
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
 
+import {ApiService} from '../../shared/services/api.service';
 import { NewsComponent } from './news.component';
 
 describe('NewsComponent', () => {
@@ -8,7 +13,18 @@ describe('NewsComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ NewsComponent ]
+      declarations: [ NewsComponent ],
+      schemas: [
+        CUSTOM_ELEMENTS_SCHEMA
+      ],
+      imports: [
+        HttpModule,
+        HttpClientModule,
+        FormsModule
+      ],
+        providers: [
+        ApiService
+      ]
     })
     .compileComponents();
   }));

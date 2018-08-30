@@ -9,9 +9,11 @@ import { Component, OnInit, Input } from '@angular/core';
 export class ModalComponent implements OnInit {
   
   @Input () bookModalObjChild;
-  data:any;
+  data:any = [];
   public modalSocialId:number;
-  constructor() {}
+  
+  constructor() {
+  }
 
   ngOnInit() {
     this.data = this.bookModalObjChild;

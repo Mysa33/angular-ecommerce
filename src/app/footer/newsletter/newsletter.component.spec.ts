@@ -1,6 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-import { FormGroup, FormControl, Validators, ReactiveFormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
 
+import { LocalStorageService } from '../../shared/services/local-storage.service';
 import { NewsletterComponent } from './newsletter.component';
 
 describe('NewsletterComponent', () => {
@@ -11,10 +12,10 @@ describe('NewsletterComponent', () => {
     TestBed.configureTestingModule({
       declarations: [ NewsletterComponent ],
       imports: [
-        FormGroup,
-        FormControl,
-        Validators,
         ReactiveFormsModule
+      ],
+      providers: [
+        LocalStorageService
       ]
     })
     .compileComponents();
@@ -27,6 +28,6 @@ describe('NewsletterComponent', () => {
   });
 
   it('should create', () => {
-    expect(component).toBeFalsy();
+    expect(component.newsletterArray).toBe("newsletterFormArray");
   });
 });
