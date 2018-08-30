@@ -1,6 +1,9 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import {  CUSTOM_ELEMENTS_SCHEMA  } from '@angular/core';
+import { HttpModule } from '@angular/http';
+import { HttpClientModule } from '@angular/common/http';
 
+import { DataShareService } from '../shared/services/data-share.service';
 import { HeaderComponent } from './header.component';
 
 describe('HeaderComponent', () => {
@@ -12,6 +15,13 @@ describe('HeaderComponent', () => {
       declarations: [ HeaderComponent ],
       schemas: [
         CUSTOM_ELEMENTS_SCHEMA
+      ],
+      imports: [
+        HttpModule,
+        HttpClientModule
+      ],
+      providers: [
+        DataShareService
       ]
     })
     .compileComponents();

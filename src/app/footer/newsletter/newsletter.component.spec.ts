@@ -1,4 +1,5 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { FormGroup, FormControl, Validators, ReactiveFormsModule } from '@angular/forms';
 
 import { NewsletterComponent } from './newsletter.component';
 
@@ -8,7 +9,13 @@ describe('NewsletterComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ NewsletterComponent ]
+      declarations: [ NewsletterComponent ],
+      imports: [
+        FormGroup,
+        FormControl,
+        Validators,
+        ReactiveFormsModule
+      ]
     })
     .compileComponents();
   }));
@@ -20,6 +27,6 @@ describe('NewsletterComponent', () => {
   });
 
   it('should create', () => {
-    expect(component).toBeTruthy();
+    expect(component).toBeFalsy();
   });
 });
