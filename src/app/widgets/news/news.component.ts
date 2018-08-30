@@ -7,13 +7,19 @@ import {ApiService} from '../../shared/services/api.service';
   styleUrls: ['./news.component.scss']
 })
 export class NewsComponent implements OnInit {
-  widgetStatus:boolean = false;
-  dataUrl:string = "http://localhost:4200/assets/data/newsData.json";
+  widgetStatus:boolean;
+  dataUrl:string;
   newsData;
   newsArray;
+  firstRowStatus:boolean;
+  secRowStatus:boolean;
   constructor(private _newsService:ApiService) { }
 
   ngOnInit() {
+    this.widgetStatus = false;
+    this.dataUrl = "http://localhost:4200/assets/data/newsData.json";
+    this.firstRowStatus = true;
+    this.secRowStatus = false;
     this.getPostsData(this.widgetStatus);
   }
   getPostsData(widgetStatus){
