@@ -27,32 +27,51 @@
             }
         }
     }
-    figure{
-        margin-top:10px;
-        height:198px;
-        overflow: hidden;
-        img{
-            width:100%;
-            height:auto;
+    .ecom-news-item-wrapper{
+        box-shadow:0px 0px 0.5px 1px rgba(41, 41 , 41, .2);
+        border-radius:4px;
+        text-align: justify;
+        figure{
+            margin-top:10px;
+            height:198px;
+            overflow: hidden;
+            border-radius:4px;
+            img{
+                width:100%;
+                height:auto;
+            }
+        }
+        span{
+            padding-left:10px;
+            padding-right:10px;
+            padding-bottom:10px;
+            font-family: $main-font;
+        }
+        .ecom-news-title{
+            padding-left:10px;
+            padding-right:10px;
+            padding-bottom:10px;
+            font-family: $main-font;
+            font-size:1.1em;
+            color:$txt-sec-color;
+            font-weight: 600;
+        }
+        .ecom-news-date{
+            padding-left:10px;
+            padding-right:10px;
+            padding-bottom:10px;
+            font-size:0.8em;
+            font-family: $main-font;
+            color:$sec-color;
+        }
+        p{  
+            padding-left:10px;
+            padding-right:10px;
+            padding-bottom:10px;
+            margin-top:15px;
+            font-family: $main-font;
+            color:$sec-color;
         }
     }
-    span{
-        font-family: $main-font;
-    }
-    .ecom-news-title{
-        font-family: $main-font;
-        font-size:1.1em;
-        color:$txt-sec-color;
-        font-weight: 600;
-    }
-    .ecom-news-date{
-        font-size:0.8em;
-        font-family: $main-font;
-        color:$sec-color;
-    }
-    p{
-        margin-top:15px;
-        font-family: $main-font;
-        color:$sec-color;
-    }
+    
 }

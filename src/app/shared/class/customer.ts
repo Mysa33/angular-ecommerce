@@ -1,4 +1,5 @@
 export class Customer {
+    
     public data:any;
     public _i:number;
 

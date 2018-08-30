@@ -1,6 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 
 import {ApiService} from '../../shared/services/api.service';
+import { TeamMember } from '../../shared/class/team-member';
 
 @Component({
   selector: 'app-team',
@@ -12,7 +13,7 @@ export class TeamComponent implements OnInit {
   
   @Input() emittedPrantId;
   team;
-  teamArray = [];
+  teamArray:any[] = [];
   allTeam;
   widgetSatus:boolean = false;
   widgetParent:number = 0;
@@ -20,7 +21,7 @@ export class TeamComponent implements OnInit {
 
   constructor(private _teamService: ApiService) {
     
-   }
+  }
 
   ngOnInit() {
     this.getTeam(this.team);
@@ -44,12 +45,13 @@ export class TeamComponent implements OnInit {
   setTeam(widgetSatus):boolean{
     this.widgetSatus = widgetSatus;
     this.team.map((val, index, data)=>{
-      let teamMember = {
+      /*let teamMember = {
         "name" : data[index].name,
         "img" : data[index].picture.large,
         "phone" :data[index].phone,
         "email" : data[index].email
-      };
+      };*/
+      let teamMember = new TeamMember().setMember(data,index);
       this.teamArray.push(teamMember);
     });
     return this.widgetSatus = true;
@@ -79,7 +81,4 @@ export class TeamComponent implements OnInit {
     }
     return this.emailStatus;
   }
-  
-  
-
 }
