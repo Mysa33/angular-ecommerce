@@ -16,6 +16,7 @@ export class NewsComponent implements OnInit {
   secRowData;
   firstRowStatus:boolean;
   secRowStatus:boolean;
+  flag:number;
 
   constructor(private _newsService:ApiService) { }
 
@@ -24,6 +25,7 @@ export class NewsComponent implements OnInit {
     this.dataUrl = "http://localhost:4200/assets/data/newsData.json";
     this.firstRowStatus = true;
     this.secRowStatus = false;
+    this.flag = 3;
     this.getPostsData(this.widgetStatus);
   }
 
@@ -32,8 +34,8 @@ export class NewsComponent implements OnInit {
     this._newsService.getData(this.dataUrl).subscribe(
       data => { 
         this.newsData = data;
-        this.firstRowData = new Slide().setFirstRow(this.newsData,this.firstRowData);
-        this.secRowData = new Slide().setSecondRow(this.newsData,this.secRowData);
+        this.firstRowData = new Slide().setFirstRow(this.newsData,this.firstRowData,this.flag);
+        this.secRowData = new Slide().setSecondRow(this.newsData,this.secRowData,this.flag);
         this.resolveAfterdelay(this.widgetStatus,this.newsData);
       },
       err => console.error(err),
