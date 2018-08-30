@@ -1,15 +1,15 @@
 <div class="ecom-news-wrapper" *ngIf="widgetStatus">
   <div class="ecom-news-nav-wrapper">
-    <div (click)="setNewsStatus(firstRowStatus,secRowStatus);">
+    <div (click)="setRowStatus(firstRowStatus,secRowStatus);">
       <i class="material-icons">keyboard_arrow_left</i>
     </div>
-    <div (click)="setNewsStatus(firstRowStatus,secRowStatus);">
+    <div (click)="setRowStatus(firstRowStatus,secRowStatus);">
       <i class="material-icons">keyboard_arrow_right</i>
     </div>
   </div>
   <!-- .row -->
   <div class="row" *ngIf="firstRowStatus">
-    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4" *ngFor="let item of newsData;let i = index">
+    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4" *ngFor="let item of firstRowData;let i = index">
       <div class="ecom-news-item-wrapper">
         <div>      
           <figure>
@@ -33,7 +33,7 @@
   <!-- /.row -->
   <!-- .row -->
   <div class="row" *ngIf="secRowStatus">
-    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4" *ngFor="let item of newsData;let i = index">
+    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4" *ngFor="let item of secRowData;let i = index">
       <div class="ecom-news-item-wrapper">
         <div>      
           <figure>
