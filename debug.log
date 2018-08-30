@@ -75,3 +75,6 @@
 [0827/224609.366:ERROR:process_info.cc(545)] ReadProcessData failed
 [0827/224609.366:ERROR:process_reader_win.cc(242)] ReadMemory at 0x7ffec06824e0 of 12 bytes failed: Seule une partie d’une requête ReadProcessMemory ou WriteProcessMemory a été effectuée. (0x12B)
 [0827/224609.366:WARNING:process_snapshot_win.cc(69)] ReadMemory ExceptionInformation failed
+[0830/010508.372:ERROR:process_reader_win.cc(242)] ReadMemory at 0x7da709b0d0 of 512 bytes failed: Seule une partie d’une requête ReadProcessMemory ou WriteProcessMemory a été effectuée. (0x12B)
+[0830/010508.410:ERROR:crash_report_exception_handler.cc(111)] WriteEverything failed
+[0830/010508.411:ERROR:filesystem_win.cc(148)] DeleteFile C:\Users\Samy\AppData\Local\Temp\karma-10360820\Crashpad\reports\94269614-15d5-4064-9b06-be9355d841c0.dmp: Le processus ne peut pas accéder au fichier car ce fichier est utilisé par un autre processus. (0x20)

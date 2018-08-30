@@ -1,4 +1,5 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import {  CUSTOM_ELEMENTS_SCHEMA  } from '@angular/core';
 
 import { BestDealComponent } from './best-deal.component';
 
@@ -8,7 +9,10 @@ describe('BestDealComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ BestDealComponent ]
+      declarations: [ BestDealComponent ],
+      schemas: [
+        CUSTOM_ELEMENTS_SCHEMA
+      ]
     })
     .compileComponents();
   }));
