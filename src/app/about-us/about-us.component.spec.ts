@@ -26,4 +26,10 @@ describe('AboutUsComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('should have title', () => {
+
+    expect(component.page).toEqual("about");
+
+  });
 });

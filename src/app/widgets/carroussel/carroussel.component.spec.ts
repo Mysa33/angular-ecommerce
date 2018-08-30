@@ -32,4 +32,10 @@ describe('CarrousselComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('data should not be', () => {
+
+    expect(component.getProductsData()).not.toBeNull();
+   
+  });
 });

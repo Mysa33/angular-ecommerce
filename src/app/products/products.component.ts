@@ -29,7 +29,7 @@ export class ProductsComponent implements OnInit {
   ) {}
 
   ngOnInit() {
-    this.page  = "Shop";
+    this.page  = "shop";
     this.localData = "cartCleared";
     this.booksCartLength = 0
     this.bookModal = {};

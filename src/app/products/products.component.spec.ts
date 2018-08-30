@@ -50,15 +50,15 @@ describe('ProductsComponent', () => {
 
   });
 
-  it('should have page title', () => {
+  it('should have title', () => {
 
-    expect(component.page).toEqual("Shop");
+    expect(component.page).toEqual("shop");
 
   });
 
   it('should have default value', () => {
 
-    expect(component.page).toEqual("Shop");
+    expect(component.page).toEqual("shop");
     expect(component.localData).toEqual("cartCleared");
     expect(component.booksCartLength).toEqual(0);
     expect(component.bookModal).toEqual({});
@@ -69,8 +69,6 @@ describe('ProductsComponent', () => {
   it('data should not be', () => {
 
     expect(component.getProductsData()).not.toBeNull();
-
-    let data = component.getProductsData();
    
   });
 
