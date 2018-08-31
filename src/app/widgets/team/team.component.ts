@@ -19,9 +19,7 @@ export class TeamComponent implements OnInit {
   widgetParent:number = 0;
   emailStatus:boolean = true;
 
-  constructor(private _teamService: ApiService) {
-    
-  }
+  constructor(private _teamService: ApiService) {}
 
   ngOnInit() {
     this.getTeam(this.team);
@@ -45,12 +43,6 @@ export class TeamComponent implements OnInit {
   setTeam(widgetSatus):boolean{
     this.widgetSatus = widgetSatus;
     this.team.map((val, index, data)=>{
-      /*let teamMember = {
-        "name" : data[index].name,
-        "img" : data[index].picture.large,
-        "phone" :data[index].phone,
-        "email" : data[index].email
-      };*/
       let teamMember = new TeamMember().setMember(data,index);
       this.teamArray.push(teamMember);
     });
