@@ -1,0 +1,82 @@
+<!-- breadcrumb -->
+<app-breadcrumb [pageName]="page"></app-breadcrumb>
+<!-- breadcrumb -->
+<div class="container ecom-blog-container">
+  <!--.row-->
+  <div class="row">
+    
+    <div class="col-lg-8">
+      <h4 class="ecom-p-title">{{page}}</h4>
+      <!-- .row -->
+      <div class="row ecom-blog-first-row" *ngIf="firstRowStatus">
+        <div class="col-lg-12" *ngFor="let item of firstRowData;let i = index">
+          <div class="ecom-news-item-wrapper">
+            <div>      
+              <figure>
+                <img src="{{item.img}}" alt="{{item.title}}">
+                <figcaption>
+                  <i class="material-icons" routerLink="/blog">
+                    zoom_in
+                  </i>
+                </figcaption>
+                
+              </figure>
+        
+              <span class="ecom-news-title">{{item.title}}</span>
+              <br>
+              <span class="ecom-news-date"><strong>Publié le : </strong> {{item.date}}</span>  
+            </div>
+            <p>
+              {{item.txt}} 
+            </p>
+          </div>
+        </div>
+
+        <div class="ecom-blog-more">
+          <span class="btn btn-primary" (click)="setRowStatus(firstRowStatus,secRowStatus);">See more</span>
+        </div>
+
+      </div>
+      <!-- /.row -->
+      <br>
+      <app-banner></app-banner>
+      <br>
+
+      <!-- .row -->
+      <div class="row ecom-blog-first-row" *ngIf="secRowStatus">
+          <div class="col-lg-12" *ngFor="let item of secRowData;let i = index">
+            <div class="ecom-news-item-wrapper">
+              <div>      
+                <figure>
+                  <img src="{{item.img}}" alt="{{item.title}}">
+                  <figcaption>
+                    <i class="material-icons" routerLink="/blog">
+                      zoom_in
+                    </i>
+                  </figcaption>
+                  
+                </figure>
+          
+                <span class="ecom-news-title">{{item.title}}</span>
+                <br>
+                <span class="ecom-news-date"><strong>Publié le : </strong> {{item.date}}</span>  
+              </div>
+              <p>
+                {{item.txt}} 
+              </p>
+            </div>
+          </div>
+        </div>
+        <!-- /.row -->
+
+    </div>
+
+    <div class="col-lg-4">
+
+      <app-sidebar></app-sidebar>
+
+    </div>
+
+  </div>
+  <!--/.row-->
+</div>

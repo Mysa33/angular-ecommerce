@@ -38,6 +38,7 @@ import { NewsComponent } from './widgets/news/news.component';
 import { PostsComponent } from './sidebar/posts/posts.component';
 import { BannerComponent } from './widgets/banner/banner.component';
 import { BreadcrumbComponent } from './widgets/breadcrumb/breadcrumb.component';
+import { BlogComponent } from './blog/blog.component';
 
 
 const routes: Routes  = [
@@ -45,6 +46,7 @@ const routes: Routes  = [
   {path :'home', component: HomeComponent},
   {path :'shop', component: ProductsComponent},
   {path : 'about', component : AboutUsComponent},
+  {path : 'blog', component : BlogComponent},
   {path : 'contact', component : ContactComponent},
   {path :'profil', component: ProfileComponent}
 ];
@@ -79,7 +81,8 @@ const routes: Routes  = [
     NewsComponent,
     PostsComponent,
     BannerComponent,
-    BreadcrumbComponent 
+    BreadcrumbComponent,
+    BlogComponent 
   ],
   imports: [
     BrowserModule,

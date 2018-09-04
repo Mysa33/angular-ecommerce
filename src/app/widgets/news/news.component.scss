@@ -40,37 +40,59 @@
                 width:100%;
                 height:auto;
             }
+            figcaption{
+                position:absolute;
+                left:15px;
+                top:10px;
+                display:none;
+                width:92.5%;
+                margin-left: auto;
+                margin-right:auto;
+                height:48%;
+                text-align: center;
+                color:$txt-first-color;
+                border-radius:4px;
+                
+                i:hover{cursor:pointer;color:$sec-color!important;}
+                i{
+                   margin-top:22%!important;
+                   padding:auto!important;
+                   color:$txt-first-color;
+                   font-size:3em;
+                   opacity: 1!important;
+                }
+            }
+        }
+        figure:hover{
+            figcaption{
+                display:block;
+                opacity: 0.6;
+                background-color: $main-color;
+            }
         }
         span{
-            padding-left:10px;
-            padding-right:10px;
-            padding-bottom:10px;
             font-family: $main-font;
         }
         .ecom-news-title{
-            padding-left:10px;
-            padding-right:10px;
-            padding-bottom:10px;
             font-family: $main-font;
             font-size:1.1em;
             color:$txt-sec-color;
             font-weight: 600;
         }
         .ecom-news-date{
-            padding-left:10px;
-            padding-right:10px;
-            padding-bottom:10px;
             font-size:0.8em;
             font-family: $main-font;
             color:$sec-color;
         }
         p{  
-            padding-left:10px;
-            padding-right:10px;
-            padding-bottom:10px;
             margin-top:15px;
             font-family: $main-font;
             color:$sec-color;
+        }
+        span, p, .ecom-news-date, .ecom-news-title{
+            padding-left:10px;
+            padding-right:10px;
+            padding-bottom:10px;
         }
     }
     

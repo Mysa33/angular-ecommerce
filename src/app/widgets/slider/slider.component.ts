@@ -19,7 +19,7 @@ export class SliderComponent implements OnInit {
   slideSecRow:boolean;
 
   constructor(private _sliderService:ApiService) {
-    this.dataUrl = "http://localhost:4200/assets/data/sliderData.json";
+    this.dataUrl = "assets/data/sliderData.json";
   }
 
   ngOnInit() {

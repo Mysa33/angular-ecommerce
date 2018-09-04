@@ -10,7 +10,12 @@
         line-height: 2em;
         h6{font-size:1.2em;font-weight: 500;}  
     }
+    
     .ecom-profil-msg-row{
+        
+        .ecom-msg-table-wrapper{
+            padding-left:0px!important;
+        }
         .ecm-profil-msg-count{
             position :relative;
             top:20px;
@@ -22,11 +27,17 @@
             border-radius:50%;
             text-align:center;
             line-height: 20px;
-            vertical-align: middle!important;  
+            vertical-align: middle!important; 
+            span{
+                text-align:center;
+                vertical-align: middle;
+                font-size: 1.2em;
+                font-weight: 500;
+            } 
         }
-        .ecom-msg-icon{
-            i{font-size:2.5em;}
-        }
+    }
+    .ecom-msg-icon{
+        i{font-size:2.5em;}
     }
     .ecom-msg-count{
         color:$txt-sec-color;
@@ -45,11 +56,11 @@
 }
 @media (min-width:992px) and (max-width:1199px){
     .ecom-profil-responsive{
-        display:initial;
+        display:table-cell;
     }
 }
 @media (min-width:1200px) {
     .ecom-profil-responsive{
-        display:initial;
+        display:table-cell;
     }
 }

@@ -1,0 +1,118 @@
+@import "../variables.scss";
+.ecom-blog-container{
+    margin-top:50px;
+    font-family: $main-font;
+    h4{color:$txt-sec-color!important;}
+    p{text-align: justify;font-size:1.1em;color:$sec-color;}
+    i{color:$txt-sec-color;font-size:0.95em!important;margin-top:5px;}
+    span{color:$sec-color;}
+    .ecom-p-title{
+        text-transform: capitalize;
+    }
+    .ecom-blog-first-row{
+        .ecom-blog-more{
+            width:40%;
+            margin-left:auto;
+            margin-right:auto;
+            span{
+                width: 80%;
+                margin-left:auto;
+                margin-right:auto;
+                text-align:center!important;
+                font-family: $main-font;
+                color:$txt-first-color;
+                background-color: $secondary-bg-color;
+                border-color:$secondary-bg-color;
+            }
+            span:hover{
+                background-color: $main-bg-color;
+                border-color:$main-bg-color;
+            }
+        }
+        .ecom-news-item-wrapper{
+            box-shadow:0px 0px 0.5px 1px rgba(41, 41 , 41, .2);
+            border-radius:4px;
+            text-align: justify;
+            figure{
+                margin-top:10px;
+                height:198px;
+                overflow: hidden;
+                border-radius:4px;
+                img{
+                    width:100%;
+                    height:auto;
+                }
+                figcaption{
+                    position:absolute;
+                    left:15px;
+                    top:10px;
+                    display:none;
+                    width:96.4%;
+                    margin-left: auto;
+                    margin-right:auto;
+                    height:54%;
+                    text-align: center;
+                    color:$txt-first-color;
+                    border-radius:4px;
+                    
+                    i:hover{cursor:pointer;color:$main-color!important;}
+                    i{
+                       margin-top:10%!important;
+                       padding:auto!important;
+                       color:$txt-first-color;
+                       font-size:3em!important;
+                       opacity: 1!important;
+                    }
+                }
+            }
+            figure:hover{
+                figcaption{
+                    display:block;
+                    opacity: 0.6;
+                    background-color: $secondary-bg-color;
+                }
+            }
+            span{
+                font-family: $main-font;
+            }
+            .ecom-news-title{
+                font-family: $main-font;
+                font-size:1.1em;
+                color:$txt-sec-color;
+                font-weight: 600;
+            }
+            .ecom-news-date{
+                font-size:0.8em;
+                font-family: $main-font;
+                color:$sec-color;
+            }
+            p{  
+                margin-top:15px;
+                font-family: $main-font;
+                color:$sec-color;
+            }
+            span, p, .ecom-news-date, .ecom-news-title{
+                padding-left:10px;
+                padding-right:10px;
+                padding-bottom:10px;
+            }
+        }
+
+
+
+
+        .ecom-news-wrapper{
+            width:100%;
+            height:auto;
+            display: inline-block;
+            margin-top:15px;
+            
+            
+        }
+    }
+    
+    
+
+
+    
+}

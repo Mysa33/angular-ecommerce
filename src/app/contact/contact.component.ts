@@ -15,7 +15,7 @@ export class ContactComponent implements OnInit {
 
   ngOnInit() {
     this.widgetTeamId = 2;
-    this.page = "Contact";
+    this.page = "contact";
   }
 
   

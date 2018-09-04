@@ -74,5 +74,5 @@ export class ProductsComponent implements OnInit {
     this.bookModal = {};
     this.modalVisibility = false;
   }
-  
+   
 }

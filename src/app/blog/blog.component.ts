@@ -1,14 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 
-import {ApiService} from '../../shared/services/api.service';
-import { Slide } from '../../shared/class/slide';
+import {ApiService} from '../shared/services/api.service';
+import { Slide } from '../shared/class/slide';
 
 @Component({
-  selector: 'app-news',
-  templateUrl: './news.component.html',
-  styleUrls: ['./news.component.scss']
+  selector: 'app-blog',
+  templateUrl: './blog.component.html',
+  styleUrls: ['./blog.component.scss']
 })
-export class NewsComponent implements OnInit {
+export class BlogComponent implements OnInit {
   widgetStatus:boolean;
   dataUrl:string;
   newsData;
@@ -17,10 +17,12 @@ export class NewsComponent implements OnInit {
   firstRowStatus:boolean;
   secRowStatus:boolean;
   flag:number;
+  page:string;
 
   constructor(private _newsService:ApiService) { }
 
   ngOnInit() {
+    this.page = "blog";
     this.widgetStatus = false;
     this.dataUrl = "assets/data/newsData.json";
     this.firstRowStatus = true;
@@ -59,11 +61,11 @@ export class NewsComponent implements OnInit {
     this.firstRowStatus = firstRowStatus;
     this.secRowStatus = secRowStatus;
     if(this.firstRowStatus == true){
-      this.firstRowStatus = false;
+      this.firstRowStatus = true;
       this.secRowStatus = true;
     }else{
       this.firstRowStatus = true;
-      this.secRowStatus = false;
+      this.secRowStatus = true;
     }
   }
 
