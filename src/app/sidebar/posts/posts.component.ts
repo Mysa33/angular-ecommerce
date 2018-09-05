@@ -7,7 +7,7 @@ import {ApiService} from '../../shared/services/api.service';
 })
 export class PostsComponent implements OnInit {
   
-  dataUrl:string = "http://localhost:4200/assets/data/postsData.json";
+  dataUrl:string = "assets/data/postsData.json";
   postsData;
   firstRowStatus:boolean = true;
   secRowStatus:boolean = false;
