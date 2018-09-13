@@ -119,4 +119,26 @@ Modal
     .ecom-modal-close:hover{
         background-color:$main-bg-color;
     }
+}/************
+Responsive
+************/
+@media (min-width:320px) and (max-width:767px){
+    .ecom-responsive{
+        display:inline-block;
+    }
+}
+@media (min-width:768px) and (max-width:991px){
+    .ecom-responsive{
+        display:none;
+    }
+}
+@media (min-width:992px) and (max-width:1199px){
+    .ecom-responsive{
+        display:inline-block;
+    }
+}
+@media (min-width:1200px){
+    .ecom-responsive{
+        display:inline-block;
+    }
 }

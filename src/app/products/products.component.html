@@ -9,13 +9,13 @@
                 
         <input type="search" class="form-control" [(ngModel)]="queryString" placeholder ="Rechercher par titre">
   
-          <div class="input-group-append">
-            <span class="input-group-text">
-              <i class="material-icons">search</i>
-            </span>
-          </div>
+        <div class="input-group-append">
+          <span class="input-group-text">
+            <i class="material-icons">search</i>
+          </span>
+        </div>
     
-          </div>
+        </div><!-- todo : a verifier-->
       </div>
     </div>
     <!-- /.row -->
@@ -40,11 +40,11 @@
               <span>&euro;</span>
             </p>
             <a class="btn btn-primary ecom-home-catalog-add-cart" id="{{i}}" (click)="addToCart(i);">
-              <span>Ajouter au panier</span>
+              <span class="ecom-responsive">Ajouter au panier</span>
               <span class="ecom-home-add-to-cart-icon">
                   <i class="material-icons">add_shopping_cart</i>
               </span>
-            </a><!-- todo verifier -->
+            </a><!-- todo a verifier -->
           </div>
       </div>
       <!-- /.ecom-home-catalog-card -->
