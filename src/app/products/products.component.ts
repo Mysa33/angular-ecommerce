@@ -15,11 +15,11 @@ export class ProductsComponent implements OnInit {
   
   page:string;
   books;
-  booksCart:any[];
-  booksCartLength:number;
+  cart:any[];
+  cartLength:number;
   modalVisibility;
-  bookModalObj:any[];
-  bookModal;
+  emittedItem:any[];
+  modalItem:object;
   localData:string;
   
   constructor(
@@ -31,13 +31,13 @@ export class ProductsComponent implements OnInit {
   ngOnInit() {
     this.page  = "shop";
     this.localData = "cartCleared";
-    this.booksCartLength = 0
-    this.bookModal = {};
-    this.booksCart = [];
-    this.getProductsData();
+    this.cartLength = 0
+    this.modalItem = new Object;
+    this.cart = [];
+    this.getData();
   }
 
-  getProductsData():void{
+  getData():void{
     this._bookService.getBooks().subscribe(
       data => { this.books = data},
       err => console.error(err),
@@ -46,32 +46,32 @@ export class ProductsComponent implements OnInit {
   }
 
   addToCart(i):void{
-    const bookToCart = new DataToCart().setData(this.books,i);
-    let cartDataStatus = this._localstorageService.getLocalstorage(this.books,this.localData);
+    var bookToCart = new DataToCart().setData(this.books,i);
+    var cartDataStatus = this._localstorageService.getLocalstorage(this.books,this.localData);
     if(cartDataStatus === 1){
-      this.booksCart = [];
+      this.cart = [];
       localStorage.setItem(this.localData,"0");//Todo : local storage service 
-      this.booksCart.push(bookToCart);
+      this.cart.push(bookToCart);
     }else{
-      this.booksCart = this.booksCart;
-      this.booksCart.push(bookToCart);
+      this.cart = this.cart;
+      this.cart.push(bookToCart);
     }
-    this.passData(this.booksCart);
+    this.passData(this.cart);
   }
 
-  passData(booksCart):void{
-    this.booksCart = booksCart;
-    this._dataShareService.sendDataToOtherComponent(this.booksCart);
+  passData(cart):void{
+    this.cart = cart;
+    this._dataShareService.sendDataToOtherComponent(this.cart);
   }
 
   openModal(i):void{
-    let array = new Modal().setBookModal(this.books,i);
-    this.bookModal = array;
+    var array:Modal = new Modal().setBookModal(this.books,i);
+    this.modalItem = array;
     this.modalVisibility = true;
   }
   
   closeModal():void{
-    this.bookModal = {};
+    this.modalItem = {};
     this.modalVisibility = false;
   }
    

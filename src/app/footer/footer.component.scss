@@ -2,9 +2,10 @@
 @import "../variables.scss";
 footer{
     font-family: $main-font;
+    background-color: $secondary-bg-color;
     h6{
         font-size:1.2em!important;
-        color:$txt-sec-color;
+        color:$txt-sec-color!important;
     }
     margin-top:50px!important;
     .ecom-footer{
@@ -12,9 +13,18 @@ footer{
         padding-top:30px;
         padding-bottom:30px;
         background-color: $secondary-bg-color;
-        h4{color:$txt-first-color;}
+        h6{color:$txt-sec-color;}
         .ecom-footer-nav{
-            a{color:$txt-first-color!important;text-decoration: none;}
+            display:none;
+            .ecom-footer-nav-title{
+
+                color:$txt-sec-color!important;
+                font-size:1.2em!important;
+            }
+            a.ecom-footer-nav-item{
+                color:$txt-first-color!important;
+                text-decoration: none!important;
+            }
         }
     }
     /**/
@@ -22,9 +32,5 @@ footer{
         padding-left:0px!important;
         padding-right: 0px!important;
     }
-    .ecom-footer-nav{
-        a{
-            display:block!important;
-        }
-    }
+    
 }
