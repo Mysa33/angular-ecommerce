@@ -1,11 +1,11 @@
 export class Modal {
     
     public data:any;
-    public _i:number;
+    private _i:number;
 
-    setBookModal(data,_i):any{
+    setItem(data,_i):any{
         this.data = data;
-        let dataArray = {
+        var dataArray = {
             "isbn" : this.data[_i].isbn,
             "title": this.data[_i].title,
             "price": this.data[_i].price,

@@ -1,9 +1,14 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { async, ComponentFixture, TestBed, fakeAsync, tick } from '@angular/core/testing';
 import {  CUSTOM_ELEMENTS_SCHEMA  } from '@angular/core';
+//import {routes} from "../app-routing.module";
+import {Router} from "@angular/router";
 import { HttpModule } from '@angular/http';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 
+import {RouterTestingModule} from '@angular/router/testing';
+import {HttpClientTestingModule, HttpTestingController} from "@angular/common/http/testing";
+import {HttpClient} from "@angular/common/http";
 import { FilterdataPipe } from '../shared/pipes/filterdata.pipe';
 import {ApiService} from '../shared/services/api.service';
 import { DataShareService } from '../shared/services/data-share.service';
@@ -20,7 +25,7 @@ describe('ProductsComponent', () => {
   var mockedData = new MockBooks().getMockData(mockedData); 
   var array:any[] = [];
   mockedData.map((value,index)=>{
-    let item = new Book().setBook(value);
+    let item = new Book().setBook(value);//rework
     array.push(item);
   });
   
@@ -36,6 +41,9 @@ describe('ProductsComponent', () => {
       imports: [
         HttpModule,
         HttpClientModule,
+        RouterTestingModule,
+        HttpClientTestingModule,
+        HttpTestingController,
         FormsModule
       ],
         providers: [
@@ -67,10 +75,9 @@ describe('ProductsComponent', () => {
 
   it('should have default value', () => {
     expect(component.page).toEqual("shop");
-    expect(component.localData).toEqual("cartCleared");
-    expect(component.booksCartLength).toEqual(0);
-    expect(component.bookModal).toEqual({});
-    expect(component.booksCart).toEqual([]); 
+    expect(component.cartLength).toEqual(0);
+    expect(component.modalItem).toEqual({});
+    expect(component.cart).toEqual([]); 
   });
 
   it('data should not be null', () => {
