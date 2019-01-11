@@ -40,17 +40,6 @@ import { BannerComponent } from './widgets/banner/banner.component';
 import { BreadcrumbComponent } from './widgets/breadcrumb/breadcrumb.component';
 import { BlogComponent } from './blog/blog.component';
 
-
-const routes: Routes  = [
-  {path :'', redirectTo : 'home', pathMatch:'full'},
-  {path :'home', component: HomeComponent},
-  {path :'shop', component: ProductsComponent},
-  {path : 'about', component : AboutUsComponent},
-  {path : 'blog', component : BlogComponent},
-  {path : 'contact', component : ContactComponent},
-  {path :'profil', component: ProfileComponent}
-];
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -90,7 +79,6 @@ const routes: Routes  = [
     HttpClientModule,
     FormsModule,
     AppRoutingModule,
-    RouterModule.forRoot(routes),
     ReactiveFormsModule,
     ReactiveFormsModule
   ],
