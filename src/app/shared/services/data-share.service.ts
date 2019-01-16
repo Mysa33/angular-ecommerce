@@ -6,7 +6,7 @@ import { Subject } from 'rxjs/Subject';
 export class DataShareService {
     shareDataSubject = new Subject<any>(); 
     
-    sendDataToOtherComponent(data){
+    sendData(data){
       this.shareDataSubject.next(data);
     }
 }

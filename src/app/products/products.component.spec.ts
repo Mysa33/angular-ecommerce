@@ -1,14 +1,12 @@
-import { async, ComponentFixture, TestBed, fakeAsync, tick } from '@angular/core/testing';
+import { async, ComponentFixture, TestBed, inject, fakeAsync, tick } from '@angular/core/testing';
 import {  CUSTOM_ELEMENTS_SCHEMA  } from '@angular/core';
-//import {routes} from "../app-routing.module";
 import {Router} from "@angular/router";
 import { HttpModule } from '@angular/http';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
-
 import {RouterTestingModule} from '@angular/router/testing';
-import {HttpClientTestingModule, HttpTestingController} from "@angular/common/http/testing";
-import {HttpClient} from "@angular/common/http";
+
+import {routes} from "../app-routing.module";
 import { FilterdataPipe } from '../shared/pipes/filterdata.pipe';
 import {ApiService} from '../shared/services/api.service';
 import { DataShareService } from '../shared/services/data-share.service';
@@ -21,9 +19,9 @@ describe('ProductsComponent', () => {
 
   let component: ProductsComponent;
   let fixture: ComponentFixture<ProductsComponent>;
-
-  var mockedData = new MockBooks().getMockData(mockedData); 
+  var mockedData:Array<MockBooks> = new MockBooks().getMockData(mockedData); 
   var array:any[] = [];
+
   mockedData.map((value,index)=>{
     let item = new Book().setBook(value);//rework
     array.push(item);
@@ -42,8 +40,6 @@ describe('ProductsComponent', () => {
         HttpModule,
         HttpClientModule,
         RouterTestingModule,
-        HttpClientTestingModule,
-        HttpTestingController,
         FormsModule
       ],
         providers: [
@@ -80,7 +76,7 @@ describe('ProductsComponent', () => {
     expect(component.cart).toEqual([]); 
   });
 
-  it('data should not be null', () => {
+  it('should not be null', () => {
     expect(array).not.toBeNull();
     array.map((value,index, data)=>{
       expect(data).not.toBeNull();
@@ -92,7 +88,7 @@ describe('ProductsComponent', () => {
     });
   });
 
-  it('data props should not be', () => {    
+  it('should be', () => {    
     array.map((value,index, data)=>{
       expect(data[index].isbn).toEqual(jasmine.any(String));
       expect(data[index].title).toEqual(jasmine.any(String));
@@ -101,5 +97,5 @@ describe('ProductsComponent', () => {
       expect(data[index].synopsis).toEqual(jasmine.any(String));
     });
   });
-
+  
 });

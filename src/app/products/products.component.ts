@@ -12,64 +12,73 @@ import { Modal } from '../shared/class/modal';
   <!-- breadcrumb -->
   <app-breadcrumb [pageName]="page"></app-breadcrumb>
   <!-- breadcrumb -->
+  <!-- .container -->
   <div class="container">
-
     <!-- .row -->
     <div class="row ecom-home-catalog-serach-row">
+      <!-- .col-lg-4 -->
       <div class="col-lg-4 col-lg-offset-8">
+        <!-- .input-group -->
         <div class="input-group mb-3">    
-          <input type="search" class="form-control" [(ngModel)]="queryString" placeholder ="Rechercher par titre">
+          <input type="search" class="form-control" [(ngModel)]="queryString" placeholder ="Rechercher par titre">          
+          <!-- .input-group-append -->
           <div class="input-group-append">
             <span class="input-group-text">
               <i class="material-icons">search</i>
             </span>
           </div>
+          <!-- /.input-group-append -->
         </div>
+        <!-- /.input-group -->
       </div>
-      <!-- /.row -->
-
+      <!-- /.col-lg-4 -->
+    </div>
+    <!-- /.row -->
     <!-- .ecom-home-catalog-row -->
     <div class="row ecom-home-catalog-row">
-      <!-- col-lg-4-->
+      <!-- .col-lg-4-->
       <div class="col-lg-4 col-md-4 col-sm-4 col-xs-6" *ngFor="let book of  books | filterdata: queryString : 'title'; let i = index">
         <!-- .ecom-home-catalog-card -->
         <div class="card ecom-home-catalog-card">
-            <figure>
-              <img class="card-img-top" src="{{book.cover}}" alt="{{book.title}}">
-              <figcaption>
-                  <button type="button" class="btn" id="{{i}}" (click)="openModal(i);">
-                    Lire plus 
-                  </button>
-              </figcaption>
-            </figure>
-            <div class="card-body">
-              <h5 class="card-title ecom-home-catalog-book-title">{{book.title}}</h5>
-              <p class="card-text ecom-home-catalog-book-price">
-                <span>{{book.price}}</span>
-                <span>&euro;</span>
-              </p>
-              <a class="btn btn-primary ecom-home-catalog-add-cart" id="{{i}}" (click)="addToCart(i);">
-                <span class="ecom-responsive">Ajouter au panier</span>
-                <span class="ecom-home-add-to-cart-icon">
-                    <i class="material-icons">add_shopping_cart</i>
-                </span>
-              </a><!-- todo a verifier -->
-            </div>
+          <figure>
+            <img class="card-img-top" src="{{book.cover}}" alt="{{book.title}}">
+            <figcaption>
+              <button type="button" class="btn" id="{{i}}" (click)="openModal(i);">
+                Lire plus 
+              </button>
+            </figcaption>
+          </figure>
+          <!-- .card-body -->
+          <div class="card-body">
+            <h5 class="card-title ecom-home-catalog-book-title">{{book.title}}</h5>
+            <p class="card-text ecom-home-catalog-book-price">
+              <span>{{book.price}}</span>
+              <span>&euro;</span>
+            </p>
+            <a class="btn btn-primary ecom-home-catalog-add-cart" id="{{i}}" (click)="addToCart(i);">
+              <span class="ecom-responsive">Ajouter au panier</span>
+              <span class="ecom-home-add-to-cart-icon">
+                <i class="material-icons">add_shopping_cart</i>
+              </span>
+            </a><!-- todo a verifier -->
+          </div>
+          <!-- /.card-body -->
         </div>
-        <!-- /.ecom-home-catalog-card -->
+        <!-- /.col-lg-4-->
       </div>
+      <!-- .ecom-home-catalog-card -->
     </div>
     <!-- .ecom-home-catalog-row -->
   </div>
-  
-  <!-- modal -->
+  <!-- /.container -->
+  <!-- .ecom-modal-container -->
   <div class="ecom-modal-container" *ngIf="modalVisibility">
-    <!-- .modal -->
+    <!-- .modal-body -->
     <div class="ecom-modal modal-body" >
       <!-- .row -->
       <div class="row ecom-modal-content"> 
         <!-- app-modal-body -->
-        <app-modal [bookModalObjChild]="modalItem"></app-modal>
+        <app-modal [item]="modalItem"></app-modal>
         <!-- app-modal-body -->
         <div class="col-lg-12">
           <div class="modal-footer">
@@ -79,14 +88,12 @@ import { Modal } from '../shared/class/modal';
       </div>
       <!-- /.row -->
     </div>
-    <!-- /.modal -->
+    <!-- /.modal-body -->
   </div>
-  <!-- /modal -->  
+  <!-- /.ecom-modal-container -->
   `,
   styleUrls: ['./products.component.scss']
 })
-
-
 
 export class ProductsComponent implements OnInit {
   
@@ -110,26 +117,25 @@ export class ProductsComponent implements OnInit {
     this.cartLength = 0
     this.modalItem = new Object;
     this.cart = [];
-    this.storageName = "cartStatus";
+    this.storageName = "cartCleared";
     this.getData();
   }
 
-  getData():void{
+  getData():any{
     this._bookService.getBooks().subscribe(
-      data => { this.books = data},
+      data => { return this.books = data},
       err => console.error(err),
       () => console.log('done loading books')
     );
   }
 
-  addToCart(i):void{
+  addToCart(i:number):void{
     var bookToCart = new DataToCart().setData(this.books,i);
     var cartStatus = this._localStorageService.getLocalstorage(this.books, this.storageName);
     //Check if cart is cleared
     if(cartStatus === 1){
-      //use toString method
       this.cart = [];
-      localStorage.setItem(this.storageName,"0");//Todo : local storage service 
+      this._localStorageService.setLocalstorage(0, this.storageName);
       this.cart.push(bookToCart);
     }else{
       this.cart = this.cart;
@@ -138,13 +144,13 @@ export class ProductsComponent implements OnInit {
     this.passData(this.cart);
   }
 
-  passData(cart):void{
+  passData(cart:any[]):void{
     this.cart = cart;
-    this._dataShareService.sendDataToOtherComponent(this.cart);
+    this._dataShareService.sendData(this.cart);
   }
 
-  openModal(i):void{
-    var array:Modal = new Modal().setItem(this.books,i);
+  openModal(i:number):void{
+    let array:Modal = new Modal().setItem(this.books,i);
     this.modalItem = array;
     this.modalVisibility = true;
   }

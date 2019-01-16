@@ -8,7 +8,7 @@ import { Component, OnInit, Input } from '@angular/core';
 
 export class ModalComponent implements OnInit {
   
-  @Input () bookModalObjChild;
+  @Input () item;
   data:any = [];
   public modalSocialId:number;
   
@@ -16,7 +16,7 @@ export class ModalComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.data = this.bookModalObjChild;
+    this.data = this.item;
     this.modalSocialId = 2;
   }
 }
