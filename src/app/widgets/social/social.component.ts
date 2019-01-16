@@ -2,7 +2,24 @@ import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-social',
-  templateUrl: './social.component.html',
+  template:`
+  <div class="ecom-social-col ecom-social-first">
+    <h6 [ngStyle]="{'color':setTitleColor(socialDefaultId) }">
+        Social :
+    </h6>
+  </div>
+  <div [ngStyle]="{'display':setCompDisplay(socialDefaultId) }">
+      <div class="ecom-social-col" [ngStyle]="{'display':setCompDisplay(socialDefaultId) }">
+          <i class="material-icons" [ngStyle]="{'color':setCompColor(socialDefaultId) }">share</i>
+      </div>
+      <div class="ecom-social-col" [ngStyle]="{'display':setCompDisplay(socialDefaultId) }">
+          <i class="material-icons" [ngStyle]="{'color':setCompColor(socialDefaultId) }">thumb_up_alt</i>
+      </div>
+      <div class="ecom-social-col" [ngStyle]="{'display':setCompDisplay(socialDefaultId) }">
+          <i class="material-icons" [ngStyle]="{'color':setCompColor(socialDefaultId) }">photo_camera</i>
+      </div>
+  </div>
+  `,
   styleUrls: ['./social.component.scss']
 })
 export class SocialComponent implements OnInit {

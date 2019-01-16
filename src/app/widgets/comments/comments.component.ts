@@ -3,7 +3,25 @@ import { Component, OnInit, Input } from '@angular/core';
 import {ApiService} from '../../shared/services/api.service';
 @Component({
   selector: 'app-comments',
-  templateUrl: './comments.component.html',
+  template:`
+  <div class="col-lg-12 ecom-comments-container ecom-no-padding">
+    <h6 [ngStyle]="{'color':setWidgetTitleColor(defaultCommentsWidgetId) }">Comments :</h6>
+    <div class="row" *ngIf="commentsArray">
+      <div class="col-lg-12" *ngFor = "let user of  commentsArray; let i = index">
+        <div class="row" style="margin-top:5px;">
+          <div class="col-lg-2">
+            <img class= "rounded-circle" src="{{user.img.thumbnail}}" alt="{{user.name.first}}">
+          </div>  
+          <div class="col-lg-10 ecom-comment-user-infos" [ngStyle]="{'color':setWidgetColor(defaultCommentsWidgetId) }">
+            <span>{{user.name.title}}</span>
+            <span>{{user.name.first}}</span>
+            <q>{{user.comment}}</q>      
+          </div>   
+        </div>
+      </div>
+    </div>
+  </div>
+  `,
   styleUrls: ['./comments.component.scss']
 })
 export class CommentsComponent implements OnInit {

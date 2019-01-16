@@ -5,7 +5,32 @@ import { TeamMember } from '../../shared/class/team-member';
 
 @Component({
   selector: 'app-team',
-  templateUrl: './team.component.html',
+  template:`
+  <div class="row ecom-team-row" *ngIf ="widgetSatus">
+    <div class="col-lg-4" *ngFor ="let member of teamArray; let i=index">
+        <div>
+        <img class="rounded-circle" src="{{member.img}}" alt="{{member.name.first}}">
+        </div>
+        <div class="ecom-team-name-wrapper">
+            <span><strong>{{member.name.title}}</strong></span>
+            <span><strong>{{member.name.first}}</strong></span>
+            <span><strong>{{member.name.last}}</strong></span>
+        </div>
+        <div *ngIf="emailStatus">
+            <i class="material-icons">
+                mail_outline
+            </i>
+            <span class="ecom-team-mail-span">{{member.email}}</span>
+        </div>
+        <div>
+            <i class="material-icons">
+                phone
+            </i>
+            <span>{{member.phone}}</span>
+        </div>
+    </div>
+  </div>
+  `,
   styleUrls: ['./team.component.scss']
 })
 

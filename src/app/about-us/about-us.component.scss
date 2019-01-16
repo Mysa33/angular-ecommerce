@@ -1,14 +1,22 @@
-@import "../variables.scss";
+@import "../variables";
 /**/
 .ecom-page-margin-top{
     margin-top:50px;
-    font-family: $main-font;
+    font-family: $main-font!important;
     .ecom-about-main-container{
         h4{color:$txt-sec-color!important;}
         p{text-align: justify;font-size:1.1em;color:$sec-color;}
         i{color:$txt-sec-color;font-size:0.95em!important;margin-top:5px;}
         span{color:$sec-color;}
     }
+    .ecom-about-img-container{
+        display:none;
+        img{ /*Todo : responsive*/
+            
+            width:50%!important;height:auto;margin-top:40px;
+        }
+    }
+
     .ecom-infos-container{
         margin-bottom:15px;
         h4{color:$txt-sec-color!important;}
@@ -18,9 +26,6 @@
         .ecom-sub-title{
             color:$sec-color!important;
         }
-    }
-    img.ecom-about-main-img{
-        max-width:90%;height:auto;margin-top:40px;
     }
     .ecom-custom-margin{
         margin-top:30px;

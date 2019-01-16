@@ -28,8 +28,6 @@ describe('AboutUsComponent', () => {
   });
 
   it('should have title', () => {
-
     expect(component.page).toEqual("about");
-
   });
 });

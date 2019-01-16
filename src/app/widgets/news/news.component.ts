@@ -5,13 +5,74 @@ import { Slide } from '../../shared/class/slide';
 
 @Component({
   selector: 'app-news',
-  templateUrl: './news.component.html',
+  template:`
+  <div class="ecom-news-wrapper" *ngIf="widgetStatus">
+    <div class="ecom-news-nav-wrapper">
+      <div (click)="setRowStatus(firstRowStatus,secRowStatus);">
+        <i class="material-icons">keyboard_arrow_left</i>
+      </div>
+      <div (click)="setRowStatus(firstRowStatus,secRowStatus);">
+        <i class="material-icons">keyboard_arrow_right</i>
+      </div>
+    </div>
+    <!-- .row -->
+    <div class="row" *ngIf="firstRowStatus">
+      <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4" *ngFor="let item of firstRowData;let i = index">
+        <div class="ecom-news-item-wrapper">
+          <div>      
+            <figure>
+              <img src="{{item.img}}" alt="{{item.title}}">
+              <figcaption>
+                <i class="material-icons" routerLink="/blog">
+                  zoom_in
+                </i>
+              </figcaption> 
+            </figure>
+            <span class="ecom-news-title">{{item.title}}</span>
+            <br>
+            <span class="ecom-news-date"><strong>Publié le : </strong> {{item.date}}</span>  
+          </div>
+          <p>
+            {{item.txt}} 
+          </p>
+        </div>
+      </div>
+    </div>
+    <!-- /.row -->
+    <!-- .row -->
+    <div class="row" *ngIf="secRowStatus">
+      <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4" *ngFor="let item of secRowData;let i = index">
+        <div class="ecom-news-item-wrapper">
+          <div>      
+            <figure>
+              <img src="{{item.img}}" alt="{{item.title}}">
+              <figcaption>
+                <i class="material-icons" routerLink="/blog">
+                  zoom_in
+                </i>
+              </figcaption>
+              
+            </figure>
+            <span class="ecom-news-title">{{item.title}}</span>
+            <br>
+            <span class="ecom-news-date"><strong>Publié le : </strong> {{item.date}}</span>  
+          </div>
+          <p>
+            {{item.txt}} 
+          </p>
+        </div>
+      </div>
+    </div>
+    <!-- /.row -->
+  </div>
+  `,
   styleUrls: ['./news.component.scss']
 })
 export class NewsComponent implements OnInit {
+  
   widgetStatus:boolean;
   dataUrl:string;
-  newsData;
+  newsData:object;
   firstRowData;
   secRowData;
   firstRowStatus:boolean;
@@ -43,7 +104,7 @@ export class NewsComponent implements OnInit {
     );
   }
 
-  resolveAfterdelay(widgetStatus,newsData):any {
+  resolveAfterdelay(widgetStatus:boolean,newsData:object):any {
     this.widgetStatus = widgetStatus;
     this.newsData = newsData;
     return new Promise(resolve => {
@@ -55,7 +116,8 @@ export class NewsComponent implements OnInit {
     });
   }
 
-  setRowStatus(firstRowStatus,secRowStatus){
+  setRowStatus(firstRowStatus:boolean,secRowStatus:boolean){
+
     this.firstRowStatus = firstRowStatus;
     this.secRowStatus = secRowStatus;
     if(this.firstRowStatus == true){

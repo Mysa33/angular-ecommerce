@@ -4,7 +4,60 @@ import {ApiService} from '../../shared/services/api.service';
 
 @Component({
   selector: 'app-slider',
-  templateUrl: './slider.component.html',
+  template:`
+  <div class="container ecom-slider-container" *ngIf="widgetStatus">
+    <!-- .row -->
+    <div class="ecom-slider-row" *ngIf ="slideSecRow">
+      <div class="ecom-slider-second-title">
+        <h4>{{firstSlide.main}}</h4>
+      </div>
+      <div class="ecom-slider-main-title">
+        <h2>{{firstSlide.title}}</h2>
+        <span>jusqu'au {{firstSlide.date}}</span>
+      </div>
+      <div class="ecom-slider-btn-cont">
+        <a class="btn ecom-home-featured-add-cart" routerLink="/shop">
+          <span>Shop now !</span>
+          <span class="ecom-home-add-to-cart-icon">
+            <i class="material-icons">shop</i>
+          </span>
+        </a>
+      </div>
+    </div>
+    <!-- /.row -->
+    <!-- .row -->
+    <div class="ecom-slider-row-sec" *ngIf ="slideFirstRow">
+      <div class="ecom-slider-second-title">
+        <h4>{{secSlide.main}}</h4>
+      </div>
+      <div class="ecom-slider-main-title">
+        <h2>{{secSlide.title}}</h2>
+        <span>jusqu'au {{secSlide.date}}</span>
+      </div>
+      <div class="ecom-slider-btn-cont">
+        <a class="btn ecom-home-featured-add-cart" routerLink="/shop">
+          <span>Shop now !</span>
+          <span class="ecom-home-add-to-cart-icon">
+            <i class="material-icons">shop</i>
+          </span>
+        </a>
+      </div>
+    </div>
+    <!-- /.row -->
+    <!-- .row -->
+    <div class="ecom-slider-nav-wrapper">
+      <div class="ecom-slider-btn">
+        <div class="ecom-slider-btn-wrapper ecom-slider-btn-left" (click)="setWidgetStatus(slideFirstRow,slideSectRow);">
+          <i class="material-icons">keyboard_arrow_left</i>
+        </div>  
+        <div class="ecom-slider-btn-wrapper ecom-slider-btn-right" (click)="setWidgetStatus(slideFirstRow,slideSectRow);">
+          <i class="material-icons">keyboard_arrow_right</i>
+        </div>
+      </div>
+    </div>
+    <!-- /.row -->
+  </div>
+  `,
   styleUrls: ['./slider.component.scss']
 })
 

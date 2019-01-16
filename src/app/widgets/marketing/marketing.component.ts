@@ -2,7 +2,17 @@ import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-marketing',
-  templateUrl: './marketing.component.html',
+  template:`
+  <div class="container ecom-marketing-container">
+    <div class="row">
+      <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3" *ngFor="let item of  marketingArray; let i = index">
+        <div class="ecom-marketing-item-prop"><i class="material-icons" [ngStyle]="{'color':iconColor}">{{item.icon}}</i></div>
+        <div class="ecom-marketing-item-prop ecom-marketing-item-number" [ngStyle]="{'color':numberColor }">{{item.number}}</div>
+        <div class="ecom-marketing-item-prop ecom-marketing-item-txt" [ngStyle]="{'color':txtColor }">{{item.text}}</div>
+      </div>
+    </div>
+  </div>
+  `,
   styleUrls: ['./marketing.component.scss']
 })
 export class MarketingComponent implements OnInit {
