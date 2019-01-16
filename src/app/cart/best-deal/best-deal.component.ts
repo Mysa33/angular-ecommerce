@@ -1,22 +1,53 @@
 import { Component, OnInit, Input } from '@angular/core';
 
 import { ApiService } from '../../shared/services/api.service';
-import { BestdealCommon } from  '../../shared/class/bestDealCommon';
 
 @Component({
   selector: 'app-best-deal',
-  templateUrl: './best-deal.component.html',
+  template:`
+  <div class="col-lg-12 alert alert-success" *ngIf="percentVis">
+    {{offerPercentTxt}}
+  </div>
+  <div class="col-lg-12 alert alert-success" *ngIf="minusVis">
+    {{offerMinusTxt}}
+  </div>
+  <div class="col-lg-12 alert alert-success" *ngIf="sliceVis">
+    {{offerSliceTxt}}
+  </div>
+  <div class="col-sm-12 ecom-cart-best-deal-col">
+    <h2>
+        Pix BestDeal : 
+    </h2>
+    <h3>
+        {{priceBestdeal}} &euro;
+    </h3>
+  </div>
+  `,
   styleUrls: ['./best-deal.component.scss']
 })
-export class BestDealComponent extends BestdealCommon implements OnInit {
+export class BestDealComponent implements OnInit {
   
   @Input () data;
   @Input () cartTotalBd;
+  isbnArray:Array<any>
+  commercialOffersUrl:string;
+  dataOffers;
+  bestDealData:any;
+  price:number;
+  priceBestdeal:number = 0;
+  offerSliceTxt:string;
+  offerPercentTxt:string;
+  offerMinusTxt:string;
+  bestDealPercentTxt: string;
+  bestDealMinusTxt: string;
+  bestDealSliceTxt: string;
+  bestDealPriceTxt: string;
+  percentVis:boolean = false;
+  minusVis:boolean = false;
+  sliceVis:boolean = false;
+  dataArray;
   
-
-  constructor(private _offersService: ApiService) {
-    super();
-  }
+  constructor(private _offersService: ApiService) {}
 
   ngOnInit() {
     this.doBestDeal();
@@ -25,10 +56,10 @@ export class BestDealComponent extends BestdealCommon implements OnInit {
   doBestDeal(){
     this.getBestdealData(); 
   } 
-  //get Best deal data
+  //get Bestdeal data
   getBestdealData(){
-    this.dataBestdeal = this.data.products;
-    this.isbnArray = this.dataBestdeal.map(data => data.isbn).sort()
+    this.bestDealData = this.data.products;
+    this.isbnArray = this.bestDealData.map(data => data.isbn).sort()
     .filter(function(elem, index, self) {
       return index === self.indexOf(elem);
     });
@@ -52,6 +83,13 @@ export class BestDealComponent extends BestdealCommon implements OnInit {
         () => console.log('done loading offers')
       );
     }
+  }
+  //doSetbestdealUrl
+  doSetbestdealUrl():void{
+    for(let o in this.isbnArray){
+        this.commercialOffersUrl += this.isbnArray[o] + "," ;
+    }
+    this.commercialOffersUrl = "http://henri-potier.xebia.fr/books/"+this.commercialOffersUrl+"/commercialOffers";
   }
   // Calc best deal 
   calcBestdeal(dataOffers):void{

@@ -1,8 +1,8 @@
 export class Book {
     
-    public data;
+    public data:any;
 
-    setBook(data){
+    setBook(data:any){
         this.data = data;
         let dataModel = {
             "isbn":data.isbn,
@@ -10,7 +10,6 @@ export class Book {
             "price":data.price,
             "cover":data.cover,
             "synopsis":data.synopsis[0]
-
         }
         return dataModel;
     }

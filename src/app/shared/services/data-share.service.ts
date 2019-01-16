@@ -7,6 +7,9 @@ export class DataShareService {
     shareDataSubject = new Subject<any>(); 
     
     sendData(data){
+
       this.shareDataSubject.next(data);
+      
     }
+
 }

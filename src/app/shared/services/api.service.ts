@@ -8,6 +8,7 @@ export class ApiService {
   offersApi:string="";
   apiRoot:string;
   dataApi:string="";
+  
   constructor(private http:HttpClient) {} 
   //Get Books
   getBooks() {
