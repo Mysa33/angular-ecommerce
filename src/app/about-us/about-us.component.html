@@ -1,11 +1,10 @@
 <!-- breadcrumb -->
 <app-breadcrumb [pageName]="page"></app-breadcrumb>
 <!-- breadcrumb -->
-<div class="container ecom-page-margin-top">
+<div class="container ecom-about-container">
   <div class="row">
     <!-- .ecom-about-main-container -->
     <div class="col-lg-6 ecom-about-main-container">
-
       <h4 class="ecom-p-title">Qui sommes-nous ?</h4>
       <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
         Pellentesque placerat nunc ac odio pharetra, vitae sagittis odio convallis. 
@@ -29,7 +28,11 @@
       <img src="assets/img/about-img.jpg" class="ecom-about-main-img" alt="about us">
     </div>
     <!-- /.ecom-about-img-container-->
-    <!-- .ecom-infos-container -->
+  </div>
+</div>
+<div class="container">
+  <div class="row">
+
     <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 ecom-infos-container">
       <h4 class="ecom-p-title ecom-sub-title"> Contact :</h4>
       <div>
@@ -92,7 +95,6 @@
         <span>Lorem ipsum</span>
       </div>
     </div>
-    <!-- /.ecom-about-main-container -->
   </div>
 </div>
 <!--.ecom-team-container -->
@@ -100,6 +102,7 @@
   <app-featured></app-featured>
 </div>
 <!--/.ecom-team-container -->
+
 <!--.ecom-team-container -->
 <div class="container-fluid ecom-team-container">
   <app-marketing [parentId] = "1"></app-marketing>
@@ -107,10 +110,10 @@
 <!--/.ecom-team-container -->
 <div class="container ecom-page-margin-top custom-margin">
   <div class="row">
-      <div class="col-lg-12 ecom-about-main-container">
-          <h4 style="margin-bottom:15xp;">Notre équipe :</h4>
-          <app-team [emittedPrantId]="1"></app-team>
-        </div>
+    <div class="col-lg-12 ecom-about-main-container">
+      <h4 style="margin-bottom:15xp;">Notre équipe :</h4>
+      <app-team [emittedPrantId]="1"></app-team>
+    </div>
   </div>  
 </div>
 <div class="container ecom-page-margin-top custom-margin">

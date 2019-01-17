@@ -75,13 +75,13 @@ export class ContactFormComponent implements OnInit {
     inputTxt: new FormControl('',[Validators.required, Validators.minLength(20), Validators.maxLength(250)])
   });
 
-  onSubmit(contactFormArray,storedData):void { 
+  onSubmit(contactFormArray, storedData):void { 
     if(!this.contactForm.valid){
       alert("le formulaire est invalide.");
       return;
     }else{
       this.storedData = storedData;
-      this.getContactData(this.storedData,this.arrayName);
+      this.getContactData(this.storedData, this.arrayName);
       this.contactFormArray = contactFormArray;
       let postDate:any = new Date();
       postDate = postDate.getDate() + "/" + postDate.getMonth() + "/" + postDate.getFullYear();
@@ -92,15 +92,15 @@ export class ContactFormComponent implements OnInit {
         "flag" : flag
       };
       this.storedData.push(this.contactFormArray);
-      this._profilService.setLocalstorage(this.storedData,this.arrayName);
+      this._profilService.setLocalstorage(this.storedData, this.arrayName);
       this.contactForm.reset();
     }   
   }
 
-  getContactData(storedData,arrayName):any{ //Config Messages data
+  getContactData(storedData, arrayName):any{ //Config Messages data
     this.storedData= storedData;
     this.arrayName = arrayName;
-    this.storedData = this._profilService.getLocalstorage(this.storedData,this.arrayName);
+    this.storedData = this._profilService.getLocalstorage(this.storedData, this.arrayName);
     if(this.storedData === null){
       this.storedData = [];
     }

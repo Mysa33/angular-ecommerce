@@ -54,20 +54,20 @@ export class CommentsComponent implements OnInit {
     );
   }
 
-  setUsers(users):any{
+  setUsers(users):object{
     this.users = users;
     this.commentsArray = [];
     const fakeComment:string = "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
-    this.result = this.users.map((data, index, arr) => {
+     for (let i in this.users){
       this.usersArray = {
-        "index" : index,
-        "name" : data.name,
-        "img" : data.picture,
+        "index" : this.users[i],
+        "name" : this.users[i].name,
+        "img" : this.users[i].picture,
         "comment" : fakeComment
       }
       this.commentsArray.push(this.usersArray);
-    });
-    return this.commentsArray;
+    }
+    return this.result = this.commentsArray;
   }
 
   setWidgetColor(defaultCommentsWidgetId):any{

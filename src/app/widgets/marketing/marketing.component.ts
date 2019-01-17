@@ -26,13 +26,16 @@ export class MarketingComponent implements OnInit {
   constructor() {}
 
   ngOnInit() {
+    
     this.setWidgetStyle(this.parentId);
+
   }
 
   setWidgetStyle(parentId):void{
-    this.widgetStyleId = parentId;
     
-    if(this.widgetStyleId === 0 || 1){
+    this.widgetStyleId = parentId;
+
+    if((this.widgetStyleId === 0) || 1){
       this.iconColor="#333";
       this.numberColor = "#e40046";
       this.txtColor = "#333";

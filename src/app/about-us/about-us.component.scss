@@ -1,7 +1,6 @@
 @import "../variables";
-/**/
-.ecom-page-margin-top{
-    margin-top:50px;
+.ecom-about-container{
+    margin-top:50px!important;
     font-family: $main-font!important;
     .ecom-about-main-container{
         h4{color:$txt-sec-color!important;}
@@ -10,13 +9,11 @@
         span{color:$sec-color;}
     }
     .ecom-about-img-container{
-        display:none;
-        img{ /*Todo : responsive*/
-            
-            width:50%!important;height:auto;margin-top:40px;
+        img{ 
+            max-width:100%!important;height:auto;margin-top:40px;
         }
     }
-
+}
     .ecom-infos-container{
         margin-bottom:15px;
         h4{color:$txt-sec-color!important;}
@@ -30,7 +27,6 @@
     .ecom-custom-margin{
         margin-top:30px;
     }  
-}
 .ecom-team-container{
     margin-top:15px;
     background-color: #f8f9f9;

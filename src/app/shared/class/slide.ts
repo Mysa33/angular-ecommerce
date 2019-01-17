@@ -8,32 +8,35 @@ export class Slide {
     public firstRowStatus:boolean;
     public secondRowStatus:boolean;
 
-    setFirstRow(data,firstRowStatus,flag):any{  
+    setFirstRow(data, firstRowStatus, flag):any{  
+        
         this.data = data;
         this.firstRowStatus = firstRowStatus;
         let dataLength:number = this.data.length;
         this.flag = Math.floor(dataLength/2);
-        this.data.map((value, index)=>{
-            if(index < flag ){
-                this.firstRowData.push(value);  
+        for(let i in this.data){
+            if(i < flag ){
+                this.firstRowData.push(this.data[i]);  
             }  
-        });
+        }
         return this.firstRowData;
+
     }
 
     setSecondRow(data,secondRowData,flag):any{  
+        
         this.data = data;
         this.secondRowData = secondRowData;
         let dataLength:number = this.data.length;
         this.flag = Math.floor(dataLength/2);
         let arrayData:any[] = [];
-        this.data.map((value, index)=>{
-            if(index >= flag ){
-                arrayData.push(value);  
+        for(let i in this.data){
+            if(i >= flag ){
+                arrayData.push(this.data[i]);  
             }  
-        });
-        this.secondRowData = arrayData;
-        return this.secondRowData;
+        }
+        return this.secondRowData = arrayData;
+
     }
     
 }

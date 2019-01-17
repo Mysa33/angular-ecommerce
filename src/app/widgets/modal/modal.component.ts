@@ -40,11 +40,12 @@ export class ModalComponent implements OnInit {
   data:any[] = [];
   public modalSocialId:number;
   
-  constructor() {
-  }
+  constructor() {}
 
   ngOnInit() {
+
     this.data = this.item;
     this.modalSocialId = 2;
+
   }
 }

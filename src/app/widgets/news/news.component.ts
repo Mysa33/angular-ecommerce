@@ -95,9 +95,9 @@ export class NewsComponent implements OnInit {
     this._newsService.getData(this.dataUrl).subscribe(
       data => { 
         this.newsData = data;
-        this.firstRowData = new Slide().setFirstRow(this.newsData,this.firstRowData,this.flag);
-        this.secRowData = new Slide().setSecondRow(this.newsData,this.secRowData,this.flag);
-        this.resolveAfterdelay(this.widgetStatus,this.newsData);
+        this.firstRowData = new Slide().setFirstRow(this.newsData, this.firstRowData, this.flag);
+        this.secRowData = new Slide().setSecondRow(this.newsData, this.secRowData, this.flag);
+        this.resolveAfterdelay(this.widgetStatus, this.newsData);
       },
       err => console.error(err),
       () => console.log('done loading posts')
@@ -105,6 +105,7 @@ export class NewsComponent implements OnInit {
   }
 
   resolveAfterdelay(widgetStatus:boolean,newsData:object):any {
+    
     this.widgetStatus = widgetStatus;
     this.newsData = newsData;
     return new Promise(resolve => {
@@ -114,6 +115,7 @@ export class NewsComponent implements OnInit {
       }, 
       500);
     });
+    
   }
 
   setRowStatus(firstRowStatus:boolean,secRowStatus:boolean){

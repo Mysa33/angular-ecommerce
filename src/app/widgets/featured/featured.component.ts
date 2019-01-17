@@ -113,12 +113,12 @@ export class FeaturedComponent implements OnInit {
     this.getFeaturedsData(this.firstRowStatus, this.secRowStatus);
   }
 
-  getFeaturedsData(firstRowStatus,secRowStatus):void{
+  getFeaturedsData(firstRowStatus, secRowStatus):void{
     this._featuredService.getBooks().subscribe(
       data => { 
         this.featured = data;
-        this.sliderFirstRow = new Slide().setFirstRow(this.featured,this.sliderFirstRow,this.flag);
-        this.sliderSecRow = new Slide().setSecondRow(this.featured,this.sliderSecRow,this.flag);
+        this.sliderFirstRow = new Slide().setFirstRow(this.featured, this.sliderFirstRow, this.flag);
+        this.sliderSecRow = new Slide().setSecondRow(this.featured, this.sliderSecRow, this.flag);
         this.firstRowStatus = !firstRowStatus;
         this.secRowStatus = secRowStatus;
       },
@@ -127,7 +127,7 @@ export class FeaturedComponent implements OnInit {
     );
   }
 
-  setWidgetStatus(firstRowStatus,secRowStatus){
+  setWidgetStatus(firstRowStatus, secRowStatus){
     this.firstRowStatus = firstRowStatus;
     this.secRowStatus = secRowStatus;
     if(this.firstRowStatus == true){
