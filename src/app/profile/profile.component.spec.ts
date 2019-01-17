@@ -8,6 +8,7 @@ import { LocalStorageService } from '../shared/services/local-storage.service';
 import { ProfileComponent } from './profile.component';
 
 describe('ProfileComponent', () => {
+  
   let component: ProfileComponent;
   let fixture: ComponentFixture<ProfileComponent>;
 

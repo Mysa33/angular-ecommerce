@@ -5,6 +5,7 @@ import { HttpModule } from '@angular/http';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import {RouterTestingModule} from '@angular/router/testing';
+import { Observable } from 'rxjs/Observable';
 
 import {routes} from "../app-routing.module";
 import { FilterdataPipe } from '../shared/pipes/filterdata.pipe';
@@ -19,10 +20,12 @@ describe('ProductsComponent', () => {
 
   let component: ProductsComponent;
   let fixture: ComponentFixture<ProductsComponent>;
+  let router;
+  let location;
   var mockedData:Array<MockBooks> = new MockBooks().getMockData(mockedData); 
   var array:any[] = [];
 
-  mockedData.map((value,index)=>{
+  mockedData.map((value)=>{
     let item = new Book().setBook(value);//rework
     array.push(item);
   });
@@ -61,41 +64,56 @@ describe('ProductsComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  it('should have title', () => {
+  it('should page have title', () => {
     expect(component.page).not.toBeNull();
+    //check html
   });
 
   it('should title be shop', () => {
     expect(component.page).toEqual("shop");
   });
 
-  it('should have default value', () => {
+  //Default values
+  it('should page have default value', () => {
     expect(component.page).toEqual("shop");
+  });
+
+  it('should cartLength have default value', () => {
     expect(component.cartLength).toEqual(0);
+  });
+
+  it('should modalItem have default value', () => {
     expect(component.modalItem).toEqual({});
+  });
+
+  it('should cart have default value', () => {
     expect(component.cart).toEqual([]); 
   });
 
-  it('should not be null', () => {
+  //Mock data
+  it('should array not be null', () => {
     expect(array).not.toBeNull();
-    array.map((value,index, data)=>{
-      expect(data).not.toBeNull();
-      expect(data[index].isbn).not.toBeNull();
-      expect(data[index].title).not.toBeNull();
-      expect(data[index].price).not.toBeNull();
-      expect(data[index].cover).not.toBeNull();
-      expect(data[index].synopsis).not.toBeNull();
-    });
+  });
+
+  it('should data not be null', () => {
+    expect(array).not.toBeNull();
+    for(let i in array ){
+      expect(array[i].isbn).not.toBeNull();
+      expect(array[i].title).not.toBeNull();
+      expect(array[i].price).not.toBeNull();
+      expect(array[i].cover).not.toBeNull();
+      expect(array[i].synopsis).not.toBeNull();
+    }
   });
 
   it('should be', () => {    
-    array.map((value,index, data)=>{
-      expect(data[index].isbn).toEqual(jasmine.any(String));
-      expect(data[index].title).toEqual(jasmine.any(String));
-      expect(data[index].price).toEqual(jasmine.any(Number));
-      expect(data[index].cover).toEqual(jasmine.any(String));
-      expect(data[index].synopsis).toEqual(jasmine.any(String));
-    });
+    for(let i in array){
+      expect(array[i].isbn).toEqual(jasmine.any(String));
+      expect(array[i].title).toEqual(jasmine.any(String));
+      expect(array[i].price).toEqual(jasmine.any(Number));
+      expect(array[i].cover).toEqual(jasmine.any(String));
+      expect(array[i].synopsis).toEqual(jasmine.any(String));
+    };
   });
   
 });

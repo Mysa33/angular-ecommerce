@@ -9,24 +9,24 @@ export class ApiService {
   apiRoot:string;
   dataApi:string="";
   
-  constructor(private http:HttpClient) {} 
+  constructor(private _http:HttpClient) {} 
   //Get Books
   getBooks() {
-    return this.http.get(this.booksRoot);
+    return this._http.get(this.booksRoot);
   }
   //Get commercial offers
   getoffers(offersApi){
     this.usersApi = offersApi;
-    return this.http.get(this.usersApi);
+    return this._http.get(this.usersApi);
   }
   //Get users
   getUsers(userRoot){
     this.usersApi = userRoot;
-    return this.http.get(this.usersApi);
+    return this._http.get(this.usersApi);
   }
   //Get data
   getData(apiRoot){
     this.usersApi = apiRoot;
-    return this.http.get(this.usersApi);
+    return this._http.get(this.usersApi);
   }
 }

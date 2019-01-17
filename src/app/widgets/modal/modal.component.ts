@@ -37,7 +37,7 @@ import { Component, OnInit, Input } from '@angular/core';
 export class ModalComponent implements OnInit {
   
   @Input () item;
-  data:any = [];
+  data:any[] = [];
   public modalSocialId:number;
   
   constructor() {

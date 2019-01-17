@@ -8,6 +8,7 @@ import { LocalStorageService } from '../shared/services/local-storage.service';
 import { CartComponent } from './cart.component';
 
 describe('CartComponent', () => {
+  
   let component: CartComponent;
   let fixture: ComponentFixture<CartComponent>;
 

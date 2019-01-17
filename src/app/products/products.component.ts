@@ -122,14 +122,17 @@ export class ProductsComponent implements OnInit {
   }
 
   getData():any{
+
     this._bookService.getBooks().subscribe(
       data => { return this.books = data},
       err => console.error(err),
       () => console.log('done loading books')
     );
+
   }
 
   addToCart(i:number):void{
+    
     var bookToCart = new DataToCart().setData(this.books,i);
     var cartStatus = this._localStorageService.getLocalstorage(this.books, this.storageName);
     //Check if cart is cleared
@@ -142,6 +145,7 @@ export class ProductsComponent implements OnInit {
       this.cart.push(bookToCart);
     }
     this.passData(this.cart);
+
   }
 
   passData(cart:any[]):void{
@@ -150,14 +154,18 @@ export class ProductsComponent implements OnInit {
   }
 
   openModal(i:number):void{
+
     let array:Modal = new Modal().setItem(this.books,i);
     this.modalItem = array;
     this.modalVisibility = true;
+    
   }
   
   closeModal():void{
+
     this.modalItem = {};
     this.modalVisibility = false;
+    
   }
    
 }

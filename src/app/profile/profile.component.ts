@@ -13,14 +13,14 @@ export class ProfileComponent implements OnInit {
   
   page:string = "profile";
   arrayName:string = "contactFormArray";
-  data;
+  data:any;
   count:number;
   profilStatus:boolean = false;
-  profilsInfos;
+  profilsInfos:any;
   newsletterArray:string = "newsletterFormArray";
-  newsletterData;
+  newsletterData:any;
   newsletterStatus:boolean = false;
-  userNlInfos;
+  userNlInfos:any;
   headerName:string;
   headerEmail:string;
   headerDate:string;
@@ -32,20 +32,25 @@ export class ProfileComponent implements OnInit {
   constructor(private _profilService:LocalStorageService) { }
 
   ngOnInit() {
-    this.getProfilInfos(this.data,this.arrayName);
-    this.setProfilInfos(this.data,this.profilStatus,this.profilsInfos)
-    this.getNewsletterInfos(this.newsletterData,this.newsletterArray);
-    this.setNewsletterInfos(this.newsletterData,this.newsletterStatus,this.userNlInfos)
+
+    this.getProfilInfos(this.data, this.arrayName);
+    this.setProfilInfos(this.data, this.profilStatus, this.profilsInfos);
+    this.getNewsletterInfos(this.newsletterData, this.newsletterArray);
+    this.setNewsletterInfos(this.newsletterData, this.newsletterStatus, this.userNlInfos);
+
   }
 
-  getProfilInfos(data,arrayName):any{
+  getProfilInfos(data, arrayName):any{
+
     this.data= data;
     this.arrayName = arrayName;
-    this.data = this._profilService.getLocalstorage(this.data,this.arrayName);
+    this.data = this._profilService.getLocalstorage(this.data, this.arrayName);
     return this.data;
+    
   }
 
-  setProfilInfos(data,profilStatus,profilInfos):boolean{
+  setProfilInfos(data, profilStatus:boolean, profilInfos:object):boolean{
+    
     this.data = data;
     this.profilStatus = profilStatus;
     this.profilsInfos = profilInfos;
@@ -55,16 +60,19 @@ export class ProfileComponent implements OnInit {
       this.setCommonInfos(this.data);
       this.profilsInfos = [];
       let userData:any;
-      this.data.map((value, index) => {
-        userData = new Customer().setCustomer(this.data,index);
+      //rework
+      for(let i in this.data){
+        userData = new Customer().setCustomer(this.data, i);
         this.profilsInfos.push(userData);
-      });
+      }
       this.profilStatus = true;
     }
     return this.profilStatus;
+
   }
 
   setCommonInfos(data){
+    
     this.data = data;
     this.count = this.data.length;
     this.headerName = this.data[0].data.inputName;
@@ -74,16 +82,20 @@ export class ProfileComponent implements OnInit {
     this.userSecAddress = this.data[0].data.inputAddress2;
     this.userCity = this.data[0].data.inputCity
     this.userZip = this.data[0].data.inputZip;
+
   }
 
-  getNewsletterInfos(newsletterData,newsletterArray):any{
+  getNewsletterInfos(newsletterData, newsletterArray):any{
+    
     this.newsletterData= newsletterData;
     this.newsletterArray = newsletterArray;
     this.newsletterData = this._profilService.getLocalstorage(this.newsletterData,this.newsletterArray);
     return newsletterData;
+
   }
 
   setNewsletterInfos(newsletterData,newsletterStatus,userNlInfos):boolean{
+    
     this.newsletterData = newsletterData;
     this.newsletterStatus = newsletterStatus;
     this.userNlInfos = userNlInfos;
@@ -98,4 +110,5 @@ export class ProfileComponent implements OnInit {
     }
     return this.newsletterStatus;
   }
+
 }

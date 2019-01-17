@@ -10,7 +10,6 @@ describe('BestDealComponent', () => {
 
   let component: BestDealComponent;
   let fixture: ComponentFixture<BestDealComponent>;
-  let comOffUrl:string = "";
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
@@ -18,12 +17,12 @@ describe('BestDealComponent', () => {
       schemas: [
         CUSTOM_ELEMENTS_SCHEMA
       ],
-      imports: [
+      imports :[
         HttpModule,
-        HttpClientModule,
+        HttpClientModule
       ],
       providers: [
-        ApiService
+        ApiService, {provide:HttpModule}
       ]
     })
     .compileComponents();
@@ -35,7 +34,4 @@ describe('BestDealComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should set component properties', () => {
-    expect(comOffUrl).toEqual("");
-  });
 });

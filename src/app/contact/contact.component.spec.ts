@@ -2,6 +2,7 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import {  CUSTOM_ELEMENTS_SCHEMA  } from '@angular/core';
 import {  ReactiveFormsModule } from '@angular/forms';
 
+
 import { ContactComponent } from './contact.component';
 
 describe('ContactComponent', () => {
@@ -15,7 +16,7 @@ describe('ContactComponent', () => {
         CUSTOM_ELEMENTS_SCHEMA
       ],
       imports: [
-        ReactiveFormsModule
+        ReactiveFormsModule,
       ]
     })
     .compileComponents();

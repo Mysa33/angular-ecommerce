@@ -23,7 +23,4 @@ describe('ModalComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
-    expect(component.modalSocialId).toBeGreaterThan(1);
-  });
 });

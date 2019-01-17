@@ -50,24 +50,33 @@ export class BestDealComponent implements OnInit {
   constructor(private _offersService: ApiService) {}
 
   ngOnInit() {
+
     this.doBestDeal();
+    
   }
 
   doBestDeal(){
-    this.getBestdealData(); 
+
+    this.getBestdealData();
+
   } 
+
   //get Bestdeal data
   getBestdealData(){
+    
     this.bestDealData = this.data.products;
     this.isbnArray = this.bestDealData.map(data => data.isbn).sort()
     .filter(function(elem, index, self) {
       return index === self.indexOf(elem);
     });
-    this.doSetbestdealUrl();
+    this.setBestDealUrl(this.isbnArray);
     this.getCommercialOffers(this.commercialOffersUrl);
+
   }
+
   // Get commercial offers
   getCommercialOffers(commercialOffersUrl){
+    
     this.commercialOffersUrl = commercialOffersUrl;
     if(this.commercialOffersUrl == ""){
       return;
@@ -83,16 +92,20 @@ export class BestDealComponent implements OnInit {
         () => console.log('done loading offers')
       );
     }
+
   }
-  //doSetbestdealUrl
-  doSetbestdealUrl():void{
+  //setBestDealUrl
+  setBestDealUrl(isbnArray):void{
+    this.isbnArray = isbnArray;
     for(let o in this.isbnArray){
         this.commercialOffersUrl += this.isbnArray[o] + "," ;
     }
     this.commercialOffersUrl = "http://henri-potier.xebia.fr/books/"+this.commercialOffersUrl+"/commercialOffers";
+
   }
   // Calc best deal 
   calcBestdeal(dataOffers):void{
+
     this.dataOffers = dataOffers;
     this.price = this.data.totalCart;
     let percent = !this.dataOffers[0] ?  0: this.dataOffers[0].value;
@@ -114,5 +127,6 @@ export class BestDealComponent implements OnInit {
     this.percentVis = !this.dataOffers[0] ?  false : true;
     this.minusVis =  !this.dataOffers[1] ? false : true;
     this.sliceVis = !this.dataOffers[2] ? false : true;
+
   }
 }

@@ -43,15 +43,5 @@ describe('CommentsComponent', () => {
     expect(component.widgetStyleId).toEqual(0);
 
   });
-
-  it('data should not be', () => {
-
-    expect(component.getUsers()).not.toBeNull();
-    let data = component.getUsers();
-    data.map((value, index)=>{
-      expect(value.toBeUndefined());
-    })
-   
-  });
-
+  
 });

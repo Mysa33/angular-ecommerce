@@ -5,7 +5,7 @@ import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import {RouterTestingModule} from '@angular/router/testing';
 import {HttpClientTestingModule, HttpTestingController} from "@angular/common/http/testing";
-import { ReactiveFormsModule, FormsModule } from '@angular/forms';
+import { ReactiveFormsModule, FormsModule, FormGroup, FormControl, Validators } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
@@ -81,10 +81,10 @@ import { BlogComponent } from './blog/blog.component';
     FormsModule,
     AppRoutingModule,
     ReactiveFormsModule,
-    ReactiveFormsModule,
-    RouterTestingModule
-    //HttpClientTestingModule
-
+    RouterTestingModule,
+    //FormGroup, 
+    //FormControl, 
+    //Validators
   ],
   schemas: [
     CUSTOM_ELEMENTS_SCHEMA
