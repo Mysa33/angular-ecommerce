@@ -4,7 +4,8 @@ import {Router} from "@angular/router";
 import { HttpModule } from '@angular/http';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
-import {RouterTestingModule} from '@angular/router/testing';
+import { RouterTestingModule } from '@angular/router/testing';
+import { HttpTestingController, HttpClientTestingModule } from '@angular/common/http/testing';
 import { Observable } from 'rxjs/Observable';
 
 import {routes} from "../app-routing.module";
@@ -20,15 +21,18 @@ describe('ProductsComponent', () => {
 
   let component: ProductsComponent;
   let fixture: ComponentFixture<ProductsComponent>;
+  let httpMock: HttpTestingController;
+  let dataService: ApiService;
   let router;
   let location;
   var mockedData:Array<MockBooks> = new MockBooks().getMockData(mockedData); 
   var array:any[] = [];
+  let compiled;
 
-  mockedData.map((value)=>{
-    let item = new Book().setBook(value);//rework
+  for (let i in mockedData) {
+    let item = new Book().setBook(mockedData[i]);
     array.push(item);
-  });
+  }
   
   beforeEach(async(() => {
     TestBed.configureTestingModule({
@@ -57,6 +61,7 @@ describe('ProductsComponent', () => {
   beforeEach(() => {
     fixture = TestBed.createComponent(ProductsComponent);
     component = fixture.componentInstance;
+    compiled = fixture.debugElement.nativeElement;
     fixture.detectChanges();
   });
 
@@ -66,7 +71,6 @@ describe('ProductsComponent', () => {
 
   it('should page have title', () => {
     expect(component.page).not.toBeNull();
-    //check html
   });
 
   it('should title be shop', () => {
@@ -115,5 +119,29 @@ describe('ProductsComponent', () => {
       expect(array[i].synopsis).toEqual(jasmine.any(String));
     };
   });
+
+  it('should have one div at less', async(() => {
+    expect(compiled.querySelector('div')).toBeTruthy();
+  }));
+
+  it('should render text', async(() => {
+    expect(compiled.querySelector('div').textContent).toBeTruthy();
+  }));
+
+  it('should render input tag', async(() => {
+    expect(compiled.querySelector('input')).toBeTruthy();
+  }));
+
+  it('should not render form tag', async(() => {
+    expect(compiled.querySelector('form')).toBeFalsy();
+  }));
+
+  it('should render only one div.ecom-home-catalog-row', async(() => {
+    expect(compiled.querySelectorAll('div.ecom-home-catalog-row').length).toEqual(1);
+  }));
+
+  it('should render div.ecom-home-catalog-row', async(() => {
+    expect(compiled.querySelectorAll('div.ecom-home-catalog-card')).toBeTruthy();
+  }));
   
 });

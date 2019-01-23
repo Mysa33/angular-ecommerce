@@ -17,7 +17,7 @@ import { ContactComponent } from '../../contact/contact.component';
 import { ProfileComponent} from '../../profile/profile.component';
 import { routes } from '../../app-routing.module';
 
-describe('HeaderComponent', () => {
+describe('MobileNavComponent', () => {
   let component: MobileNavComponent;
   let fixture: ComponentFixture<MobileNavComponent>;
   let compiled;
