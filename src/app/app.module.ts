@@ -81,10 +81,7 @@ import { BlogComponent } from './blog/blog.component';
     FormsModule,
     AppRoutingModule,
     ReactiveFormsModule,
-    RouterTestingModule,
-    //FormGroup, 
-    //FormControl, 
-    //Validators
+    RouterTestingModule
   ],
   schemas: [
     CUSTOM_ELEMENTS_SCHEMA
