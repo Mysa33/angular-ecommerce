@@ -56,6 +56,7 @@ describe('ProductsComponent', () => {
       ]
     })
     .compileComponents();
+    dataService = TestBed.get(ApiService);
   }));
 
   beforeEach(() => {
