@@ -54,8 +54,8 @@ import { LocalStorageService } from '../../shared/services/local-storage.service
 })
 export class ContactFormComponent implements OnInit {
 
-  contactFormArray;
-  storedData;
+  contactFormArray:any;
+  storedData:any;
   arrayName:string = "contactFormArray";
   
   constructor(private _profilService:LocalStorageService) { }
@@ -74,7 +74,7 @@ export class ContactFormComponent implements OnInit {
     inputTitle : new FormControl('',[Validators.required,Validators.minLength(4),Validators.maxLength(15)]),
     inputTxt: new FormControl('',[Validators.required, Validators.minLength(20), Validators.maxLength(250)])
   });
-
+  
   onSubmit(contactFormArray, storedData):void { 
     if(!this.contactForm.valid){
       alert("le formulaire est invalide.");
@@ -97,7 +97,7 @@ export class ContactFormComponent implements OnInit {
     }   
   }
 
-  getContactData(storedData, arrayName):any{ //Config Messages data
+  getContactData(storedData:any, arrayName:string):any{ 
     this.storedData= storedData;
     this.arrayName = arrayName;
     this.storedData = this._profilService.getLocalstorage(this.storedData, this.arrayName);

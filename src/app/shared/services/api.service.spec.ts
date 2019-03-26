@@ -4,7 +4,7 @@ import { HttpTestingController, HttpClientTestingModule } from '@angular/common/
 import { HttpClientModule, HttpClient } from '@angular/common/http';
 
 import { ApiService } from './api.service';
-import { MockBooks } from '../fixtures/mock-books';
+import { MockBooks } from '../../../fixtures/mock-books';
  
 describe('ApiService', () => {
 
@@ -28,11 +28,16 @@ describe('ApiService', () => {
     mockBooks = new MockBooks().getMockData(mockBooks)
   }));
 
+  afterEach(() => {
+    // After every test, assert that there are no more pending requests.
+    httpMock.verify();
+  });
+
   it('should be created', inject([ApiService], (service: ApiService) => {
     expect(service).toBeTruthy();
   }));
 
-  it('getData() should http GET data', () => {
+  it('getData() should GET data', fakeAsync(() => {
     const data:MockBooks = mockBooks;
     const url:string = "http://henri-potier.xebia.fr/books";
     dataService.getData(url).subscribe((res) => {
@@ -41,29 +46,19 @@ describe('ApiService', () => {
     const req = httpMock.expectOne(url);
     expect(req.request.method).toEqual("GET");
     req.flush(data);
-    httpMock.verify();
-  });
+    tick(); 
+  }));
 
-  it('getBooks() should http GET books', () => {
+  it('getUsers() should GET users', fakeAsync(() => {
     const data:MockBooks = mockBooks;
-    dataService.getBooks().subscribe((res) => {
+    const url:string = "https://randomuser.me/api/?results=4";
+    dataService.getData(url).subscribe((res) => {
       expect(res).toEqual(data);
     });
-    const req = httpMock.expectOne("http://henri-potier.xebia.fr/books");
+    const req = httpMock.expectOne(url);
     expect(req.request.method).toEqual("GET");
     req.flush(data);
-    httpMock.verify();
-  });
-
-  it('getUsers() should http GET users', () => {
-    const data:MockBooks = mockBooks;
-    dataService.getBooks().subscribe((res) => {
-      expect(res).toEqual(data);
-    });
-    const req = httpMock.expectOne("http://henri-potier.xebia.fr/books");
-    expect(req.request.method).toEqual("GET");
-    req.flush(data);
-    httpMock.verify();
-  });
+    tick();
+  }));
 
 });

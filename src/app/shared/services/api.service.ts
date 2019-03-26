@@ -19,8 +19,8 @@ export class ApiService {
   }
   //Get commercial offers
   getoffers(offersApi):Observable<Object>{
-    this.usersApi = offersApi;
-    return this._http.get(this.usersApi);
+    this.offersApi = offersApi;
+    return this._http.get(this.offersApi);
   }
   //Get users
   getUsers(userRoot):Observable<Object>{
@@ -29,7 +29,7 @@ export class ApiService {
   }
   //Get data
   getData(apiRoot):Observable<Object>{
-    this.usersApi = apiRoot;
-    return this._http.get(this.usersApi);
+    this.dataApi = apiRoot;
+    return this._http.get(this.dataApi);
   }
 }
