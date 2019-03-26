@@ -14,7 +14,7 @@ import {ApiService} from '../shared/services/api.service';
 import { DataShareService } from '../shared/services/data-share.service';
 import { LocalStorageService } from '../shared/services/local-storage.service';
 import { ProductsComponent } from './products.component';
-import { MockBooks } from '../shared/fixtures/mock-books';
+import { MockBooks } from '../../fixtures/mock-books';
 import { Book } from '../shared/class/book'; 
 
 describe('ProductsComponent', () => {
@@ -141,7 +141,7 @@ describe('ProductsComponent', () => {
     expect(compiled.querySelectorAll('div.ecom-home-catalog-row').length).toEqual(1);
   }));
 
-  it('should render div.ecom-home-catalog-row', async(() => {
+  it('should render div.ecom-home-catalog-card', async(() => {
     expect(compiled.querySelectorAll('div.ecom-home-catalog-card')).toBeTruthy();
   }));
   

@@ -4,7 +4,7 @@ import { HttpClientModule } from '@angular/common/http';
 
 import {ApiService} from '../../shared/services/api.service';
 import { FeaturedComponent } from './featured.component';
-import { MockBooks } from '../../shared/fixtures/mock-books';
+import { MockBooks } from '../../../fixtures/mock-books';
 import { Book } from '../../shared/class/book'; 
 
 describe('FeaturedComponent', () => {

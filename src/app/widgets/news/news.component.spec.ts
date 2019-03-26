@@ -6,7 +6,7 @@ import { FormsModule } from '@angular/forms';
 
 import {ApiService} from '../../shared/services/api.service';
 import { NewsComponent } from './news.component';
-import { MockNews } from '../../shared/fixtures/mock-news'; 
+import { MockNews } from '../../../fixtures/mock-news'; 
 import { Slide } from '../../shared/class/slide';
 
 describe('NewsComponent', () => {
