@@ -54,7 +54,7 @@ export class CommentsComponent implements OnInit {
     );
   }
 
-  setUsers(users):object{
+  setUsers(users):object{ //Todo : use service
     this.users = users;
     this.commentsArray = [];
     const fakeComment:string = "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
@@ -70,7 +70,7 @@ export class CommentsComponent implements OnInit {
     return this.result = this.commentsArray;
   }
 
-  setWidgetColor(defaultCommentsWidgetId):any{
+  setWidgetColor(defaultCommentsWidgetId):any{ //Todo : use service
     this.defaultCommentsWidgetId = defaultCommentsWidgetId;
     switch (this.defaultCommentsWidgetId) {
       case 0:
@@ -85,7 +85,7 @@ export class CommentsComponent implements OnInit {
     }
   }
 
-  setWidgetTitleColor(defaultCommentsWidgetId):any{
+  setWidgetTitleColor(defaultCommentsWidgetId):any{ //Todo : use service
     this.defaultCommentsWidgetId = defaultCommentsWidgetId;
     switch (this.defaultCommentsWidgetId) {
       case 0:

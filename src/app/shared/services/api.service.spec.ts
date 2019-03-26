@@ -5,12 +5,14 @@ import { HttpClientModule, HttpClient } from '@angular/common/http';
 
 import { ApiService } from './api.service';
 import { MockBooks } from '../../../fixtures/mock-books';
+import { MockUsers } from '../../../fixtures/mock-users';
  
 describe('ApiService', () => {
 
   let httpMock: HttpTestingController;
   let dataService: ApiService;
   let mockBooks:MockBooks;
+  let mockUsers:MockUsers;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
@@ -25,12 +27,12 @@ describe('ApiService', () => {
     });
     dataService = TestBed.get(ApiService);
     httpMock = TestBed.get(HttpTestingController);
-    mockBooks = new MockBooks().getMockData(mockBooks)
+    mockBooks = new MockBooks().getMockData(mockBooks);
+    mockUsers = new MockUsers().mockData;
   }));
 
   afterEach(() => {
-    // After every test, assert that there are no more pending requests.
-    httpMock.verify();
+    httpMock.verify();// After every test, assert that there are no more pending requests.
   });
 
   it('should be created', inject([ApiService], (service: ApiService) => {
@@ -50,7 +52,7 @@ describe('ApiService', () => {
   }));
 
   it('getUsers() should GET users', fakeAsync(() => {
-    const data:MockBooks = mockBooks;
+    const data:MockUsers = mockUsers;
     const url:string = "https://randomuser.me/api/?results=4";
     dataService.getData(url).subscribe((res) => {
       expect(res).toEqual(data);
